@@ -97,6 +97,11 @@ namespace PlayNXNA
             throw new NotImplementedException();
         }
 
+        public TextLayout[] layoutText(string s, TextFormat format, TextWrap wrap)
+        {
+            throw new NotImplementedException();
+        }
+
         public GroupLayer rootLayer()
         {
             return _rootLayer;

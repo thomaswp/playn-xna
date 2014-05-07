@@ -21,6 +21,11 @@ namespace PlayNXNA
             return new XNAAsyncImage(preWidth, preHeight);
         }
 
+        public override byte[] getBytesSync(string value)
+        {
+            throw new NotImplementedException();
+        }
+
         protected override Image createStaticImage(object obj, playn.core.gl.Scale s)
         {
             return new XNAStaticImage();

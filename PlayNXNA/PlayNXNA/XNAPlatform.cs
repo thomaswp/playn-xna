@@ -46,11 +46,6 @@ namespace PlayNXNA
             _keyboard = new XNAKeyboard();
         }
 
-        public override Analytics analytics()
-        {
-            throw new NotImplementedException();
-        }
-
         public override Assets assets()
         {
             return _assets;
@@ -97,11 +92,6 @@ namespace PlayNXNA
         }
 
         public override float random()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override RegularExpression regularExpression()
         {
             throw new NotImplementedException();
         }

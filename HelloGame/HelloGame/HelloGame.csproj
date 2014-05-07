@@ -97,8 +97,8 @@
     <Reference Include="mscorlib">
       <Private>False</Private>
     </Reference>
-    <Reference Include="PlayN">
-      <HintPath>..\..\PlayNXNA\PlayNXNA\PlayN.dll</HintPath>
+    <Reference Include="PlayN-1.8.5">
+      <HintPath>..\..\PlayNXNA\PlayNXNA\PlayN-1.8.5.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>False</Private>

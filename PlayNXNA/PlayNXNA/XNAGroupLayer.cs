@@ -29,7 +29,12 @@ namespace PlayNXNA
 
         public void clear()
         {
-            impl.clear(this);
+            removeAll();
+        }
+
+        public void destroyAll()
+        {
+            impl.destroyAll(this);
         }
 
         public Layer get(int i)
@@ -40,6 +45,11 @@ namespace PlayNXNA
         public void remove(Layer l)
         {
             impl.remove(this, (AbstractLayer) l);
+        }
+
+        public void removeAll()
+        {
+            impl.removeAll(this);
         }
 
         public int size()

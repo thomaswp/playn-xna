@@ -96,9 +96,9 @@
     <Reference Include="mscorlib">
       <Private>False</Private>
     </Reference>
-    <Reference Include="PlayN, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="PlayN-1.8.5, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\PlayN.dll</HintPath>
+      <HintPath>.\PlayN-1.8.5.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>False</Private>
@@ -139,7 +139,7 @@
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
     <Content Include="IKVM.OpenJDK.Core.dll" />
-    <Content Include="PlayN.dll" />
+    <Content Include="PlayN-1.8.5.dll" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PlayNXNAContent\PlayNXNAContent.contentproj">
