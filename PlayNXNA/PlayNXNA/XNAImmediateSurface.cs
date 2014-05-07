@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using playn.core;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace PlayNXNA
 {
     class XNAImmediateSurface : Surface
     {
+        public SpriteBatch SpriteBatch { get; set; }
+        public InternalTransform RootTransform { get; set; }
+
+        private InternalTransform tempTransform = new StockInternalTransform();
+
         public Surface clear()
         {
-            throw new NotImplementedException();
+            return this;   
         }
 
         public Surface drawImage(Image i, float f1, float f2, float f3, float f4, float f5, float f6, float f7, float f8)
@@ -25,7 +31,10 @@ namespace PlayNXNA
 
         public Surface drawImage(Image i, float f1, float f2)
         {
-            throw new NotImplementedException();
+            tempTransform.set(RootTransform);
+            tempTransform.translate(f1, f2);
+            ((XNAImage)i).draw(SpriteBatch, tempTransform);
+            return this;
         }
 
         public Surface drawImageCentered(Image i, float f1, float f2)
@@ -60,7 +69,7 @@ namespace PlayNXNA
 
         public float height()
         {
-            throw new NotImplementedException();
+            return PlayN.graphics().height();
         }
 
         public Surface restore()
@@ -125,7 +134,7 @@ namespace PlayNXNA
 
         public float width()
         {
-            throw new NotImplementedException();
+            return PlayN.graphics().width();
         }
     }
 }

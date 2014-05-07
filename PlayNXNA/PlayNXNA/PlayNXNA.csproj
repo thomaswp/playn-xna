@@ -127,10 +127,12 @@
     <Compile Include="XNAImageLayer.cs" />
     <Compile Include="XNAImmediateLayer.cs" />
     <Compile Include="XNAImmediateSurface.cs" />
+    <Compile Include="XNAJson.cs" />
     <Compile Include="XNAKeyboard.cs" />
     <Compile Include="XNALayer.cs" />
     <Compile Include="XNALog.cs" />
     <Compile Include="XNAMouse.cs" />
+    <Compile Include="XNANet.cs" />
     <Compile Include="XNAPlatform.cs" />
     <Compile Include="XNAPointer.cs" />
     <Compile Include="XNAStaticImage.cs" />

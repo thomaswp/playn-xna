@@ -56,6 +56,7 @@ namespace PlayNXNA
             if (lastX != x || lastY != y)
             {
                 onMouseMove(new PlayNMouse.MotionEvent.Impl(new Events.Flags.Impl(), time, x, y, x - lastX, y - lastY));
+                pointer.onMouseMove(time, x, y);
                 lastX = x;
                 lastY = y;
             }

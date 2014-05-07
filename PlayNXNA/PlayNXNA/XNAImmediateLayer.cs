@@ -10,10 +10,12 @@ namespace PlayNXNA
     public class XNAImmediateLayer : XNALayer, ImmediateLayer
     {
         private ImmediateLayer.Renderer _renderer;
+        private XNAImmediateSurface surface;
 
         public XNAImmediateLayer(ImmediateLayer.Renderer renderer)
         {
             _renderer = renderer;
+            surface = new XNAImmediateSurface();
         }
 
         public ImmediateLayer.Renderer renderer()
@@ -23,7 +25,11 @@ namespace PlayNXNA
 
         public override void draw(SpriteBatch spritebatch, InternalTransform parentTransform)
         {
-            // TODO
+            if (!visible()) return;
+            InternalTransform xform = getLocalTransform(parentTransform);
+            surface.RootTransform = xform;
+            surface.SpriteBatch = spritebatch;
+            _renderer.render(surface);
         }
     }
 }

@@ -30,6 +30,8 @@ namespace PlayNXNA
         private readonly XNAMouse _mouse;
         private readonly XNAPointer _pointer;
         private readonly XNAKeyboard _keyboard;
+        private readonly XNAJson _json;
+        private readonly XNANet _net;
 
         private Game game;
         private readonly System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
@@ -44,6 +46,8 @@ namespace PlayNXNA
             _mouse = new XNAMouse();
             _pointer = new XNAPointer();
             _keyboard = new XNAKeyboard();
+            _json = new XNAJson();
+            _net = new XNANet(this);
         }
 
         public override Assets assets()
@@ -63,7 +67,7 @@ namespace PlayNXNA
 
         public override Json json()
         {
-            throw new NotImplementedException();
+            return _json;
         }
 
         public override Keyboard keyboard()
@@ -78,7 +82,7 @@ namespace PlayNXNA
 
         public override Net net()
         {
-            throw new NotImplementedException();
+            return _net;
         }
 
         public override void openURL(string value)
@@ -143,6 +147,7 @@ namespace PlayNXNA
             if (game != null)
             {
                 _mouse.update();
+                _keyboard.update();
                 game.tick(tick());
                 runQueue.execute();
             }
