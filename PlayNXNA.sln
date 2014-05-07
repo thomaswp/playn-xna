@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNXNA", "PlayNXNA\PlayNXNA\PlayNXNA.csproj", "{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "PlayNXNAContent", "PlayNXNA\PlayNXNAContent\PlayNXNAContent.contentproj", "{19F0E54C-F31D-45F5-8FC4-B43CA389BAE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}.Debug|x86.ActiveCfg = Debug|x86
+		{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}.Debug|x86.Build.0 = Debug|x86
+		{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}.Release|x86.ActiveCfg = Release|x86
+		{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}.Release|x86.Build.0 = Release|x86
+		{19F0E54C-F31D-45F5-8FC4-B43CA389BAE7}.Debug|x86.ActiveCfg = Debug|x86
+		{19F0E54C-F31D-45F5-8FC4-B43CA389BAE7}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
