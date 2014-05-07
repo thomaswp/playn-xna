@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using playn.core;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
 namespace PlayNTest
 {
@@ -50,11 +52,13 @@ namespace PlayNTest
             impl.depthChanged(this, l, f);
         }
 
-        public override void draw()
+        public override void draw(SpriteBatch spritebatch, InternalTransform parentTransform)
         {
+            if (!visible()) return;
+
             for (int i = 0, size = impl.children.size(); i < size; i++)
             {
-                ((XNALayer)impl.children.get(i)).draw();
+                ((XNALayer)impl.children.get(i)).draw(spritebatch, getLocalTransform(parentTransform));
             }
         }
     }

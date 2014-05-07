@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using playn.core;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
 namespace PlayNTest
 {
     class XNAImageLayer : XNALayer, ImageLayer
     {
-        public XNAImageLayer(Image image = null)
+        XNAImage _image;
+
+        public XNAImageLayer(XNAImage image = null)
         {
+            _image = image;
         }
 
         public void clearHeight()
@@ -24,7 +29,7 @@ namespace PlayNTest
 
         public Image image()
         {
-            throw new NotImplementedException();
+            return _image;
         }
 
         public void setHeight(float f)
@@ -58,9 +63,10 @@ namespace PlayNTest
             throw new NotImplementedException();
         }
 
-        public override void draw()
+        public override void draw(SpriteBatch spritebatch, InternalTransform parentTransform)
         {
-            Console.WriteLine("Draing image layer: " + this);
+            if (!visible()) return;
+            _image.draw(spritebatch, getLocalTransform(parentTransform));
         }
     }
 }

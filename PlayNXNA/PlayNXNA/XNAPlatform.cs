@@ -27,15 +27,20 @@ namespace PlayNTest
 
         private readonly XNAGraphics _graphics;
         private readonly XNAAssets _assets;
+        private readonly XNAMouse _mouse;
         private readonly XNAPointer _pointer;
 
         private Game game;
         private readonly System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
 
+        public Microsoft.Xna.Framework.GraphicsDeviceManager GraphicsDevice { get; set; }
+        public Microsoft.Xna.Framework.Content.ContentManager Content { get; set; }
+
         public XNAPlatform() : base(new XNALog())
         {
             _graphics = new XNAGraphics();
             _assets = new XNAAssets(this);
+            _mouse = new XNAMouse();
             _pointer = new XNAPointer();
         }
 
@@ -123,7 +128,7 @@ namespace PlayNTest
 
         public override double time()
         {
-            throw new NotImplementedException();
+            return new TimeSpan(DateTime.Now.Ticks).TotalMilliseconds;
         }
 
         public override Touch touch()
@@ -145,15 +150,17 @@ namespace PlayNTest
         {
             if (game != null)
             {
+                _mouse.update();
                 game.tick(tick());
+                runQueue.execute();
             }
         }
 
-        internal void draw(Microsoft.Xna.Framework.GameTime gameTime)
+        public void draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
         {
             if (game != null)
             {
-                _graphics.draw();
+                _graphics.draw(spriteBatch);
             }
         }
     }

@@ -126,8 +126,10 @@
     <Compile Include="XNAImageLayer.cs" />
     <Compile Include="XNALayer.cs" />
     <Compile Include="XNALog.cs" />
+    <Compile Include="XNAMouse.cs" />
     <Compile Include="XNAPlatform.cs" />
     <Compile Include="XNAPointer.cs" />
+    <Compile Include="XNAStaticImage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
@@ -135,8 +137,9 @@
     <Content Include="Test.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PlayNTestContent\PlayNTestContent.contentproj">
-      <Name>PlayNTestContent</Name>
+    <ProjectReference Include="..\PlayNXNAContent\PlayNXNAContent.contentproj">
+      <Project>{19F0E54C-F31D-45F5-8FC4-B43CA389BAE7}</Project>
+      <Name>PlayNXNAContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
   </ItemGroup>

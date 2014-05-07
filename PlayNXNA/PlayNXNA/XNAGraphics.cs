@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using playn.core;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace PlayNTest
 {
     class XNAGraphics : Graphics
     {
         private readonly XNAGroupLayer _rootLayer;
+        private readonly InternalTransform rootXform = new StockInternalTransform();
 
         public XNAGraphics()
         {
@@ -42,7 +44,7 @@ namespace PlayNTest
 
         public ImageLayer createImageLayer(Image i)
         {
-            return new XNAImageLayer(i);
+            return new XNAImageLayer((XNAImage) i);
         }
 
         public ImmediateLayer createImmediateLayer(ImmediateLayer.Renderer ilr)
@@ -87,7 +89,7 @@ namespace PlayNTest
 
         public int height()
         {
-            throw new NotImplementedException();
+            return ((XNAPlatform) PlayN.platform()).GraphicsDevice.PreferredBackBufferHeight;
         }
 
         public TextLayout layoutText(string str, TextFormat tf)
@@ -117,12 +119,12 @@ namespace PlayNTest
 
         public int width()
         {
-            throw new NotImplementedException();
+            return ((XNAPlatform)PlayN.platform()).GraphicsDevice.PreferredBackBufferWidth;
         }
 
-        public void draw()
+        public void draw(SpriteBatch spritebatch)
         {
-            _rootLayer.draw();
+            _rootLayer.draw(spritebatch, rootXform);
         }
     }
 }

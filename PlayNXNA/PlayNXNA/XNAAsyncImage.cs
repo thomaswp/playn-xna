@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using playn.core;
+using Microsoft.Xna.Framework.Graphics;
+using playn.core.util;
 
 namespace PlayNTest
 {
@@ -10,6 +12,8 @@ namespace PlayNTest
     {
         private float preWidth;
         private float preHeight;
+        private Exception error;
+        private java.util.List callbacks = new java.util.ArrayList();
 
         public XNAAsyncImage(float preWidth, float preHeight)
         {
@@ -17,14 +21,32 @@ namespace PlayNTest
             this.preHeight = preHeight;
         }
 
-        public void setError(Exception t)
+        public override float width()
         {
-            throw new NotImplementedException();
+            return texture == null ? preWidth : base.width();
         }
 
-        public void setImage(object obj, playn.core.gl.Scale s)
+        public override float height()
         {
-            throw new NotImplementedException();
+            return texture == null ? preHeight : base.height();
+        }
+        
+        public void setError(Exception error)
+        {
+            this.error = error;
+            callbacks = Callbacks.dispatchFailureClear(callbacks, error);
+        }
+
+        public void setImage(object tex, playn.core.gl.Scale s)
+        {
+            texture = (Texture2D)tex;
+            _scale = s;
+            callbacks = Callbacks.dispatchSuccessClear(callbacks, this);
+        }
+
+        public override void addCallback(Callback callback)
+        {
+            callbacks.add(callback);
         }
     }
 }

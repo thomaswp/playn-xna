@@ -37,7 +37,10 @@ namespace PlayNTest
         /// </summary>
         protected override void Initialize()
         {
+            IsMouseVisible = true;
             platform = registerPlatform();
+            platform.GraphicsDevice = graphics;
+            platform.Content = Content;
             base.Initialize();
         }
 
@@ -49,7 +52,6 @@ namespace PlayNTest
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
             // TODO: use this.Content to load your game content here
         }
 
@@ -86,8 +88,10 @@ namespace PlayNTest
         {
             GraphicsDevice.Clear(Color.Black);
 
-            platform.draw(gameTime);
-
+            spriteBatch.Begin();
+            platform.draw(spriteBatch);
+            spriteBatch.End();
+            
             base.Draw(gameTime);
         }
     }
