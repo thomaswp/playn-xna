@@ -6,7 +6,7 @@ using playn.core;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace PlayNTest
+namespace PlayNXNA
 {
     public abstract class XNALayer : AbstractLayer
     {

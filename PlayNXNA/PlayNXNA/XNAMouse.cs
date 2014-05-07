@@ -7,7 +7,7 @@ using PlayNMouse = playn.core.Mouse;
 using XMouse = Microsoft.Xna.Framework.Input.Mouse;
 using playn.core;
 
-namespace PlayNTest
+namespace PlayNXNA
 {
     public class XNAMouse : MouseImpl
     {

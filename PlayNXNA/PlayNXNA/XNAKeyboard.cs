@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using playn.core;
 
-namespace PlayNTest
+namespace PlayNXNA
 {
     public class XNAKeyboard : Keyboard
     {

@@ -6,7 +6,7 @@ using playn.core;
 using Microsoft.Xna.Framework.Graphics;
 using playn.core.util;
 
-namespace PlayNTest
+namespace PlayNXNA
 {
     class XNAAsyncImage : XNAImage, AsyncImage
     {

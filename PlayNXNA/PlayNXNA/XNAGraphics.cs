@@ -5,7 +5,7 @@ using System.Text;
 using playn.core;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace PlayNTest
+namespace PlayNXNA
 {
     class XNAGraphics : Graphics
     {

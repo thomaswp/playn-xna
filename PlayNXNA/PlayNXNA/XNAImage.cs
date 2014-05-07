@@ -8,7 +8,7 @@ using playn.core.gl;
 using playn.core.util;
 using Microsoft.Xna.Framework;
 
-namespace PlayNTest
+namespace PlayNXNA
 {
     public abstract class XNAImage : Image
     {

@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNXNA", "PlayNXNA\PlayNXNA\PlayNXNA.csproj", "{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "PlayNXNAContent", "PlayNXNA\PlayNXNAContent\PlayNXNAContent.contentproj", "{19F0E54C-F31D-45F5-8FC4-B43CA389BAE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNXNAContent", "PlayNXNA\PlayNXNAContent\PlayNXNAContent.contentproj", "{19F0E54C-F31D-45F5-8FC4-B43CA389BAE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloGame", "HelloGame\HelloGame\HelloGame.csproj", "{A1FAA6C5-27EF-44C3-818C-B82F423C30A9}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "HelloGameContent", "HelloGame\HelloGameContent\HelloGameContent.contentproj", "{AE956C53-4E72-4DDB-ABC9-761075852D63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuteGame", "CuteGame\CuteGame\CuteGame.csproj", "{FA803145-0189-463D-92B2-E5E570A1F59E}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "CuteGameContent", "CuteGame\CuteGameContent\CuteGameContent.contentproj", "{C3255F04-E09E-4BD2-AE15-F7B5128646B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +25,18 @@ Global
 		{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}.Release|x86.Build.0 = Release|x86
 		{19F0E54C-F31D-45F5-8FC4-B43CA389BAE7}.Debug|x86.ActiveCfg = Debug|x86
 		{19F0E54C-F31D-45F5-8FC4-B43CA389BAE7}.Release|x86.ActiveCfg = Release|x86
+		{A1FAA6C5-27EF-44C3-818C-B82F423C30A9}.Debug|x86.ActiveCfg = Debug|x86
+		{A1FAA6C5-27EF-44C3-818C-B82F423C30A9}.Debug|x86.Build.0 = Debug|x86
+		{A1FAA6C5-27EF-44C3-818C-B82F423C30A9}.Release|x86.ActiveCfg = Release|x86
+		{A1FAA6C5-27EF-44C3-818C-B82F423C30A9}.Release|x86.Build.0 = Release|x86
+		{AE956C53-4E72-4DDB-ABC9-761075852D63}.Debug|x86.ActiveCfg = Debug|x86
+		{AE956C53-4E72-4DDB-ABC9-761075852D63}.Release|x86.ActiveCfg = Release|x86
+		{FA803145-0189-463D-92B2-E5E570A1F59E}.Debug|x86.ActiveCfg = Debug|x86
+		{FA803145-0189-463D-92B2-E5E570A1F59E}.Debug|x86.Build.0 = Debug|x86
+		{FA803145-0189-463D-92B2-E5E570A1F59E}.Release|x86.ActiveCfg = Release|x86
+		{FA803145-0189-463D-92B2-E5E570A1F59E}.Release|x86.Build.0 = Release|x86
+		{C3255F04-E09E-4BD2-AE15-F7B5128646B1}.Debug|x86.ActiveCfg = Debug|x86
+		{C3255F04-E09E-4BD2-AE15-F7B5128646B1}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
