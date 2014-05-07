@@ -60,6 +60,14 @@
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cute, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Cute.dll</HintPath>
+    </Reference>
+    <Reference Include="Hello, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Hello.dll</HintPath>
+    </Reference>
     <Reference Include="IKVM.OpenJDK.Core">
       <HintPath>..\..\..\..\..\..\..\..\Program Files\ikvm\bin\IKVM.OpenJDK.Core.dll</HintPath>
     </Reference>
@@ -93,6 +101,10 @@
     <Reference Include="mscorlib">
       <Private>False</Private>
     </Reference>
+    <Reference Include="PlayN, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\PlayN.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
@@ -108,10 +120,6 @@
     <Reference Include="System.Net">
       <Private>False</Private>
     </Reference>
-    <Reference Include="Test, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\Test.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HelloGame.cs" />
@@ -124,6 +132,9 @@
     <Compile Include="XNAGroupLayer.cs" />
     <Compile Include="XNAImage.cs" />
     <Compile Include="XNAImageLayer.cs" />
+    <Compile Include="XNAImmediateLayer.cs" />
+    <Compile Include="XNAImmediateSurface.cs" />
+    <Compile Include="XNAKeyboard.cs" />
     <Compile Include="XNALayer.cs" />
     <Compile Include="XNALog.cs" />
     <Compile Include="XNAMouse.cs" />
@@ -132,9 +143,11 @@
     <Compile Include="XNAStaticImage.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Cute.dll" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
-    <Content Include="Test.dll" />
+    <Content Include="Hello.dll" />
+    <Content Include="PlayN.dll" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PlayNXNAContent\PlayNXNAContent.contentproj">

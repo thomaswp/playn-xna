@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using playn.sample.hello.core;
 using playn.core;
+using playn.sample.cute.core;
 
 namespace PlayNTest
 {
@@ -13,7 +14,8 @@ namespace PlayNTest
         {
             base.Initialize();
 
-            HelloGame game = new HelloGame();
+            Game game = new HelloGame();
+            //Game game = new CuteGame();
             PlayN.run(game);
         }
 

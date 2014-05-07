@@ -49,7 +49,7 @@ namespace PlayNTest
 
         public ImmediateLayer createImmediateLayer(ImmediateLayer.Renderer ilr)
         {
-            throw new NotImplementedException();
+            return new XNAImmediateLayer(ilr);
         }
 
         public ImmediateLayer.Clipped createImmediateLayer(int i1, int i2, ImmediateLayer.Renderer ilr)

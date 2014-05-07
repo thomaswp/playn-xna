@@ -29,6 +29,7 @@ namespace PlayNTest
         private readonly XNAAssets _assets;
         private readonly XNAMouse _mouse;
         private readonly XNAPointer _pointer;
+        private readonly XNAKeyboard _keyboard;
 
         private Game game;
         private readonly System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
@@ -42,6 +43,7 @@ namespace PlayNTest
             _assets = new XNAAssets(this);
             _mouse = new XNAMouse();
             _pointer = new XNAPointer();
+            _keyboard = new XNAKeyboard();
         }
 
         public override Analytics analytics()
@@ -71,7 +73,7 @@ namespace PlayNTest
 
         public override Keyboard keyboard()
         {
-            throw new NotImplementedException();
+            return _keyboard;
         }
 
         public override Mouse mouse()
