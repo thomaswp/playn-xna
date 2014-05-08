@@ -128,6 +128,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XNAAssets.cs" />
     <Compile Include="XNAAsyncImage.cs" />
+    <Compile Include="XNACanvas.cs" />
+    <Compile Include="XNACanvasImage.cs" />
+    <Compile Include="XNACanvasState.cs" />
     <Compile Include="XNAFont.cs" />
     <Compile Include="XNAGame.cs" />
     <Compile Include="XNAGraphics.cs" />

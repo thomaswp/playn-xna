@@ -79,7 +79,7 @@ namespace PlayNXNA
 
         public override Mouse mouse()
         {
-            throw new NotImplementedException();
+            return _mouse;
         }
 
         public override Net net()

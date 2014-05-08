@@ -28,7 +28,7 @@ namespace PlayNXNA
 
         protected override Image createStaticImage(object obj, playn.core.gl.Scale s)
         {
-            return new XNAStaticImage();
+            return new XNAStaticImage((Texture2D)obj, s);
         }
 
         public override Sound getSound(string value)

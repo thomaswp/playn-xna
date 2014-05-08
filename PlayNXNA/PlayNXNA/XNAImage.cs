@@ -17,6 +17,8 @@ namespace PlayNXNA
         protected bool mipmapped;
         protected Scale _scale;
 
+        internal Texture2D Texture { get { return texture; } }
+
         public abstract void addCallback(Callback callback);
 
         public void clearTexture()
@@ -89,7 +91,7 @@ namespace PlayNXNA
             return texture != null;
         }
 
-        public void draw(SpriteBatch spritebatch, InternalTransform transform)
+        public virtual void draw(SpriteBatch spritebatch, InternalTransform transform)
         {
             if (texture == null) return;
             spritebatch.Draw(texture, new Vector2(transform.tx(), transform.ty()), new Rectangle(0, 0, texture.Width, texture.Height), 

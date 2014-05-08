@@ -32,9 +32,9 @@ namespace PlayNXNA
             return new XNAGroupLayer();
         }
 
-        public CanvasImage createImage(float f1, float f2)
+        public CanvasImage createImage(float height, float width)
         {
-            throw new NotImplementedException();
+            return new XNACanvasImage(width, height);
         }
 
         public ImageLayer createImageLayer()

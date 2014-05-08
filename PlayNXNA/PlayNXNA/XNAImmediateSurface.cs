@@ -12,6 +12,8 @@ namespace PlayNXNA
         public SpriteBatch SpriteBatch { get; set; }
         public InternalTransform RootTransform { get; set; }
 
+        private int _fillColor;
+
         private InternalTransform tempTransform = new StockInternalTransform();
 
         public Surface clear()
@@ -54,7 +56,8 @@ namespace PlayNXNA
 
         public Surface fillRect(float f1, float f2, float f3, float f4)
         {
-            throw new NotImplementedException();
+            
+            return this;
         }
 
         public Surface fillTriangles(float[] farr1, float[] farr2, int[] iarr)
@@ -97,9 +100,10 @@ namespace PlayNXNA
             throw new NotImplementedException();
         }
 
-        public Surface setFillColor(int i)
+        public Surface setFillColor(int fillColor)
         {
-            throw new NotImplementedException();
+            this._fillColor = fillColor;
+            return this;
         }
 
         public Surface setFillPattern(Pattern p)
