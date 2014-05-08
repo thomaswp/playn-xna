@@ -33,12 +33,14 @@ namespace PlayNXNA
 
         public override Sound getSound(string value)
         {
-            throw new NotImplementedException();
+            return new XNASound();
         }
 
-        public override string getTextSync(string value)
+        public override string getTextSync(string file)
         {
-            throw new NotImplementedException();
+            int ext = file.LastIndexOf(".");
+            if (ext >= 0) file = file.Substring(0, ext);
+            return platform.Content.Load<String>(file);
         }
 
         protected override Image loadImage(string str, AbstractAssets.ImageReceiver aair)

@@ -30,7 +30,7 @@ namespace PlayNXNA
             : base(width, height)
         {
             this.width = (int)width; this.height = (int)height;
-            texture = new Texture2D(((XNAPlatform)PlayN.platform()).GraphicsDevice.GraphicsDevice, 
+            texture = new Texture2D(((XNAPlatform)PlayN.platform()).DeviceManager.GraphicsDevice, 
                 this.width, this.height, false, SurfaceFormat.Color);
             data = new int[this.width * this.height];
             texture.GetData<int>(data);
@@ -52,6 +52,13 @@ namespace PlayNXNA
         private static int green(int color) { return (color >> 8) & 0xFF; }
         private static int red(int color) { return color & 0xFF; }
         private static int argb(int a, int r, int g, int b) { return (a << 24) | (b << 16) | (g << 8) | r; }
+
+
+        public static Microsoft.Xna.Framework.Color GetXNAColor(int playnColor)
+        {
+            int xnaColor = colorSwapRB(playnColor);
+            return new Microsoft.Xna.Framework.Color(red(xnaColor), green(xnaColor), blue(xnaColor), alpha(xnaColor));
+        }
 
         private void getBounds(float x, float y, float w, float h, out int x1, out int y1, out int x2, out int y2)
         {

@@ -37,7 +37,7 @@ namespace PlayNXNA
         private Game game;
         private readonly System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
 
-        public Microsoft.Xna.Framework.GraphicsDeviceManager GraphicsDevice { get; set; }
+        public Microsoft.Xna.Framework.GraphicsDeviceManager DeviceManager { get; set; }
         public Microsoft.Xna.Framework.Content.ContentManager Content { get; set; }
 
         public XNAPlatform() : base(new XNALog())
@@ -111,7 +111,8 @@ namespace PlayNXNA
 
         public override void setPropagateEvents(bool value)
         {
-            throw new NotImplementedException();
+            _pointer.setPropagateEvents(value);
+            _mouse.setPropagateEvents(value);
         }
 
         public override Storage storage()

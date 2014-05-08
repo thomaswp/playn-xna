@@ -10,7 +10,9 @@ namespace PlayNXNA
 {
     class XNAImageLayer : XNALayer, ImageLayer
     {
-        XNAImage _image;
+        XNAImage _image; 
+        private float _width, _height;
+        private bool widthSet, heightSet;
 
         public XNAImageLayer(XNAImage image = null)
         {
@@ -19,12 +21,17 @@ namespace PlayNXNA
 
         public void clearHeight()
         {
-            throw new NotImplementedException();
+            heightSet = false;
         }
 
         public void clearWidth()
         {
-            throw new NotImplementedException();
+            widthSet = false;
+        }
+
+        public override float height()
+        {
+            return heightSet ? _height : _image.height();
         }
 
         public Image image()
@@ -32,35 +39,43 @@ namespace PlayNXNA
             return _image;
         }
 
-        public void setHeight(float f)
+        public void setHeight(float height)
         {
-            throw new NotImplementedException();
+            heightSet = true;
+            _height = height;
         }
 
-        public ImageLayer setImage(Image i)
+        public ImageLayer setImage(Image image)
         {
-            throw new NotImplementedException();
+            this._image = (XNAImage) image;
+            return this;
         }
 
-        public void setSize(float f1, float f2)
+        public void setSize(float width, float height)
         {
-            throw new NotImplementedException();
+            setWidth(width);
+            setHeight(height);
         }
 
-        public void setWidth(float f)
+        public void setWidth(float width)
         {
-            throw new NotImplementedException();
+            widthSet = true;
+            _width = width;
         }
 
+        public override float width()
+        {
+            return widthSet ? _width : _image.width();
+        }
 
         public float scaledHeight()
         {
-            throw new NotImplementedException();
+            return heightSet ? _height : _image.height();
         }
 
         public float scaledWidth()
         {
-            throw new NotImplementedException();
+            return scaleX() * _width;
         }
 
         public override void draw(SpriteBatch spritebatch, InternalTransform parentTransform)

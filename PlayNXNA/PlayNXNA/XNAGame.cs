@@ -39,7 +39,7 @@ namespace PlayNXNA
         {
             IsMouseVisible = true;
             platform = registerPlatform();
-            platform.GraphicsDevice = graphics;
+            platform.DeviceManager = graphics;
             platform.Content = Content;
             base.Initialize();
         }

@@ -7,15 +7,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNXNAContent", "PlayNXNA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloGame", "HelloGame\HelloGame\HelloGame.csproj", "{A1FAA6C5-27EF-44C3-818C-B82F423C30A9}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "HelloGameContent", "HelloGame\HelloGameContent\HelloGameContent.contentproj", "{AE956C53-4E72-4DDB-ABC9-761075852D63}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloGameContent", "HelloGame\HelloGameContent\HelloGameContent.contentproj", "{AE956C53-4E72-4DDB-ABC9-761075852D63}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuteGame", "CuteGame\CuteGame\CuteGame.csproj", "{FA803145-0189-463D-92B2-E5E570A1F59E}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "CuteGameContent", "CuteGame\CuteGameContent\CuteGameContent.contentproj", "{C3255F04-E09E-4BD2-AE15-F7B5128646B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuteGameContent", "CuteGame\CuteGameContent\CuteGameContent.contentproj", "{C3255F04-E09E-4BD2-AE15-F7B5128646B1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Showcase", "Showcase\Showcase\Showcase.csproj", "{EB957998-6D2B-4D33-965F-F1C8BCF67124}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "ShowcaseContent", "Showcase\ShowcaseContent\ShowcaseContent.contentproj", "{5D75393C-4A15-4EA3-A30E-4BB19FCFD0BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowcaseContent", "Showcase\ShowcaseContent\ShowcaseContent.contentproj", "{5D75393C-4A15-4EA3-A30E-4BB19FCFD0BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNContentImporter", "PlayNContentImporter\PlayNContentImporter.csproj", "{5758AEE3-1E7E-4707-B75C-DE85709414F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{EB957998-6D2B-4D33-965F-F1C8BCF67124}.Release|x86.Build.0 = Release|x86
 		{5D75393C-4A15-4EA3-A30E-4BB19FCFD0BF}.Debug|x86.ActiveCfg = Debug|x86
 		{5D75393C-4A15-4EA3-A30E-4BB19FCFD0BF}.Release|x86.ActiveCfg = Release|x86
+		{5758AEE3-1E7E-4707-B75C-DE85709414F0}.Debug|x86.ActiveCfg = Debug|x86
+		{5758AEE3-1E7E-4707-B75C-DE85709414F0}.Debug|x86.Build.0 = Debug|x86
+		{5758AEE3-1E7E-4707-B75C-DE85709414F0}.Release|x86.ActiveCfg = Debug|x86
+		{5758AEE3-1E7E-4707-B75C-DE85709414F0}.Release|x86.Build.0 = Debug|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -32,7 +32,7 @@ namespace PlayNXNA
             return new XNAGroupLayer();
         }
 
-        public CanvasImage createImage(float height, float width)
+        public CanvasImage createImage(float width, float height)
         {
             return new XNACanvasImage(width, height);
         }
@@ -89,17 +89,17 @@ namespace PlayNXNA
 
         public int height()
         {
-            return ((XNAPlatform) PlayN.platform()).GraphicsDevice.PreferredBackBufferHeight;
+            return ((XNAPlatform) PlayN.platform()).DeviceManager.PreferredBackBufferHeight;
         }
 
         public TextLayout layoutText(string text, TextFormat format)
         {
-            return new XNATextLayout(text, format, new pythagoras.f.Rectangle());
+            return new XNATextLayout(text, format);
         }
 
         public TextLayout[] layoutText(string text, TextFormat format, TextWrap wrap)
         {
-            return new XNATextLayout[] { new XNATextLayout(text, format, new pythagoras.f.Rectangle()) };
+            return new XNATextLayout[] { new XNATextLayout(text, format) };
         }
 
         public GroupLayer rootLayer()
@@ -124,7 +124,7 @@ namespace PlayNXNA
 
         public int width()
         {
-            return ((XNAPlatform)PlayN.platform()).GraphicsDevice.PreferredBackBufferWidth;
+            return ((XNAPlatform)PlayN.platform()).DeviceManager.PreferredBackBufferWidth;
         }
 
         public void draw(SpriteBatch spritebatch)

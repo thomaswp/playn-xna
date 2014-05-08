@@ -71,5 +71,11 @@ namespace PlayNXNA
                 ((XNALayer)impl.children.get(i)).draw(spritebatch, getLocalTransform(parentTransform));
             }
         }
+
+        public override Layer hitTestDefault(pythagoras.f.Point p)
+        {
+            Layer answer = impl.hitTest(this, p);
+            return answer;
+        }
     }
 }

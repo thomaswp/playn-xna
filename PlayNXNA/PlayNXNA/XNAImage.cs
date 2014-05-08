@@ -66,9 +66,9 @@ namespace PlayNXNA
             _repeatY = repeatY;
         }
 
-        public Image.Region subImage(float f1, float f2, float f3, float f4)
+        public Image.Region subImage(float x, float y, float width, float height)
         {
-            throw new NotImplementedException();
+            return new XNAImageRegion(this, x, y, width, height);
         }
 
         public Pattern toPattern()

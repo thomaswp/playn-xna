@@ -26,7 +26,8 @@ namespace PlayNXNA
 
         public void error(string str, Exception t)
         {
-            throw new NotImplementedException();
+            Console.WriteLine(str);
+            Console.WriteLine(t);
         }
 
         public void info(string str, Exception t)

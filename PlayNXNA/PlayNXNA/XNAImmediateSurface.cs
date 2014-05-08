@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using playn.core;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
+using XColor = Microsoft.Xna.Framework.Color;
 
 namespace PlayNXNA
 {
@@ -13,8 +15,15 @@ namespace PlayNXNA
         public InternalTransform RootTransform { get; set; }
 
         private int _fillColor;
+        private Texture2D rectTexture;
 
         private InternalTransform tempTransform = new StockInternalTransform();
+
+        public XNAImmediateSurface()
+        {
+            rectTexture = new Texture2D(((XNAPlatform)PlayN.platform()).DeviceManager.GraphicsDevice, 1, 1);
+            rectTexture.SetData<XColor>(new XColor[] { XColor.White });
+        }
 
         public Surface clear()
         {
@@ -31,22 +40,27 @@ namespace PlayNXNA
             throw new NotImplementedException();
         }
 
-        public Surface drawImage(Image i, float f1, float f2)
+        public Surface drawImage(Image image, float x, float y)
         {
             tempTransform.set(RootTransform);
-            tempTransform.translate(f1, f2);
-            ((XNAImage)i).draw(SpriteBatch, tempTransform);
+            tempTransform.translate(x, y);
+            ((XNAImage)image).draw(SpriteBatch, tempTransform);
             return this;
         }
 
-        public Surface drawImageCentered(Image i, float f1, float f2)
+        public Surface drawImageCentered(Image image, float x, float y)
         {
-            throw new NotImplementedException();
+            tempTransform.set(RootTransform);
+            tempTransform.translate(x - image.width() * 0.5f * tempTransform.scaleX(), y - image.height() * 0.5f * tempTransform.scaleY());
+            ((XNAImage)image).draw(SpriteBatch, tempTransform);
+            return this;
         }
 
-        public Surface drawLayer(Layer l)
+        public Surface drawLayer(Layer layer)
         {
-            throw new NotImplementedException();
+            tempTransform.set(RootTransform);
+            ((XNALayer)layer).draw(SpriteBatch, tempTransform);
+            return this;
         }
 
         public Surface drawLine(float f1, float f2, float f3, float f4, float f5)
@@ -54,9 +68,14 @@ namespace PlayNXNA
             throw new NotImplementedException();
         }
 
-        public Surface fillRect(float f1, float f2, float f3, float f4)
+        public Surface fillRect(float x, float y, float w, float h)
         {
-            
+            tempTransform.set(RootTransform);
+            tempTransform.translate(x, y);
+            tempTransform.scale(w, h);
+            XColor color = XNACanvas.GetXNAColor(_fillColor);
+            SpriteBatch.Draw(rectTexture, new Vector2(tempTransform.tx(), tempTransform.ty()), new Rectangle(0, 0, rectTexture.Width, rectTexture.Height),
+                color, tempTransform.rotation(), Vector2.Zero, new Vector2(tempTransform.scaleX(), tempTransform.scaleY()), SpriteEffects.None, 0);
             return this;
         }
 

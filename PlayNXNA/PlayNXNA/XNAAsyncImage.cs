@@ -13,7 +13,7 @@ namespace PlayNXNA
         private float preWidth;
         private float preHeight;
         private Exception error;
-        private java.util.List callbacks = new java.util.ArrayList();
+        private java.util.List callbacks;
 
         public XNAAsyncImage(float preWidth, float preHeight)
         {
@@ -46,7 +46,15 @@ namespace PlayNXNA
 
         public override void addCallback(Callback callback)
         {
-            callbacks.add(callback);
+            if (error != null)
+            {
+                callback.onFailure(error);
+            }
+            else if (texture != null)
+            {
+                callback.onSuccess(this);
+            }
+            callbacks = Callbacks.createAdd(callbacks, callback);
         }
     }
 }
