@@ -17,9 +17,9 @@ namespace PlayNXNA
             _rootLayer = new XNAGroupLayer();
         }
 
-        public Font createFont(string str, Font.Style fs, float f)
+        public Font createFont(string name, Font.Style style, float size)
         {
-            throw new NotImplementedException();
+            return new XNAFont(this, name, style, size);
         }
 
         public GroupLayer.Clipped createGroupLayer(float f1, float f2)
@@ -92,14 +92,14 @@ namespace PlayNXNA
             return ((XNAPlatform) PlayN.platform()).GraphicsDevice.PreferredBackBufferHeight;
         }
 
-        public TextLayout layoutText(string str, TextFormat tf)
+        public TextLayout layoutText(string text, TextFormat format)
         {
-            throw new NotImplementedException();
+            return new XNATextLayout(text, format, new pythagoras.f.Rectangle());
         }
 
-        public TextLayout[] layoutText(string s, TextFormat format, TextWrap wrap)
+        public TextLayout[] layoutText(string text, TextFormat format, TextWrap wrap)
         {
-            throw new NotImplementedException();
+            return new XNATextLayout[] { new XNATextLayout(text, format, new pythagoras.f.Rectangle()) };
         }
 
         public GroupLayer rootLayer()
@@ -109,7 +109,7 @@ namespace PlayNXNA
 
         public float scaleFactor()
         {
-            throw new NotImplementedException();
+            return 1;
         }
 
         public int screenHeight()

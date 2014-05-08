@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuteGame", "CuteGame\CuteGa
 EndProject
 Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "CuteGameContent", "CuteGame\CuteGameContent\CuteGameContent.contentproj", "{C3255F04-E09E-4BD2-AE15-F7B5128646B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Showcase", "Showcase\Showcase\Showcase.csproj", "{EB957998-6D2B-4D33-965F-F1C8BCF67124}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "ShowcaseContent", "Showcase\ShowcaseContent\ShowcaseContent.contentproj", "{5D75393C-4A15-4EA3-A30E-4BB19FCFD0BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -37,6 +41,12 @@ Global
 		{FA803145-0189-463D-92B2-E5E570A1F59E}.Release|x86.Build.0 = Release|x86
 		{C3255F04-E09E-4BD2-AE15-F7B5128646B1}.Debug|x86.ActiveCfg = Debug|x86
 		{C3255F04-E09E-4BD2-AE15-F7B5128646B1}.Release|x86.ActiveCfg = Release|x86
+		{EB957998-6D2B-4D33-965F-F1C8BCF67124}.Debug|x86.ActiveCfg = Debug|x86
+		{EB957998-6D2B-4D33-965F-F1C8BCF67124}.Debug|x86.Build.0 = Debug|x86
+		{EB957998-6D2B-4D33-965F-F1C8BCF67124}.Release|x86.ActiveCfg = Release|x86
+		{EB957998-6D2B-4D33-965F-F1C8BCF67124}.Release|x86.Build.0 = Release|x86
+		{5D75393C-4A15-4EA3-A30E-4BB19FCFD0BF}.Debug|x86.ActiveCfg = Debug|x86
+		{5D75393C-4A15-4EA3-A30E-4BB19FCFD0BF}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

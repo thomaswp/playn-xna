@@ -29,6 +29,7 @@ namespace PlayNXNA
         private readonly XNAAssets _assets;
         private readonly XNAMouse _mouse;
         private readonly XNAPointer _pointer;
+        private readonly XNATouch _touch;
         private readonly XNAKeyboard _keyboard;
         private readonly XNAJson _json;
         private readonly XNANet _net;
@@ -45,6 +46,7 @@ namespace PlayNXNA
             _assets = new XNAAssets(this);
             _mouse = new XNAMouse();
             _pointer = new XNAPointer();
+            _touch = new XNATouch();
             _keyboard = new XNAKeyboard();
             _json = new XNAJson();
             _net = new XNANet(this);
@@ -129,7 +131,7 @@ namespace PlayNXNA
 
         public override Touch touch()
         {
-            throw new NotImplementedException();
+            return _touch;
         }
 
         public override Platform.Type type()
