@@ -11,7 +11,7 @@ namespace PlayNXNA
     public class XNAKeyboard : Keyboard
     {
         private Keyboard.Listener listener;
-        private XKeys[] pressedKeys;
+        private XKeys[] pressedKeys = new XKeys[0];
 
         public void getText(Keyboard.TextType ktt, string str1, string str2, playn.core.util.Callback c)
         {

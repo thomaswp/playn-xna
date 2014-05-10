@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using playn.core;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 
 namespace PlayNXNA
 {
@@ -31,9 +32,15 @@ namespace PlayNXNA
             return new XNAStaticImage((Texture2D)obj, s);
         }
 
-        public override Sound getSound(string value)
+        public override Sound getSound(string path)
         {
-            return new XNASound();
+            SoundEffect effect = platform.Content.Load<SoundEffect>(path);
+            return ((XNAAudio)platform.audio()).createSound(effect);
+        }
+
+        public override Sound getMusic(string path)
+        {
+            return base.getMusic(path);
         }
 
         public override string getTextSync(string file)

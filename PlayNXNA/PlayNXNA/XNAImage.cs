@@ -37,7 +37,7 @@ namespace PlayNXNA
 
         public virtual float height()
         {
-            return texture.Height;
+            return isReady() ? texture.Height : 0;
         }
 
         public bool repeatX()
@@ -83,7 +83,7 @@ namespace PlayNXNA
 
         public virtual float width()
         {
-            return texture.Width;
+            return isReady() ? texture.Width : 0;
         }
 
         public bool isReady()
@@ -91,11 +91,34 @@ namespace PlayNXNA
             return texture != null;
         }
 
-        public virtual void draw(SpriteBatch spritebatch, InternalTransform transform)
+        public virtual void draw(SpriteBatch spritebatch, InternalTransform transform, float width, float height)
         {
             if (texture == null) return;
-            spritebatch.Draw(texture, new Vector2(transform.tx(), transform.ty()), new Rectangle(0, 0, texture.Width, texture.Height), 
-                Microsoft.Xna.Framework.Color.White, transform.rotation(), Vector2.Zero, new Vector2(transform.scaleX(), transform.scaleY()), SpriteEffects.None, 0);
+            if (repeatX() || repeatY())
+            {
+                spritebatch.End();
+                spritebatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.LinearWrap,
+                        DepthStencilState.Default, RasterizerState.CullNone);
+
+                Rectangle srcRect = new Rectangle(0, 0, texture.Width, texture.Height);
+                if (repeatX()) srcRect.Width = (int)width;
+                if (repeatY()) srcRect.Height = (int)height;
+                spritebatch.Draw(texture, new Vector2(transform.tx(), transform.ty()), srcRect,
+                    Microsoft.Xna.Framework.Color.White, transform.rotation(), Vector2.Zero, new Vector2(transform.scaleX(), transform.scaleY()), SpriteEffects.None, 0);
+
+                spritebatch.End();
+                spritebatch.Begin();
+            }
+            else
+            {
+                spritebatch.Draw(texture, new Vector2(transform.tx(), transform.ty()), new Rectangle(0, 0, texture.Width, texture.Height),
+                    Microsoft.Xna.Framework.Color.White, transform.rotation(), Vector2.Zero, new Vector2(transform.scaleX(), transform.scaleY()), SpriteEffects.None, 0);
+            }
+        }
+
+        public void draw(SpriteBatch spritebatch, InternalTransform transform)
+        {
+            draw(spritebatch, transform, width(), height());
         }
     }
 }

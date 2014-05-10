@@ -45,7 +45,7 @@ namespace PlayNXNA
             _parent.addCallback(callback);
         }
 
-        public override void draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spritebatch, InternalTransform transform)
+        public override void draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spritebatch, InternalTransform transform, float width, float height)
         {
             texture = _parent.Texture;
             if (texture == null) return;

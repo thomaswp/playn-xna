@@ -125,7 +125,7 @@
     <Compile Include="sprites\ding.mp3">
       <Name>ding</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="sprites\pea.png">
       <Name>pea</Name>
@@ -176,6 +176,57 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="Helvetica-12.spritefont">
+      <Name>Helvetica-12</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Museo-24.spritefont">
+      <Name>Museo-24</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <SubType>Designer</SubType>
+    </Compile>
+    <Compile Include="CourierNew-24.spritefont">
+      <Name>CourierNew-24</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="CourierNew-12.spritefont">
+      <Name>CourierNew-12</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Helvetica-24.spritefont">
+      <Name>Helvetica-24</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Helvetica-12-Bold.spritefont">
+      <Name>Helvetica-12-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="CourierNew-24-Bold.spritefont">
+      <Name>CourierNew-24-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Helvetica-24-Bold.spritefont">
+      <Name>Helvetica-24-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Helvetica-12-Italic.spritefont">
+      <Name>Helvetica-12-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Helvetica-24-Italic.spritefont">
+      <Name>Helvetica-24-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
     </Compile>
     <None Include="text\Museo.otf">
       <Name>Museo</Name>

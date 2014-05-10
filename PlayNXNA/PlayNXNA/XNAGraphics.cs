@@ -7,10 +7,12 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace PlayNXNA
 {
-    class XNAGraphics : Graphics
+    public class XNAGraphics : Graphics
     {
+
         private readonly XNAGroupLayer _rootLayer;
         private readonly InternalTransform rootXform = new StockInternalTransform();
+        private Dictionary<String, List<FontInfo>> fontMap = new Dictionary<string, List<FontInfo>>();
 
         public XNAGraphics()
         {
@@ -19,7 +21,32 @@ namespace PlayNXNA
 
         public Font createFont(string name, Font.Style style, float size)
         {
-            return new XNAFont(this, name, style, size);
+            size *= 0.75f;
+            if (!fontMap.ContainsKey(name)) throw new Exception("No registered font: " + name);
+            List<FontInfo> fonts = fontMap[name];
+            FontInfo best = fonts[0];
+            for (int i = 1; i < fonts.Count; i++)
+            {
+                FontInfo info = fonts[i];
+                bool bestStyle = best.style == style;
+                bool infoStyle = info.style == style;
+                if (bestStyle != infoStyle)
+                {
+                    best = bestStyle ? best : info;
+                    continue;
+                }
+
+                bool bestSizeGreater = best.size >= size;
+                bool infoSizeGreater = info.size >= size;
+                if (bestSizeGreater != infoSizeGreater)
+                {
+                    best = bestSizeGreater ? best : info;
+                    continue;
+                }
+
+                best = best.size < info.size ? best : info;
+            }
+            return new XNAFont(this, name, style, size, best);
         }
 
         public GroupLayer.Clipped createGroupLayer(float f1, float f2)
@@ -125,6 +152,18 @@ namespace PlayNXNA
         public int width()
         {
             return ((XNAPlatform)PlayN.platform()).DeviceManager.PreferredBackBufferWidth;
+        }
+
+        public void registerFont(string name, string path, float size, Font.Style style)
+        {
+            SpriteFont spritefont = ((XNAPlatform)PlayN.platform()).Content.Load<SpriteFont>(path);
+            FontInfo info = new FontInfo();
+            info.font = spritefont;
+            info.size = size;
+            info.style = style;
+            if (!fontMap.ContainsKey(name)) fontMap.Add(name, new List<FontInfo>());
+            List<FontInfo> fonts = fontMap[name];
+            fonts.Add(info);
         }
 
         public void draw(SpriteBatch spritebatch)

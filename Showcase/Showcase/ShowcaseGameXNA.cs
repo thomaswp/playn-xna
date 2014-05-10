@@ -13,6 +13,16 @@ namespace Showcase
         {
             base.Initialize();
 
+            XNAGraphics graphics = (XNAGraphics) PlayN.graphics();
+            graphics.registerFont("Helvetica", "Helvetica-24", 24, Font.Style.PLAIN);
+            graphics.registerFont("Helvetica", "Helvetica-24-Bold", 24, Font.Style.BOLD);
+            graphics.registerFont("Helvetica", "Helvetica-24-Italic", 24, Font.Style.ITALIC);
+            graphics.registerFont("Helvetica", "Helvetica-12", 12, Font.Style.PLAIN);
+            graphics.registerFont("Helvetica", "Helvetica-12-Bold", 12, Font.Style.BOLD);
+            graphics.registerFont("Helvetica", "Helvetica-12-Italic", 12, Font.Style.ITALIC);
+            graphics.registerFont("Museo-300", "Museo-24", 24, Font.Style.PLAIN);
+            graphics.registerFont("Courier", "CourierNew-24", 24, Font.Style.PLAIN);
+            graphics.registerFont("Courier", "CourierNew-12", 12, Font.Style.PLAIN);
             Game game = new playn.showcase.core.Showcase(this);
             //Game game = new CanvasTestGame();
             PlayN.run(game);
@@ -20,7 +30,10 @@ namespace Showcase
 
         protected override XNAPlatform registerPlatform()
         {
-            return XNAPlatform.register();
+            XNAPlatform.Config config = new XNAPlatform.Config();
+            config.width = 640;
+            config.name = "PlayN Showcase XNA";
+            return XNAPlatform.register(config);
         }
 
         public string info()

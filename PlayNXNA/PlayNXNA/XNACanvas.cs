@@ -139,7 +139,11 @@ namespace PlayNXNA
 
         public override Canvas drawImage(Image image, float dx, float dy, float dw, float dh, float sx, float sy, float sw, float sh)
         {
-            Texture2D tex = ((XNAImage)image).Texture;
+            return drawImage(((XNAImage)image).Texture, dx, dy, dw, dh, sx, sy, sw, sh);
+        }
+
+        public Canvas drawImage(Texture2D tex, float dx, float dy, float dw, float dh, float sx, float sy, float sw, float sh)
+        {
             if (tex == null) return this;
             sx = Math.Max(0, sx); sy = Math.Max(0, sy);
             sw = Math.Min(tex.Width, sw); sh = Math.Min(tex.Height, sh);
@@ -165,6 +169,7 @@ namespace PlayNXNA
                     }
                 }
             }
+            dirty = true;
             return this;
         }
 
@@ -308,9 +313,25 @@ namespace PlayNXNA
             return this;
         }
 
-        public override Canvas fillText(TextLayout text, float x, float y)
+        public override Canvas fillText(TextLayout layout, float x, float y)
         {
-            return this;
+            XNAFont font = ((XNAFont)layout.format().font);
+            FontInfo info = font.fontInfo;
+            GraphicsDevice device = ((XNAPlatform) PlayN.platform()).DeviceManager.GraphicsDevice;
+            RenderTarget2D renderTarget = new RenderTarget2D(device, (int)layout.bounds().width(), (int)layout.bounds().height());
+            device.SetRenderTarget(renderTarget);
+            device.Clear(new Microsoft.Xna.Framework.Color(0, 0, 0, 0));
+            float scale = font.Scale;
+            using (SpriteBatch batch = new SpriteBatch(device))
+            {
+                batch.Begin();
+                Microsoft.Xna.Framework.Color color = GetXNAColor(colorSwapRB(state.fillColor));
+                batch.DrawString(info.font, layout.text(), Microsoft.Xna.Framework.Vector2.Zero, color, 0, 
+                    Microsoft.Xna.Framework.Vector2.Zero, scale, SpriteEffects.None, 0);
+                batch.End();
+            }
+            device.SetRenderTarget(null);
+            return drawImage((Texture2D)renderTarget, x, y, renderTarget.Width, renderTarget.Height, 0, 0, renderTarget.Width, renderTarget.Height);
         }
 
         public override Canvas restore()

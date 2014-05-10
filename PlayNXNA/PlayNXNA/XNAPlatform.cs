@@ -10,8 +10,12 @@ namespace PlayNXNA
     {
         public class Config
         {
-
+            public int width = 800, height = 480;
+            public bool fullscreen = false;
+            public string name = "Game";
         }
+
+        public readonly Config config;
 
         public static XNAPlatform register()
         {
@@ -20,7 +24,7 @@ namespace PlayNXNA
 
         public static XNAPlatform register(Config config)
         {
-            XNAPlatform platform = new XNAPlatform();
+            XNAPlatform platform = new XNAPlatform(config);
             PlayN.setPlatform(platform);
             return platform;
         }
@@ -33,6 +37,7 @@ namespace PlayNXNA
         private readonly XNAKeyboard _keyboard;
         private readonly XNAJson _json;
         private readonly XNANet _net;
+        private readonly XNAAudio _audio;
 
         private Game game;
         private readonly System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
@@ -40,8 +45,10 @@ namespace PlayNXNA
         public Microsoft.Xna.Framework.GraphicsDeviceManager DeviceManager { get; set; }
         public Microsoft.Xna.Framework.Content.ContentManager Content { get; set; }
 
-        public XNAPlatform() : base(new XNALog())
+        public XNAPlatform(Config config) : base(new XNALog())
         {
+            this.config = config;
+
             _graphics = new XNAGraphics();
             _assets = new XNAAssets(this);
             _mouse = new XNAMouse();
@@ -50,6 +57,7 @@ namespace PlayNXNA
             _keyboard = new XNAKeyboard();
             _json = new XNAJson();
             _net = new XNANet(this);
+            _audio = new XNAAudio(this);
         }
 
         public override Assets assets()
@@ -59,7 +67,7 @@ namespace PlayNXNA
 
         public override Audio audio()
         {
-            throw new NotImplementedException();
+            return _audio;
         }
 
         public override Graphics graphics()

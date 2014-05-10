@@ -41,6 +41,11 @@ namespace PlayNXNA
             platform = registerPlatform();
             platform.DeviceManager = graphics;
             platform.Content = Content;
+            Window.Title = platform.config.name;
+            graphics.PreferredBackBufferWidth = platform.config.width;
+            graphics.PreferredBackBufferHeight = platform.config.height;
+            graphics.IsFullScreen = platform.config.fullscreen;
+            graphics.ApplyChanges();
             base.Initialize();
         }
 
@@ -88,7 +93,8 @@ namespace PlayNXNA
         {
             GraphicsDevice.Clear(Color.Black);
 
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.LinearClamp,
+                    DepthStencilState.Default, RasterizerState.CullNone);
             platform.draw(spriteBatch);
             spriteBatch.End();
             
