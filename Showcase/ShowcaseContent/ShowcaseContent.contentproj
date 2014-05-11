@@ -228,6 +228,21 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
+    <Compile Include="Helvetica-12-Bold-Italic.spritefont">
+      <Name>Helvetica-12-Bold-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Helvetica-24-Bold-Italic.spritefont">
+      <Name>Helvetica-24-Bold-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Helvetica-9.spritefont">
+      <Name>Helvetica-9</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
     <None Include="text\Museo.otf">
       <Name>Museo</Name>
     </None>

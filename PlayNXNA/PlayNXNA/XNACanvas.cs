@@ -4,17 +4,23 @@ using System.Linq;
 using System.Text;
 using playn.core;
 using Microsoft.Xna.Framework.Graphics;
+using Point = pythagoras.f.Point;
 
 namespace PlayNXNA
 {
     public class XNACanvas : AbstractCanvas, Canvas
     {
+        private static int aax = 2;
+
         private XNACanvasState state;
         private List<XNACanvasState> stateStack = new List<XNACanvasState>();
         private Texture2D texture;
         private int[] data;
+        private byte[] bitmap;
         private bool dirty;
         private new int width, height;
+        private InternalTransform tempTransform = new StockInternalTransform();
+        private Point tempPoint = new Point();
 
         public Texture2D Texture
         {
@@ -33,6 +39,7 @@ namespace PlayNXNA
             texture = new Texture2D(((XNAPlatform)PlayN.platform()).DeviceManager.GraphicsDevice, 
                 this.width, this.height, false, SurfaceFormat.Color);
             data = new int[this.width * this.height];
+            bitmap = new byte[this.width * this.height * aax * aax];
             texture.GetData<int>(data);
             state = XNACanvasState.create(texture);
         }
@@ -68,6 +75,33 @@ namespace PlayNXNA
             y2 = Math.Min((int)(y + h), state.clipRect.Bottom);
         }
 
+        private InternalTransform getAAXform()
+        {
+            tempTransform.set(state.transform);
+            tempTransform.scale(aax, aax);
+            return tempTransform;
+        }
+
+        private void getAAXformBounds(float x, float y, float w, float h, out int x1, out int y1, out int x2, out int y2)
+        {
+            InternalTransform aaXform = getAAXform();
+            x1 = y1 = int.MaxValue;
+            x2 = y2 = int.MinValue;
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    tempPoint.set(x + w * i, y + h * j);
+                    aaXform.transform(tempPoint, tempPoint);
+                    float tx = tempPoint.x(), ty = tempPoint.y();
+                    x1 = (int)Math.Min(x1, tx); x2 = (int)Math.Max(x2, tx);
+                    y1 = (int)Math.Min(y1, ty); y2 = (int)Math.Max(y2, ty);
+                }
+            }
+            x1 = Math.Max(x1, 0); x2 = Math.Min(x2, width * aax);
+            y1 = Math.Max(y1, 0); y2 = Math.Min(y2, height * aax);
+        }
+
         private static int blend(int c1, int c2, int alpha)
         {
             int beta = 255 - alpha;
@@ -83,9 +117,11 @@ namespace PlayNXNA
             return y * width + x;
         }
 
-        private void set(int x, int y, int color)
+        private void set(int x, int y, int color, float confidence = 1)
         {
-            int a = alpha(color);
+            if (confidence <= 0) return;
+            if (confidence > 1) confidence = 1;
+            int a = (int)(alpha(color) * confidence);
             int index = textureIndex(x, y, width);
             if (a == 255)
             {
@@ -100,6 +136,64 @@ namespace PlayNXNA
         private void clear(int x, int y)
         {
             data[textureIndex(x, y, width)] = 0;
+        }
+
+        private delegate bool HitTest(float i, float j);
+
+        private void draw(float x, float y, float w, float h, int color, HitTest hitTest)
+        {
+            int x1, x2, y1, y2;
+            getAAXformBounds(x, y, w, h, out x1, out y1, out x2, out y2);
+            InternalTransform aaXform = getAAXform();
+            int maxIndex = bitmap.Length;
+            for (int i = x1; i < x2; i++)
+            {
+                for (int j = y1; j < y2; j++)
+                {
+                    int index = j * width * aax + i;
+                    if (index < 0 || index >= maxIndex) continue;
+
+                    tempPoint.set(i, j);
+                    aaXform.inverseTransform(tempPoint, tempPoint);
+                    float tx = tempPoint.x(), ty = tempPoint.y();
+
+                    if (tx < x || tx >= x + w || ty < y || ty >= y + h)
+                    {
+                        bitmap[index] = 0;
+                    }
+                    else
+                    {
+                        bitmap[index] = (byte)(hitTest.Invoke(tx, ty) ? 1 : 0);
+                    }
+                }
+            }
+            applyBitmap(x1, x2, y1, y2, maxIndex, color);
+            dirty = true;
+        }
+
+        private void applyBitmap(int x1, int x2, int y1, int y2, int maxIndex, int color)
+        {
+            int ax1 = x1 / aax, ax2 = x2 / aax;
+            int ay1 = y1 / aax, ay2 = y2 / aax;
+            for (int i = ax1; i < ax2; i++)
+            {
+                for (int j = ay1; j < ay2; j++)
+                {
+                    int hits = 0, count = 0;
+                    for (int ai = 0; ai < aax; ai++)
+                    {
+                        for (int aj = 0; aj < aax; aj++)
+                        {
+                            int index = (j * aax + aj) * width * aax + (i * aax + ai);
+                            if (index < 0 || index >= maxIndex) continue;
+                            if (bitmap[index] == 1) hits++;
+                            count++;
+                        }
+                    }
+                    if (count == 0) continue;
+                    set(i, j, color, (float)hits / count);
+                }
+            }
         }
 
         public override Canvas clear()
@@ -192,36 +286,40 @@ namespace PlayNXNA
 
         public override Canvas drawLine(float x1, float y1, float x2, float y2)
         {
-            int ix1, ix2, iy1, iy2;
-            getBounds(x1, y1, x2 - x1 + 1, y2 - y1 + 1, out ix1, out iy1, out ix2, out iy2);
-
-            if (ix2 - ix1 > iy2 - iy1)
-            {
-                for (int i = ix1; i < ix2; i++)
+            float dx = x2 - x1, dy = y2 - y1;
+            float m = dx == 0 ? 0 : dy / dx;
+            int ix1 = (int)x1, ix2 = (int)x2, iy1 = (int)y1, iy2 = (int)y2;
+            draw(x1, y1, x2 - x1 + 1, y2 - y1 + 1, state.fillColor, (float tx, float ty) =>
                 {
-                    int j = iy1 + (i - ix1) * (iy2 - iy1) / (ix2 - ix1);
-                    set(i, j, state.fillColor);
-                }
-            }
-            else
-            {
-                for (int i = iy1; i < iy2; i++)
-                {
-                    int j = ix1 + (i - iy1) * (ix2 - ix1) / (iy2 - iy1);
-                    set(j, i, state.fillColor);
-                }
-            }
+                    int itx = (int)tx, ity = (int)ty;
+                    if (itx < ix1 || itx > ix2 || ity < iy1 || ity > iy2) return false;
 
+                    if (dx == 0)
+                    {
+                        return itx == ix1;
+                    }
+                    else if (dy == 0)
+                    {
+                        return ity == iy1;
+                    }
+
+                    if (dx > dy)
+                    {
+                        float y = (tx - x1) * m + y1;
+                        return Math.Abs(ty - y) <= 0.5f;
+                    }
+                    else
+                    {
+                        float x = (ty - y1) / m + x1;
+                        return Math.Abs(tx - x) <= 0.5f;
+                    }
+                });
             return this;
         }
 
         public override Canvas drawPoint(float x, float y)
         {
-            if (state.clipRect.Contains(new Microsoft.Xna.Framework.Point((int)x, (int)y)))
-            {
-                set((int)x, (int)y, state.fillColor);
-            }
-            return this;
+            return fillRect(x, y, 1, 1);
         }
 
         public override Canvas drawText(string text, float x, float y)
@@ -231,21 +329,13 @@ namespace PlayNXNA
 
         public override Canvas fillCircle(float x, float y, float radius)
         {
-            int x1, x2, y1, y2;
-            getBounds(x - radius, y - radius, radius * 2, radius * 2, out x1, out y1, out x2, out y2);
             float r2 = radius * radius;
-            for (int i = x1; i < x2; i++)
-            {
-                for (int j = y1; j < y2; j++)
+            draw(x - radius, y - radius, radius * 2, radius * 2, state.fillColor, (float tx, float ty) => 
                 {
-                    float dx = (x - i);
-                    float dy = (y - j);
-                    if (dx * dx + dy * dy <= r2)
-                    {
-                        set(i, j, state.fillColor);
-                    }
-                }
-            }
+                    float dx = (x - tx);
+                    float dy = (y - ty);
+                    return (dx * dx + dy * dy <= r2);
+                });
             return this;
         }
 
@@ -256,60 +346,34 @@ namespace PlayNXNA
 
         public override Canvas fillRect(float x, float y, float w, float h)
         {
-            int x1, x2, y1, y2;
-            getBounds(x, y, w, h, out x1, out y1, out x2, out y2);
-            for (int i = x1; i < x2; i++)
-            {
-                for (int j = y1; j < y2; j++)
-                {
-                    set(i, j, state.fillColor);
-                }
-            }
-            dirty = true;
+            draw(x, y, w, h, state.fillColor, (float tx, float ty) => { return true; });
             return this;
         }
 
         public override Canvas fillRoundRect(float x, float y, float w, float h, float cornerRadius)
         {
-            int x1, x2, y1, y2;
-            getBounds(x, y, w, h, out x1, out y1, out x2, out y2);
             float cr2 = cornerRadius * cornerRadius;
-            for (int i = x1; i < x2; i++)
-            {
-                for (int j = y1; j < y2; j++)
+            draw(x, y, w, h, state.fillColor, (float tx, float ty) =>
                 {
-                    if (i < x1 + cornerRadius)
+                    float dx = 0, dy = 0;
+                    if (tx < x + cornerRadius)
                     {
-                        float dx = x1 + cornerRadius - i;
-                        if (j < y1 + cornerRadius)
-                        {
-                            float dy = y1 + cornerRadius - j;
-                            if (dx * dx + dy * dy > cr2) continue;
-                        }
-                        else if (j > y2 - cornerRadius)
-                        {
-                            float dy = j - y2 + cornerRadius;
-                            if (dx * dx + dy * dy > cr2) continue;
-                        }
+                        dx = x + cornerRadius - tx;
                     }
-                    else if (i > x2 - cornerRadius)
+                    else if (tx > x + w - cornerRadius)
                     {
-                        float dx = i - x2 + cornerRadius;
-                        if (j < y1 + cornerRadius)
-                        {
-                            float dy = y1 + cornerRadius - j;
-                            if (dx * dx + dy * dy > cr2) continue;
-                        }
-                        else if (j > y2 - cornerRadius)
-                        {
-                            float dy = j - y2 + cornerRadius;
-                            if (dx * dx + dy * dy > cr2) continue;
-                        }
+                        dx = tx - x - w + cornerRadius;
                     }
-                    set(i, j, state.fillColor);
-                }
-            }
-            dirty = true;
+                    if (ty < y + cornerRadius)
+                    {
+                        dy = y + cornerRadius - ty;
+                    }
+                    else if (ty > y + h - cornerRadius)
+                    {
+                        dy = ty - y - h + cornerRadius;
+                    }
+                    return !(dx != 0 && dy != 0 && dx * dx + dy * dy > cr2);
+                });
             return this;
         }
 
@@ -343,6 +407,7 @@ namespace PlayNXNA
 
         public override Canvas rotate(float angle)
         {
+            state.transform.rotate(angle);
             return this;
         }
 
@@ -355,6 +420,7 @@ namespace PlayNXNA
 
         public override Canvas scale(float sx, float sy)
         {
+            state.transform.scale(sx, sy);
             return this;
         }
 
@@ -402,11 +468,13 @@ namespace PlayNXNA
 
         public override Canvas setStrokeColor(int color)
         {
-            return setFillColor(color);
+            state.strokeColor = colorSwapRB(color);
+            return this;
         }
 
-        public override Canvas setStrokeWidth(float with)
+        public override Canvas setStrokeWidth(float width)
         {
+            state.strokeWidth = width;
             return this;
         }
 
@@ -422,7 +490,21 @@ namespace PlayNXNA
 
         public override Canvas strokeRect(float x, float y, float w, float h)
         {
-            return fillRect(x, y, w, h);
+            float sWidth = 1;
+            float ix1 = x + sWidth / 2, ix2 = x + w - sWidth / 2, iy1 = y + sWidth / 2, iy2 = y + h - sWidth / 2;
+            int x1, x2, y1, y2;
+            getBounds(x - sWidth / 2, y - sWidth / 2, w + sWidth, h + sWidth, out x1, out y1, out x2, out y2);
+            for (int i = x1; i < x2; i++)
+            {
+                bool intX = i > ix1 && i < ix2;
+                for (int j = y1; j < y2; j++)
+                {
+                    if (intX && j > iy1 && j < iy2) continue;
+                    set(i, j, state.strokeColor);
+                }
+            }
+            dirty = true;
+            return this;
         }
 
         public override Canvas strokeRoundRect(float x, float y, float w, float h, float cornerRadius)
@@ -437,11 +519,14 @@ namespace PlayNXNA
 
         public override Canvas transform(float m11, float m12, float m21, float m22, float dx, float dy)
         {
+            tempTransform.setTransform(m11, m12, m21, m22, dx, dy);
+            state.transform.concatenate(tempTransform);
             return this;
         }
 
         public override Canvas translate(float dx, float dy)
         {
+            state.transform.translate(dx, dy);
             return this;
         }
     }

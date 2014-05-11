@@ -23,15 +23,17 @@ namespace Showcase
             ImageLayer imageLayer2 = PlayN.graphics().createImageLayer(pea = PlayN.assets().getImageSync("peas/images/pea"));
             PlayN.graphics().rootLayer().add(imageLayer2);
 
-            CanvasImage image = PlayN.graphics().createImage(100, 150);
+            CanvasImage image = PlayN.graphics().createImage(250, 250);
             Canvas canvas = image.canvas();
             canvas.setFillColor(Color.argb(100, 0, 0, 255));
             canvas.fillCircle(40, 30, 40);
             canvas.setFillColor(Color.argb(100, 255, 0, 0));
-            canvas.fillRoundRect(0, 25, 100, 75, 15);
-            canvas.drawImage(pea, 0, 0);
+            canvas.translate(51, 51);
+            canvas.rotate((float)Math.PI / 10);
+            canvas.fillRect(0, 0, 100, 75);
+            //canvas.drawImage(pea, 0, 0);
             canvas.setFillColor(Colors.BLACK);
-            canvas.drawLine(0, 0, 20, 150);
+            //canvas.drawLine(0, 0, 50, 5);
             
             PlayN.graphics().rootLayer().add(canvasImageLayer = PlayN.graphics().createImageLayer(image));
 
@@ -45,7 +47,7 @@ namespace Showcase
         public void onMouseMove(Mouse.MotionEvent mme)
         {
 
-            canvasImageLayer.setTranslation(mme.x(), mme.y());
+            canvasImageLayer.setTranslation(mme.x() + 25, mme.y() + 25);
         }
 
         public void onMouseUp(Mouse.ButtonEvent mbe)

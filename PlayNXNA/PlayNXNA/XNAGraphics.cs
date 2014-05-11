@@ -126,7 +126,7 @@ namespace PlayNXNA
 
         public TextLayout[] layoutText(string text, TextFormat format, TextWrap wrap)
         {
-            return new XNATextLayout[] { new XNATextLayout(text, format) };
+            return XNATextLayout.layoutText(text, format, wrap);
         }
 
         public GroupLayer rootLayer()
