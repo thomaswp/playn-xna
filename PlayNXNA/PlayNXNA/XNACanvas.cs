@@ -139,11 +139,10 @@ namespace PlayNXNA
         }
 
         private delegate bool HitTest(float i, float j);
+        private delegate void PixelAction(float tx, float ty, int i, int j, int index);
 
-        private void draw(float x, float y, float w, float h, int color, HitTest hitTest)
+        private void operatePixels(int x1, int x2, int y1, int y2, PixelAction action)
         {
-            int x1, x2, y1, y2;
-            getAAXformBounds(x, y, w, h, out x1, out y1, out x2, out y2);
             InternalTransform aaXform = getAAXform();
             int maxIndex = bitmap.Length;
             for (int i = x1; i < x2; i++)
@@ -157,24 +156,31 @@ namespace PlayNXNA
                     aaXform.inverseTransform(tempPoint, tempPoint);
                     float tx = tempPoint.x(), ty = tempPoint.y();
 
-                    if (tx < x || tx >= x + w || ty < y || ty >= y + h)
-                    {
-                        bitmap[index] = 0;
-                    }
-                    else
-                    {
-                        bitmap[index] = (byte)(hitTest.Invoke(tx, ty) ? 1 : 0);
-                    }
+                    action(tx, ty, i, j, index);
                 }
             }
-            applyBitmap(x1, x2, y1, y2, maxIndex, color);
+        }
+
+        private void draw(float x, float y, float w, float h, int color, HitTest hitTest)
+        {
+            int x1, x2, y1, y2;
+            getAAXformBounds(x, y, w, h, out x1, out y1, out x2, out y2);
+            operatePixels(x1, x2, y1, y2, (float tx, float ty, int i, int j, int index) =>
+                {
+                    bool inBounds = (!(tx < x || tx >= x + w || ty < y || ty >= y + h));
+                    bitmap[index] = (byte)((inBounds && hitTest.Invoke(tx, ty)) ? 1 : 0);
+                });
+            
+            applyBitmap(x1, x2, y1, y2, color);
             dirty = true;
         }
 
-        private void applyBitmap(int x1, int x2, int y1, int y2, int maxIndex, int color)
+        private void applyBitmap(int x1, int x2, int y1, int y2, int color, int[] colormap = null)
         {
+            int maxIndex = bitmap.Length;
             int ax1 = x1 / aax, ax2 = x2 / aax;
             int ay1 = y1 / aax, ay2 = y2 / aax;
+            int[] colors = new int[aax * aax];
             for (int i = ax1; i < ax2; i++)
             {
                 for (int j = ay1; j < ay2; j++)
@@ -182,16 +188,36 @@ namespace PlayNXNA
                     int hits = 0, count = 0;
                     for (int ai = 0; ai < aax; ai++)
                     {
+                        int axi = (i * aax + ai);
+                        if (axi < x1) continue;
                         for (int aj = 0; aj < aax; aj++)
                         {
-                            int index = (j * aax + aj) * width * aax + (i * aax + ai);
+                            int ayj = (j * aax + aj);
+                            if (ayj < y1) continue;
+                            int index = ayj * width * aax + axi;
                             if (index < 0 || index >= maxIndex) continue;
-                            if (bitmap[index] == 1) hits++;
+                            if (colormap == null)
+                            {
+                                if (bitmap[index] == 1) colors[hits++] = color;
+                            }
+                            else
+                            {
+                                colors[hits++] = colormap[(ayj - y1) * (x2 - x1) + (axi - x1)];
+                            }
                             count++;
+                            
                         }
                     }
-                    if (count == 0) continue;
-                    set(i, j, color, (float)hits / count);
+                    if (hits == 0) continue;
+                    int a = 0, r = 0, g = 0, b = 0;
+                    for (int k = 0; k < hits; k++)
+                    {
+                        int c = colors[k];
+                        a += alpha(c); r += red(c);
+                        g += green(c); b += blue(c);
+                    }
+                    a /= hits; r /= hits; g /= hits; b /= hits;
+                    set(i, j, argb(a, r, g, b), (float)hits / count);
                 }
             }
         }
@@ -239,30 +265,36 @@ namespace PlayNXNA
         public Canvas drawImage(Texture2D tex, float dx, float dy, float dw, float dh, float sx, float sy, float sw, float sh)
         {
             if (tex == null) return this;
-            sx = Math.Max(0, sx); sy = Math.Max(0, sy);
-            sw = Math.Min(tex.Width, sw); sh = Math.Min(tex.Height, sh);
-            Microsoft.Xna.Framework.Rectangle sourceRect = 
+            if (dw == 0 || dh == 0) return this;
+
+            Microsoft.Xna.Framework.Rectangle sourceRect =
                 new Microsoft.Xna.Framework.Rectangle((int)sx, (int)sy, (int)sw, (int)sh);
+            if (sourceRect.X < 0) sourceRect.X = 0; if (sourceRect.Width > tex.Width) sourceRect.Width = tex.Width;
+            if (sourceRect.Y < 0) sourceRect.Y = 0; if (sourceRect.Height > tex.Height) sourceRect.Height = tex.Height;
             int[] data = new int[sourceRect.Width * sourceRect.Height];
             tex.GetData<int>(0, sourceRect, data, 0, data.Length);
 
-            int isw = (int)sw, ish = (int)sh, idw = (int)dw, idh = (int)dh;
-
             int x1, x2, y1, y2;
-            getBounds(dx, dy, dw, dh, out x1, out y1, out x2, out y2);
-            for (int i = x1; i < x2; i++)
-            {
-                for (int j = y1; j < y2; j++)
+            getAAXformBounds(dx, dy, dw, dh, out x1, out y1, out x2, out y2);
+            int bw = x2 - x1, bh = y2 - y1;
+            int[] colormap = new int[bw * bh];
+            InternalTransform aaXform = getAAXform();
+
+            operatePixels(x1, x2, y1, y2, (float tx, float ty, int i, int j, int index) =>
                 {
-                    int si = (i - x1) * isw / idw;
-                    int sj = (j - y1) * ish / idh;
-                    int index = textureIndex(si, sj, tex.Width);
-                    if (index >= 0 && index <= data.Length)
+                    if (!(tx < dx || tx >= dx + dw || ty < dy || ty >= dy + dh))
                     {
-                        set(i, j, data[index]);
+                        int colorIndex = (j - y1) * bw + (i - x1);
+                        int si = (int)((tx - dx) / dw * sh + sx);
+                        int sj = (int)((ty - dy) / dh * sh + sy);
+                        int sourceIndex = (int)(sj * sw + si);
+                        if (sourceIndex < 0 || sourceIndex >= data.Length) return;
+                        colormap[colorIndex] = data[sourceIndex];
                     }
-                }
-            }
+                });
+
+            applyBitmap(x1, x2, y1, y2, 0, colormap);
+
             dirty = true;
             return this;
         }
@@ -271,16 +303,18 @@ namespace PlayNXNA
         {
             Texture2D tex = ((XNAImage)image).Texture;
             if (tex == null) return this;
-            return drawImage(image, 0, 0, tex.Width, tex.Height, x, y, w, h);
+            return drawImage(image, x, y, w, h, 0, 0, tex.Width, tex.Height);
         }
 
         public override Canvas drawImage(Image image, float x, float y)
         {
+            if (image == null) return this;
             return drawImage(image, x, y, image.width(), image.height());
         }
 
         public override Canvas drawImageCentered(Image image, float x, float y)
         {
+            if (image == null) return this;
             return drawImage(image, x - image.width() / 2, y - image.height() / 2);
         }
 

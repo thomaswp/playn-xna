@@ -30,10 +30,11 @@ namespace Showcase
             canvas.setFillColor(Color.argb(100, 255, 0, 0));
             canvas.translate(51, 51);
             canvas.rotate((float)Math.PI / 10);
+            canvas.scale(0.4f, 0.7f);
             canvas.fillRect(0, 0, 100, 75);
-            //canvas.drawImage(pea, 0, 0);
+            canvas.drawImage(pea, 0, 0);
             canvas.setFillColor(Colors.BLACK);
-            //canvas.drawLine(0, 0, 50, 5);
+            canvas.drawLine(0, 0, 50, 5);
             
             PlayN.graphics().rootLayer().add(canvasImageLayer = PlayN.graphics().createImageLayer(image));
 
