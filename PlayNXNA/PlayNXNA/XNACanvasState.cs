@@ -11,9 +11,12 @@ namespace PlayNXNA
     public struct XNACanvasState
     {
         public int strokeColor, fillColor;
+        public float alpha;
         public float strokeWidth;
         public Rectangle clipRect;
         public InternalTransform transform;
+        public Canvas.LineCap lineCap;
+        public Canvas.LineJoin lineJoin;
 
         public static XNACanvasState create(Texture2D texture)
         {
@@ -22,6 +25,11 @@ namespace PlayNXNA
             state.transform = new StockInternalTransform();
 
             state.strokeWidth = 1;
+            state.alpha = 1;
+            state.strokeColor = XNACanvas.argb(255, 255, 255, 255);
+            state.fillColor = XNACanvas.argb(255, 0, 0, 0);
+            state.lineCap = Canvas.LineCap.SQUARE;
+            state.lineJoin = Canvas.LineJoin.MITER;
             return state;
         }
 

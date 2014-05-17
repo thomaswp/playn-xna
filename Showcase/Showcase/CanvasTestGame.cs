@@ -26,15 +26,21 @@ namespace Showcase
             CanvasImage image = PlayN.graphics().createImage(250, 250);
             Canvas canvas = image.canvas();
             canvas.setFillColor(Color.argb(100, 0, 0, 255));
-            canvas.fillCircle(40, 30, 40);
-            canvas.setFillColor(Color.argb(100, 255, 0, 0));
-            canvas.translate(51, 51);
+            //canvas.fillCircle(40, 30, 40);
+            //canvas.setFillColor(Color.argb(100, 255, 0, 0));
+            //canvas.translate(51, 51);
             canvas.rotate((float)Math.PI / 10);
             canvas.scale(0.4f, 0.7f);
-            canvas.fillRect(0, 0, 100, 75);
-            canvas.drawImage(pea, 0, 0);
-            canvas.setFillColor(Colors.BLACK);
-            canvas.drawLine(0, 0, 50, 5);
+            //canvas.fillRect(0, 0, 100, 75);
+            //canvas.drawImage(pea, 0, 0);
+            //canvas.setFillColor(Colors.BLACK);
+            //canvas.drawLine(0, 0, 50, 5);
+            Path path = canvas.createPath();
+            path.moveTo(20f, 20);
+            path.lineTo(200.5f, 21);
+            path.lineTo(21, 120);
+            path.close();
+            canvas.fillPath(path);
             
             PlayN.graphics().rootLayer().add(canvasImageLayer = PlayN.graphics().createImageLayer(image));
 

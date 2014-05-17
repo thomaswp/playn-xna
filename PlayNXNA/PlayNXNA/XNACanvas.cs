@@ -58,7 +58,7 @@ namespace PlayNXNA
         private static int blue(int color) { return (color >> 16) & 0xFF; }
         private static int green(int color) { return (color >> 8) & 0xFF; }
         private static int red(int color) { return color & 0xFF; }
-        private static int argb(int a, int r, int g, int b) { return (a << 24) | (b << 16) | (g << 8) | r; }
+        internal static int argb(int a, int r, int g, int b) { return (a << 24) | (b << 16) | (g << 8) | r; }
 
 
         public static Microsoft.Xna.Framework.Color GetXNAColor(int playnColor)
@@ -254,7 +254,7 @@ namespace PlayNXNA
 
         public override Path createPath()
         {
-            throw new NotImplementedException();
+            return new XNAPath();
         }
 
         public override Canvas drawImage(Image image, float dx, float dy, float dw, float dh, float sx, float sy, float sw, float sh)
@@ -375,7 +375,21 @@ namespace PlayNXNA
 
         public override Canvas fillPath(Path path)
         {
-            throw new NotImplementedException();
+            XNAPath xPath = (XNAPath) path;
+            float minX = int.MaxValue, minY = int.MaxValue;
+            float maxX = int.MinValue, maxY = int.MinValue;
+            foreach (XNAPath.Segment seg in xPath.segments)
+            {
+                minX = Math.Min(minX, seg.x);
+                minY = Math.Min(minY, seg.y);
+                maxX = Math.Max(maxX, seg.x);
+                maxY = Math.Max(maxY, seg.y);
+            }
+            draw(minX, minY, maxX - minX + 1, maxY - minY + 1, state.fillColor, (float tx, float ty) =>
+                {
+                    return xPath.contains(tx, ty);
+                });
+            return this;
         }
 
         public override Canvas fillRect(float x, float y, float w, float h)
