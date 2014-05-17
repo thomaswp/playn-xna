@@ -14,6 +14,7 @@ namespace PlayNXNA
         public float alpha;
         public float strokeWidth;
         public Rectangle clipRect;
+        public XNAPath clipPath;
         public InternalTransform transform;
         public Canvas.LineCap lineCap;
         public Canvas.LineJoin lineJoin;

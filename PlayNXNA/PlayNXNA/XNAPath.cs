@@ -88,7 +88,7 @@ namespace PlayNXNA
 
         public class Bezier : Segment
         {
-            public readonly float c1x, c1y, c2x, c2y, x, y;
+            public readonly float c1x, c1y, c2x, c2y;
             public Bezier(float c1x, float c1y, float c2x, float c2y, float x, float y) : base(x, y)
             {
                 this.c1x = c1x;

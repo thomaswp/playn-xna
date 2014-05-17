@@ -139,7 +139,13 @@ namespace PlayNXNA
         }
 
         private delegate bool HitTest(float i, float j);
-        private delegate void PixelAction(float tx, float ty, int i, int j, int index);
+        private delegate void PixelAction(float tx, float ty, int i, int j, int index, bool inClip);
+
+        private bool inClip(float x, float y)
+        {
+            if (state.clipPath != null && !state.clipPath.contains(x, y)) return false;
+            return state.clipRect.Contains((int)x, (int)y);
+        }
 
         private void operatePixels(int x1, int x2, int y1, int y2, PixelAction action)
         {
@@ -156,7 +162,7 @@ namespace PlayNXNA
                     aaXform.inverseTransform(tempPoint, tempPoint);
                     float tx = tempPoint.x(), ty = tempPoint.y();
 
-                    action(tx, ty, i, j, index);
+                    action(tx, ty, i, j, index, inClip((float) i / aax, (float) j / aax));
                 }
             }
         }
@@ -165,9 +171,9 @@ namespace PlayNXNA
         {
             int x1, x2, y1, y2;
             getAAXformBounds(x, y, w, h, out x1, out y1, out x2, out y2);
-            operatePixels(x1, x2, y1, y2, (float tx, float ty, int i, int j, int index) =>
+            operatePixels(x1, x2, y1, y2, (float tx, float ty, int i, int j, int index, bool inClip) =>
                 {
-                    bool inBounds = (!(tx < x || tx >= x + w || ty < y || ty >= y + h));
+                    bool inBounds = (!(tx < x || tx >= x + w || ty < y || ty >= y + h)) && inClip;
                     bitmap[index] = (byte)((inBounds && hitTest.Invoke(tx, ty)) ? 1 : 0);
                 });
             
@@ -241,9 +247,10 @@ namespace PlayNXNA
             return this;
         }
 
-        public override Canvas clip(Path value)
+        public override Canvas clip(Path path)
         {
-            throw new NotImplementedException();
+            state.clipPath = (XNAPath)path;
+            return this;
         }
 
         public override Canvas clipRect(float x, float y, float w, float h)
@@ -280,9 +287,9 @@ namespace PlayNXNA
             int[] colormap = new int[bw * bh];
             InternalTransform aaXform = getAAXform();
 
-            operatePixels(x1, x2, y1, y2, (float tx, float ty, int i, int j, int index) =>
+            operatePixels(x1, x2, y1, y2, (float tx, float ty, int i, int j, int index, bool inClip) =>
                 {
-                    if (!(tx < dx || tx >= dx + dw || ty < dy || ty >= dy + dh))
+                    if (!(tx < dx || tx >= dx + dw || ty < dy || ty >= dy + dh) && inClip)
                     {
                         int colorIndex = (j - y1) * bw + (i - x1);
                         int si = (int)((tx - dx) / dw * sh + sx);
@@ -528,30 +535,33 @@ namespace PlayNXNA
 
         public override Canvas strokeCircle(float x, float y, float radius)
         {
-            return fillCircle(x, y, radius);
+            float sw = state.strokeWidth, dsw = sw * 0.5f;
+            float sw2 = sw * sw;
+            draw(x - radius - dsw, y - radius - dsw, radius * 2 + sw, radius * 2 + sw, state.strokeColor, (float tx, float ty) =>
+                {
+                    float dx = x - tx, dy = y - ty;
+                    double d = Math.Sqrt(dx * dx + dy * dy);
+                    return Math.Abs(d - radius) <= dsw;
+                });
+            return this;
         }
 
         public override Canvas strokePath(Path path)
         {
-            throw new NotImplementedException();
+
+            return this;
         }
 
         public override Canvas strokeRect(float x, float y, float w, float h)
         {
-            float sWidth = 1;
-            float ix1 = x + sWidth / 2, ix2 = x + w - sWidth / 2, iy1 = y + sWidth / 2, iy2 = y + h - sWidth / 2;
-            int x1, x2, y1, y2;
-            getBounds(x - sWidth / 2, y - sWidth / 2, w + sWidth, h + sWidth, out x1, out y1, out x2, out y2);
-            for (int i = x1; i < x2; i++)
+            float sw = state.strokeWidth, dsw = sw * 0.5f;
+            draw(x - dsw, y - dsw, w + sw, h + sw, state.strokeColor, (float tx, float ty) =>
             {
-                bool intX = i > ix1 && i < ix2;
-                for (int j = y1; j < y2; j++)
-                {
-                    if (intX && j > iy1 && j < iy2) continue;
-                    set(i, j, state.strokeColor);
-                }
-            }
-            dirty = true;
+                float dx1 = Math.Abs(x - tx), dx2 = Math.Abs(x + w - tx);
+                float dy1 = Math.Abs(y - ty), dy2 = Math.Abs(y + h - ty);
+                float min = Math.Min(Math.Min(Math.Min(dx1, dx2), dy1), dy2);
+                return min <= dsw;
+            });
             return this;
         }
 
