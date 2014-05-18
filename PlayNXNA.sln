@@ -13,11 +13,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuteGame", "CuteGame\CuteGa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuteGameContent", "CuteGame\CuteGameContent\CuteGameContent.contentproj", "{C3255F04-E09E-4BD2-AE15-F7B5128646B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Showcase", "Showcase\Showcase\Showcase.csproj", "{EB957998-6D2B-4D33-965F-F1C8BCF67124}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowcaseGame", "Showcase\Showcase\ShowcaseGame.csproj", "{EB957998-6D2B-4D33-965F-F1C8BCF67124}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowcaseContent", "Showcase\ShowcaseContent\ShowcaseContent.contentproj", "{5D75393C-4A15-4EA3-A30E-4BB19FCFD0BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowcaseGameContent", "Showcase\ShowcaseContent\ShowcaseGameContent.contentproj", "{5D75393C-4A15-4EA3-A30E-4BB19FCFD0BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNContentImporter", "PlayNContentImporter\PlayNContentImporter.csproj", "{5758AEE3-1E7E-4707-B75C-DE85709414F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuxBlocksGame", "TuxBlocks\TuxBlocks\TuxBlocksGame.csproj", "{C90A93AD-1C32-4CE7-B56D-A64FB98DCB22}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "TuxBlocksGameContent", "TuxBlocks\TuxBlocksContent\TuxBlocksGameContent.contentproj", "{75A36A18-7677-4356-B73E-FB6F215D62B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,12 @@ Global
 		{5758AEE3-1E7E-4707-B75C-DE85709414F0}.Debug|x86.Build.0 = Debug|x86
 		{5758AEE3-1E7E-4707-B75C-DE85709414F0}.Release|x86.ActiveCfg = Debug|x86
 		{5758AEE3-1E7E-4707-B75C-DE85709414F0}.Release|x86.Build.0 = Debug|x86
+		{C90A93AD-1C32-4CE7-B56D-A64FB98DCB22}.Debug|x86.ActiveCfg = Debug|x86
+		{C90A93AD-1C32-4CE7-B56D-A64FB98DCB22}.Debug|x86.Build.0 = Debug|x86
+		{C90A93AD-1C32-4CE7-B56D-A64FB98DCB22}.Release|x86.ActiveCfg = Release|x86
+		{C90A93AD-1C32-4CE7-B56D-A64FB98DCB22}.Release|x86.Build.0 = Release|x86
+		{75A36A18-7677-4356-B73E-FB6F215D62B1}.Debug|x86.ActiveCfg = Debug|x86
+		{75A36A18-7677-4356-B73E-FB6F215D62B1}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -132,8 +132,9 @@
       <Name>PlayNXNA</Name>
     </ProjectReference>
     <ProjectReference Include="..\CuteGameContent\CuteGameContent.contentproj">
-      <Name>CuteGameContent</Name>
+      <Name>CuteGameContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{C3255F04-E09E-4BD2-AE15-F7B5128646B1}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

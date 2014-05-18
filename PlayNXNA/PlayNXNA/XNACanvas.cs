@@ -285,14 +285,13 @@ namespace PlayNXNA
             getAAXformBounds(dx, dy, dw, dh, out x1, out y1, out x2, out y2);
             int bw = x2 - x1, bh = y2 - y1;
             int[] colormap = new int[bw * bh];
-            InternalTransform aaXform = getAAXform();
 
             operatePixels(x1, x2, y1, y2, (float tx, float ty, int i, int j, int index, bool inClip) =>
                 {
                     if (!(tx < dx || tx >= dx + dw || ty < dy || ty >= dy + dh) && inClip)
                     {
                         int colorIndex = (j - y1) * bw + (i - x1);
-                        int si = (int)((tx - dx) / dw * sh + sx);
+                        int si = (int)((tx - dx) / dw * sw + sx);
                         int sj = (int)((ty - dy) / dh * sh + sy);
                         int sourceIndex = (int)(sj * sw + si);
                         if (sourceIndex < 0 || sourceIndex >= data.Length) return;

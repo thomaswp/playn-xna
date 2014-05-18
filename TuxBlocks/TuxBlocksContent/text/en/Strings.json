@@ -1,0 +1,83 @@
+{
+
+"menu" : {
+	"round":"Round",
+	"about-tuxblocks" : "About TuxBlocks",
+	"music-volume" : "Music Volume",
+	"effects-volume" : "Effects Volume",
+	"save-and-quit" : "Save and Quit",
+	"game-over" : "Game Over",
+	"victory" : "Victory!",
+	"continue" : "Continue",
+	"continue-from-save" : "Continue from save?",
+	"start-over" : "Start Over"
+},
+
+"tower" : {
+	"pea-shooter" : "Pea Shooter",
+	"big-shooter" : "B.I.G. Shooter",
+	"freezer" : "Freezer",
+	"zapper" : "Zapper",
+	"vertical-wall" : "Vertical Wall",
+	"horizontal-wall" : "Horizontal Wall"
+},
+
+"title" : {
+	"a-tux4kids-game" : "a Tux4Kids game",
+	"by" : "by",
+	"mentored-by" : "mentored by",
+	"play" : "Play",
+	"build" : "Build",
+	"story" : "Story"
+},
+
+"difficulty" : {
+	"choose-difficulty" : "Choose Difficulty",
+	"math-difficulty" : "Math difficulty:",
+	"sample-problem" : "Sample problem:",
+	"game-difficulty" : "Game difficulty:",
+	"game-difficulty-desc" : "How difficult Blocks are to destroy",
+	"solve-time" : "Solve time:",
+	"solve-time-desc" : "How long you have to solve problems between rounds"	
+},
+
+"story" : {
+	"story" : "Chapter 1"
+},
+
+"tutorial" : {
+	"Click-pc" : "Click",
+	"Click-mobile" : "Tap",
+	"click-pc" : "click",
+	"click-mobile" : "tap",
+	"clicking-pc" : "clicking",
+	"clicking-mobile" : "tapping",
+	"mouse-pc" : "mouse",
+	"mouse-mobile" : "finger",
+	"menu-pc" : "the Esc button on the keyboard",
+	"menu-mobile" : "the Android menu button"
+},
+
+"hint" : {
+	"stumped" : "Sorry - this one's got me stumped too... Maybe you should reset and try again.",
+	"solved" : "It looks like this one's solved. Press the check mark to continue.",
+
+	"drag-vague-variables" : "Try combining two Variables.",
+	"drag-vague-one-variable" : "Try moving a Variable block.",
+	"drag-vague-horizontal" : "Try dragging a Plus or Minus block.",
+	"drag-vague-vertical" : "Try dragging a Times or Divide block.",
+	"drag-specific" : "Think about dragging the %s block",
+	"drag-bottom-out" : "You should drag the %s block to the %s block",
+	
+	"simplify-vague" : "Try simplifying a block.",
+	"simplify-specific-simplify" : "Could %s be simplified with something?",
+	"simplify-specific-cancel" : "Can you cancel something out?",
+	"simplify-bottom-out-simplify" : "You should probably combine %s and %s.",
+	"simplify-bottom-out-cancel" : "You should probably cancel %s with %s.",
+	
+	"reciprocate-vague" : "Do you need to multiply or divide the whole equation by something?",
+	"reciprocate-specific" : "Take a look at %s. How could you get rid of it?",
+	"reciprocate-bottom-out" : "You should double-%s on %s so you can get rid of it."  
+}
+
+}

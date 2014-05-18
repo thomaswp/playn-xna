@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{75A36A18-7677-4356-B73E-FB6F215D62B1}</ProjectGuid>
+    <ProjectTypeGuids>{96E2B04D-8817-42c6-938A-82C39BA4D311};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
+    <OutputPath>bin\$(Platform)\$(Configuration)</OutputPath>
+    <ContentRootDirectory>Content</ContentRootDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>TuxBlocksContent</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.EffectImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.FBXImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.TextureImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.XImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.AudioImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="audio\bg\game1.mp3">
+      <Name>game1</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\bg\menu.mp3">
+      <Name>menu</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\back.mp3">
+      <Name>back</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\beat.mp3">
+      <Name>beat</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\boom.mp3">
+      <Name>boom</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\die.mp3">
+      <Name>die</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\drop.mp3">
+      <Name>drop</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\gameover.mp3">
+      <Name>gameover</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\ok.mp3">
+      <Name>ok</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\pitch-final.mp3">
+      <Name>pitch-final</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\pitch.mp3">
+      <Name>pitch</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\pop0.mp3">
+      <Name>pop0</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\pop1.mp3">
+      <Name>pop1</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\pop2.mp3">
+      <Name>pop2</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\pop3.mp3">
+      <Name>pop3</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\select.mp3">
+      <Name>select</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\success-special.mp3">
+      <Name>success-special</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\success.mp3">
+      <Name>success</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\tick.mp3">
+      <Name>tick</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\victory.mp3">
+      <Name>victory</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\wind.mp3">
+      <Name>wind</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="audio\se\zap.mp3">
+      <Name>zap</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="images\back.png">
+      <Name>back</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\cancel.png">
+      <Name>cancel</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\cancel_bordered.png">
+      <Name>cancel_bordered</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\center.png">
+      <Name>center</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\circle.png">
+      <Name>circle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\confirm.png">
+      <Name>confirm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\down.png">
+      <Name>down</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\en\start.png">
+      <Name>start</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\forward.png">
+      <Name>forward</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\fr\start.png">
+      <Name>start</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\heart.png">
+      <Name>heart</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\hi\start.png">
+      <Name>start</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\hourglass.png">
+      <Name>hourglass</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\icon-16.png">
+      <Name>icon-16</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\icon-32.png">
+      <Name>icon-32</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\less.png">
+      <Name>less</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\logo.png">
+      <Name>logo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\menu.png">
+      <Name>menu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\missile.png">
+      <Name>missile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\more.png">
+      <Name>more</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\np\bubble.9.png">
+      <Name>bubble.9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\ok.png">
+      <Name>ok</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\options.png">
+      <Name>options</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\pa\start.png">
+      <Name>start</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\plus.png">
+      <Name>plus</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\puff.png">
+      <Name>puff</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\reset.png">
+      <Name>reset</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\scratch.png">
+      <Name>scratch</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\scratch2.png">
+      <Name>scratch2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\star.png">
+      <Name>star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\tux.png">
+      <Name>tux</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\up.png">
+      <Name>up</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="images\upgrade.png">
+      <Name>upgrade</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="text\en\About.txt">
+      <Name>About</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\en\TutorialBuild.txt">
+      <Name>TutorialBuild</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\en\TutorialPlay.txt">
+      <Name>TutorialPlay</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\en\TutorialStart.txt">
+      <Name>TutorialStart</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\es\About.txt">
+      <Name>About</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\es\TutorialBuild.txt">
+      <Name>TutorialBuild</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\es\TutorialPlay.txt">
+      <Name>TutorialPlay</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\es\TutorialStart.txt">
+      <Name>TutorialStart</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\hi\About.txt">
+      <Name>About</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\hi\TutorialBuild.txt">
+      <Name>TutorialBuild</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\hi\TutorialPlay.txt">
+      <Name>TutorialPlay</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\hi\TutorialStart.txt">
+      <Name>TutorialStart</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\pa\About.txt">
+      <Name>About</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\pa\TutorialBuild.txt">
+      <Name>TutorialBuild</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\pa\TutorialPlay.txt">
+      <Name>TutorialPlay</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\pa\TutorialStart.txt">
+      <Name>TutorialStart</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fonts\MANGAL.TTF">
+      <Name>MANGAL</Name>
+    </None>
+    <None Include="fonts\MANGALB.TTF">
+      <Name>MANGALB</Name>
+    </None>
+    <None Include="fonts\RAAVI.TTF">
+      <Name>RAAVI</Name>
+    </None>
+    <None Include="fonts\RAAVIB.TTF">
+      <Name>RAAVIB</Name>
+    </None>
+    <Compile Include="text\en\ExplainingStarred.json">
+      <Name>ExplainingStarred</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\en\StarredTutorial1.json">
+      <Name>StarredTutorial1</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\en\StarredTutorial2.json">
+      <Name>StarredTutorial2</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\en\Strings.json">
+      <Name>Strings</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\en\TutorialStory0.json">
+      <Name>TutorialStory0</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\en\TutorialStory1-1.json">
+      <Name>TutorialStory1-1</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\es\Strings.json">
+      <Name>Strings</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\fr\Strings.json">
+      <Name>Strings</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\hi\Strings.json">
+      <Name>Strings</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="text\pa\Strings.json">
+      <Name>Strings</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PlayNContentImporter\PlayNContentImporter.csproj">
+      <Project>{5758AEE3-1E7E-4707-B75C-DE85709414F0}</Project>
+      <Name>PlayNContentImporter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
+  <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

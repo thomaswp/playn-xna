@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{A1FAA6C5-27EF-44C3-818C-B82F423C30A9}</ProjectGuid>
+    <ProjectGuid>{C90A93AD-1C32-4CE7-B56D-A64FB98DCB22}</ProjectGuid>
     <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HelloGame</RootNamespace>
-    <AssemblyName>HelloGame</AssemblyName>
+    <RootNamespace>TuxBlocksGame</RootNamespace>
+    <AssemblyName>TuxBlocksGame</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
     <XnaPlatform>Windows</XnaPlatform>
     <XnaProfile>HiDef</XnaProfile>
-    <XnaCrossPlatformGroupID>d9ff0bb3-c687-4e43-86fd-a30ec883e2ef</XnaCrossPlatformGroupID>
+    <XnaCrossPlatformGroupID>fc09a7e0-8038-4367-9148-b1cad777bd8a</XnaCrossPlatformGroupID>
     <XnaOutputType>Game</XnaOutputType>
     <ApplicationIcon>Game.ico</ApplicationIcon>
     <Thumbnail>GameThumbnail.png</Thumbnail>
@@ -60,10 +60,6 @@
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Hello, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\Hello.dll</HintPath>
-    </Reference>
     <Reference Include="IKVM.OpenJDK.Core">
       <HintPath>..\..\PlayNXNA\PlayNXNA\IKVM.OpenJDK.Core.dll</HintPath>
     </Reference>
@@ -97,7 +93,8 @@
     <Reference Include="mscorlib">
       <Private>False</Private>
     </Reference>
-    <Reference Include="PlayN-1.8.5">
+    <Reference Include="PlayN-1.8.5, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\PlayNXNA\PlayNXNA\PlayN-1.8.5.dll</HintPath>
     </Reference>
     <Reference Include="System">
@@ -115,26 +112,33 @@
     <Reference Include="System.Net">
       <Private>False</Private>
     </Reference>
+    <Reference Include="TriplePlay-1.8.5">
+      <HintPath>..\..\PlayNXNA\PlayNXNA\TriplePlay-1.8.5.dll</HintPath>
+    </Reference>
+    <Reference Include="TuxBlocks, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\TuxBlocks.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TuxBlocksGameXNA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="HelloGameXNA.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
-    <Content Include="Hello.dll" />
+    <Content Include="TuxBlocks.dll" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\PlayNXNA\PlayNXNA\PlayNXNA.csproj">
       <Project>{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}</Project>
       <Name>PlayNXNA</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HelloGameContent\HelloGameContent.contentproj">
-      <Name>HelloGameContent %28Content%29</Name>
+    <ProjectReference Include="..\TuxBlocksContent\TuxBlocksGameContent.contentproj">
+      <Name>TuxBlocksGameContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
-      <Project>{AE956C53-4E72-4DDB-ABC9-761075852D63}</Project>
+      <Project>{75A36A18-7677-4356-B73E-FB6F215D62B1}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

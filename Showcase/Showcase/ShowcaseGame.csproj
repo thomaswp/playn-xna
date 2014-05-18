@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Showcase</RootNamespace>
-    <AssemblyName>Showcase</AssemblyName>
+    <RootNamespace>ShowcaseGame</RootNamespace>
+    <AssemblyName>ShowcaseGame</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
@@ -63,6 +63,9 @@
     <Reference Include="IKVM.OpenJDK.Core">
       <HintPath>..\..\PlayNXNA\PlayNXNA\IKVM.OpenJDK.Core.dll</HintPath>
     </Reference>
+    <Reference Include="jBox2D-2.2.1.1">
+      <HintPath>..\..\PlayNXNA\PlayNXNA\jBox2D-2.2.1.1.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
       <Private>False</Private>
     </Reference>
@@ -97,9 +100,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\PlayNXNA\PlayNXNA\PlayN-1.8.5.dll</HintPath>
     </Reference>
-    <Reference Include="Some, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Showcase, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\Some.dll</HintPath>
+      <HintPath>.\Showcase.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>False</Private>
@@ -115,6 +118,9 @@
     </Reference>
     <Reference Include="System.Net">
       <Private>False</Private>
+    </Reference>
+    <Reference Include="TriplePlay-1.8.5">
+      <HintPath>..\..\PlayNXNA\PlayNXNA\TriplePlay-1.8.5.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -134,9 +140,10 @@
       <Project>{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}</Project>
       <Name>PlayNXNA</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ShowcaseContent\ShowcaseContent.contentproj">
-      <Name>ShowcaseContent</Name>
+    <ProjectReference Include="..\ShowcaseContent\ShowcaseGameContent.contentproj">
+      <Name>ShowcaseGameContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{5D75393C-4A15-4EA3-A30E-4BB19FCFD0BF}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
