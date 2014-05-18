@@ -11,6 +11,21 @@
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
     <OutputPath>bin\$(Platform)\$(Configuration)</OutputPath>
     <ContentRootDirectory>Content</ContentRootDirectory>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -45,112 +60,112 @@
     <Compile Include="audio\bg\game1.mp3">
       <Name>game1</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\bg\menu.mp3">
       <Name>menu</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\back.mp3">
       <Name>back</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\beat.mp3">
       <Name>beat</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\boom.mp3">
       <Name>boom</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\die.mp3">
       <Name>die</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\drop.mp3">
       <Name>drop</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\gameover.mp3">
       <Name>gameover</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\ok.mp3">
       <Name>ok</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\pitch-final.mp3">
       <Name>pitch-final</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\pitch.mp3">
       <Name>pitch</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\pop0.mp3">
       <Name>pop0</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\pop1.mp3">
       <Name>pop1</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\pop2.mp3">
       <Name>pop2</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\pop3.mp3">
       <Name>pop3</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\select.mp3">
       <Name>select</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\success-special.mp3">
       <Name>success-special</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\success.mp3">
       <Name>success</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\tick.mp3">
       <Name>tick</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\victory.mp3">
       <Name>victory</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\wind.mp3">
       <Name>wind</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="audio\se\zap.mp3">
       <Name>zap</Name>
       <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="images\back.png">
       <Name>back</Name>
@@ -399,6 +414,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arial-48.spritefont">
+      <Name>Arial-48</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Raavi-12.spritefont">
+      <Name>Raavi-12</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Mangal-12.spritefont">
+      <Name>Mangal-12</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
     <None Include="fonts\MANGAL.TTF">
       <Name>MANGAL</Name>
     </None>
@@ -461,12 +491,79 @@
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
+    <Compile Include="Arial-12-Bold-Italic.spritefont">
+      <Name>Arial-12-Bold-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Arial-9.spritefont">
+      <Name>Arial-9</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Arial-12-Bold.spritefont">
+      <Name>Arial-12-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Arial-12-Italic.spritefont">
+      <Name>Arial-12-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Arial-12.spritefont">
+      <Name>Arial-12</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Arial-24-Bold-Italic.spritefont">
+      <Name>Arial-24-Bold-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Arial-24-Bold.spritefont">
+      <Name>Arial-24-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Arial-24-Italic.spritefont">
+      <Name>Arial-24-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Arial-24.spritefont">
+      <Name>Arial-24</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\PlayNContentImporter\PlayNContentImporter.csproj">
       <Project>{5758AEE3-1E7E-4707-B75C-DE85709414F0}</Project>
       <Name>PlayNContentImporter</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

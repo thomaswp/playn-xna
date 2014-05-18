@@ -566,7 +566,11 @@ namespace PlayNXNA
 
         public override Canvas strokeRoundRect(float x, float y, float w, float h, float cornerRadius)
         {
-            return fillRoundRect(x, y, w, h, cornerRadius);
+            int color = state.fillColor;
+            state.fillColor = state.strokeColor;
+            fillRoundRect(x, y, w, h, cornerRadius);
+            state.fillColor = color;
+            return this;
         }
 
         public override Canvas strokeText(TextLayout text, float x, float y)

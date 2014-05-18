@@ -38,6 +38,7 @@ namespace PlayNXNA
         private readonly XNAJson _json;
         private readonly XNANet _net;
         private readonly XNAAudio _audio;
+        private readonly XNAStorage _storage;
 
         private Game game;
         private readonly System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
@@ -58,6 +59,7 @@ namespace PlayNXNA
             _json = new XNAJson();
             _net = new XNANet(this);
             _audio = new XNAAudio(this);
+            _storage = new XNAStorage();
         }
 
         public override Assets assets()
@@ -125,7 +127,7 @@ namespace PlayNXNA
 
         public override Storage storage()
         {
-            throw new NotImplementedException();
+            return _storage;
         }
 
         public override int tick()
@@ -145,7 +147,7 @@ namespace PlayNXNA
 
         public override Platform.Type type()
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public override void invokeAsync(java.lang.Runnable action)

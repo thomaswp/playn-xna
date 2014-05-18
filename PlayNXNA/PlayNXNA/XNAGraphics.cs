@@ -106,12 +106,12 @@ namespace PlayNXNA
 
         public playn.core.gl.GLContext ctx()
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public playn.core.gl.GL20 gl20()
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public int height()

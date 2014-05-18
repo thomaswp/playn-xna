@@ -152,6 +152,7 @@
     <Compile Include="XNAPointer.cs" />
     <Compile Include="XNASound.cs" />
     <Compile Include="XNAStaticImage.cs" />
+    <Compile Include="XNAStorage.cs" />
     <Compile Include="XNATextLayout.cs" />
     <Compile Include="XNATouch.cs" />
   </ItemGroup>

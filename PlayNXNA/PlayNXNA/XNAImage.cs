@@ -30,9 +30,19 @@ namespace PlayNXNA
             return 0;
         }
 
-        public void getRgb(int i1, int i2, int i3, int i4, int[] iarr, int i5, int i6)
+        public void getRgb(int startX, int startY, int width, int height, int[] array, int offset, int count)
         {
-            throw new NotImplementedException();
+            if (texture == null) return;
+            int[] data = new int[width * height];
+            texture.GetData<int>(0, new Rectangle(startX, startY, width, height), data, 0, data.Length);
+            int max = Math.Min(count + offset, array.Length);
+            for (int i = 0; i < data.Length; i++)
+            {
+                int x = i % width, y = i / width;
+                int offI = offset + y * count + x;
+                if (offI < max) array[offI] = data[i];
+                else break;    
+            }
         }
 
         public virtual float height()

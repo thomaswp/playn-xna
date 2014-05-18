@@ -80,7 +80,7 @@ namespace PlayNXNA
 
         public override void draw(SpriteBatch spritebatch, InternalTransform parentTransform)
         {
-            if (!visible()) return;
+            if (_image == null || !visible()) return;
             _image.draw(spritebatch, getLocalTransform(parentTransform), width(), height());
         }
     }

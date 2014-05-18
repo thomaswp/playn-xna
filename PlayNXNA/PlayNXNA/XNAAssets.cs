@@ -54,7 +54,8 @@ namespace PlayNXNA
         {
             try
             {
-                int lastDot = str.IndexOf('.');
+                Console.WriteLine("Loading: " + str);
+                int lastDot = str.LastIndexOf('.');
                 if (lastDot >= 0) str = str.Substring(0, lastDot);
                 Texture2D texture = platform.Content.Load<Texture2D>(str);
                 return aair.imageLoaded(texture, new playn.core.gl.Scale(1));
