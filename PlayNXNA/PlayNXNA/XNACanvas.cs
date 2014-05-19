@@ -49,7 +49,7 @@ namespace PlayNXNA
             texture.SetData<int>(data);
         }
 
-        private static int colorSwapRB(int color)
+        public static int colorSwapRB(int color)
         {
             return Color.argb(Color.alpha(color), Color.blue(color), Color.green(color), Color.red(color));
         }

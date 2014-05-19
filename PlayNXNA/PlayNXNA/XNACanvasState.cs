@@ -27,7 +27,7 @@ namespace PlayNXNA
 
             state.strokeWidth = 1;
             state.alpha = 1;
-            state.strokeColor = XNACanvas.argb(255, 255, 255, 255);
+            state.strokeColor = XNACanvas.argb(255, 0, 0, 255);
             state.fillColor = XNACanvas.argb(255, 0, 0, 0);
             state.lineCap = Canvas.LineCap.SQUARE;
             state.lineJoin = Canvas.LineJoin.MITER;

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using playn.core;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
 namespace PlayNXNA
 {
@@ -16,14 +17,34 @@ namespace PlayNXNA
             _canvas = new XNACanvas(width, height);
         }
 
+        public override float width()
+        {
+            return _canvas.width();
+        }
+
+        public override float height()
+        {
+            return _canvas.height();
+        }
+
         public Canvas canvas()
         {
             return _canvas;
         }
 
-        public void setRgb(int i1, int i2, int i3, int i4, int[] iarr, int i5, int i6)
+        public void setRgb(int startX, int startY, int width, int height, int[] array, int offset, int count)
         {
-            throw new NotImplementedException();
+            if (texture == null) return;
+            int[] data = new int[width * height];
+            int max = array.Length;
+            for (int i = 0; i < data.Length; i++)
+            {
+                int x = i % width, y = i / width;
+                int offI = offset + y * count + x;
+                if (offI < max) data[i] = XNACanvas.colorSwapRB(array[offI]);
+                else break;
+            }
+            texture.SetData<int>(0, new Rectangle(startX, startY, width, height), data, 0, data.Length);
         }
 
         public Image snapshot()
@@ -36,10 +57,10 @@ namespace PlayNXNA
             callback.onSuccess(this);
         }
 
-        public override void draw(SpriteBatch spritebatch, InternalTransform transform, float width, float height)
+        public override void draw(SpriteBatch spritebatch, InternalTransform transform, float width, float height, int color, float alpha)
         {
             this.texture = _canvas.Texture;
-            base.draw(spritebatch, transform, width, height);
+            base.draw(spritebatch, transform, width, height, color, alpha);
         }
     }
 }

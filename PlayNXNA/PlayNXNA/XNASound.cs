@@ -23,7 +23,7 @@ namespace PlayNXNA
         {
             instance.Dispose();
             instance = effect.CreateInstance();
-            instance.Play();
+            //instance.Play();
             return true;
         }
 

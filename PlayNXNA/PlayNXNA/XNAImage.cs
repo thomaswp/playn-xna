@@ -35,12 +35,12 @@ namespace PlayNXNA
             if (texture == null) return;
             int[] data = new int[width * height];
             texture.GetData<int>(0, new Rectangle(startX, startY, width, height), data, 0, data.Length);
-            int max = Math.Min(count + offset, array.Length);
+            int max = array.Length;
             for (int i = 0; i < data.Length; i++)
             {
                 int x = i % width, y = i / width;
                 int offI = offset + y * count + x;
-                if (offI < max) array[offI] = data[i];
+                if (offI < max) array[offI] = XNACanvas.colorSwapRB(data[i]);
                 else break;    
             }
         }
@@ -101,9 +101,16 @@ namespace PlayNXNA
             return texture != null;
         }
 
-        public virtual void draw(SpriteBatch spritebatch, InternalTransform transform, float width, float height)
+        protected Microsoft.Xna.Framework.Color getDrawColor(int color, float alpha)
+        {
+            Microsoft.Xna.Framework.Color xcolor = XNACanvas.GetXNAColor(color) * alpha;
+            return xcolor;
+        }
+
+        public virtual void draw(SpriteBatch spritebatch, InternalTransform transform, float width, float height, int color, float alpha)
         {
             if (texture == null) return;
+            Microsoft.Xna.Framework.Color xcolor = getDrawColor(color, alpha);
             if (repeatX() || repeatY())
             {
                 spritebatch.End();
@@ -114,21 +121,27 @@ namespace PlayNXNA
                 if (repeatX()) srcRect.Width = (int)width;
                 if (repeatY()) srcRect.Height = (int)height;
                 spritebatch.Draw(texture, new Vector2(transform.tx(), transform.ty()), srcRect,
-                    Microsoft.Xna.Framework.Color.White, transform.rotation(), Vector2.Zero, new Vector2(transform.scaleX(), transform.scaleY()), SpriteEffects.None, 0);
+                    xcolor, transform.rotation(), Vector2.Zero, new Vector2(transform.scaleX(), transform.scaleY()), SpriteEffects.None, 0);
 
                 spritebatch.End();
                 spritebatch.Begin();
             }
             else
             {
+                float rotation = 0;
+                try
+                {
+                    rotation = transform.rotation();
+                }
+                catch { }
                 spritebatch.Draw(texture, new Vector2(transform.tx(), transform.ty()), new Rectangle(0, 0, texture.Width, texture.Height),
-                    Microsoft.Xna.Framework.Color.White, transform.rotation(), Vector2.Zero, new Vector2(transform.scaleX(), transform.scaleY()), SpriteEffects.None, 0);
+                    xcolor, rotation, Vector2.Zero, new Vector2(transform.scaleX(), transform.scaleY()), SpriteEffects.None, 0);
             }
         }
 
         public void draw(SpriteBatch spritebatch, InternalTransform transform)
         {
-            draw(spritebatch, transform, width(), height());
+            draw(spritebatch, transform, width(), height(), XNACanvas.argb(255, 255, 255, 255), 1);
         }
     }
 }

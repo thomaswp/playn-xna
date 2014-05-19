@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using System.Diagnostics;
 
 namespace PlayNXNA
 {
@@ -46,6 +47,7 @@ namespace PlayNXNA
             graphics.PreferredBackBufferHeight = platform.config.height;
             graphics.IsFullScreen = platform.config.fullscreen;
             graphics.ApplyChanges();
+            sw.Start();
             base.Initialize();
         }
 
@@ -85,16 +87,28 @@ namespace PlayNXNA
             base.Update(gameTime);
         }
 
+        int frames;
+        Stopwatch sw = new Stopwatch();
+
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            frames++;
+            if (frames > 60)
+            {
+            //    int fps = frames * 1000 / (int)sw.ElapsedMilliseconds;
+            //    Console.WriteLine("fps: " + fps);
+            //    sw.Reset();
+            //    sw.Start();
+                frames = 0;
+            }
 
-            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.LinearClamp,
-                    DepthStencilState.Default, RasterizerState.CullNone);
+            GraphicsDevice.Clear(Color.Black);
+
+            spriteBatch.Begin();
             platform.draw(spriteBatch);
             spriteBatch.End();
             
