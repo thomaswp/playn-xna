@@ -10,7 +10,8 @@ namespace PlayNXNA
 {
     class XNAAssets : AbstractAssets
     {
-        XNAPlatform platform;
+        private XNAPlatform platform;
+        private Dictionary<String, Texture2D> textureCache = new Dictionary<String, Texture2D>();
 
         public XNAAssets(XNAPlatform platform) : base(platform)
         {
@@ -50,20 +51,30 @@ namespace PlayNXNA
             return platform.Content.Load<String>(file);
         }
 
-        protected override Image loadImage(string str, AbstractAssets.ImageReceiver aair)
+        protected override Image loadImage(string path, AbstractAssets.ImageReceiver aair)
         {
-            try
+            Texture2D texture;
+            if (textureCache.ContainsKey(path))
             {
-                Console.WriteLine("Loading: " + str);
-                int lastDot = str.LastIndexOf('.');
-                if (lastDot >= 0) str = str.Substring(0, lastDot);
-                Texture2D texture = platform.Content.Load<Texture2D>(str);
-                return aair.imageLoaded(texture, new playn.core.gl.Scale(1));
+                texture = textureCache[path];
             }
-            catch (Exception e)
+            else
             {
-                return aair.loadFailed(e);
+                try
+                {
+                    Console.WriteLine("Loading: " + path);
+                    string noDot = path;
+                    int lastDot = path.LastIndexOf('.');
+                    if (lastDot >= 0) noDot = path.Substring(0, lastDot);
+                    texture = platform.Content.Load<Texture2D>(noDot);
+                    textureCache.Add(path, texture);
+                }
+                catch (Exception e)
+                {
+                    return aair.loadFailed(e);
+                }
             }
+            return aair.imageLoaded(texture, new playn.core.gl.Scale(1));
         }
     }
 }

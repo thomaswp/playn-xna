@@ -168,7 +168,7 @@ namespace PlayNXNA
 
         public void draw(SpriteBatch spritebatch)
         {
-            _rootLayer.draw(spritebatch, rootXform);
+            _rootLayer.draw(spritebatch, rootXform, Tint.NOOP_TINT);
         }
     }
 }

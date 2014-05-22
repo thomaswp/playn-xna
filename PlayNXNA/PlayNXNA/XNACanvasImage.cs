@@ -64,10 +64,10 @@ namespace PlayNXNA
             callback.onSuccess(this);
         }
 
-        public override void draw(SpriteBatch spritebatch, InternalTransform transform, float width, float height, int color, float alpha)
+        public override void draw(SpriteBatch spritebatch, InternalTransform transform, float width, float height, int color)
         {
             this.texture = _canvas.Texture;
-            base.draw(spritebatch, transform, width, height, color, alpha);
+            base.draw(spritebatch, transform, width, height, color);
         }
     }
 }

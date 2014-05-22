@@ -62,13 +62,13 @@ namespace PlayNXNA
             impl.depthChanged(this, l, f);
         }
 
-        public override void draw(SpriteBatch spritebatch, InternalTransform parentTransform)
+        public override void draw(SpriteBatch spritebatch, InternalTransform parentTransform, int parentTint)
         {
             if (!visible()) return;
 
             for (int i = 0, size = impl.children.size(); i < size; i++)
             {
-                ((XNALayer)impl.children.get(i)).draw(spritebatch, getLocalTransform(parentTransform));
+                ((XNALayer)impl.children.get(i)).draw(spritebatch, getLocalTransform(parentTransform), getLocalTint(parentTint));
             }
         }
 

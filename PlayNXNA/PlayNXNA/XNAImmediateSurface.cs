@@ -59,7 +59,7 @@ namespace PlayNXNA
         public Surface drawLayer(Layer layer)
         {
             tempTransform.set(RootTransform);
-            ((XNALayer)layer).draw(SpriteBatch, tempTransform);
+            ((XNALayer)layer).draw(SpriteBatch, tempTransform, Tint.NOOP_TINT);
             return this;
         }
 

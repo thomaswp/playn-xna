@@ -18,6 +18,12 @@ namespace PlayNXNA
             return localTransform.concatenate(transform(), originX(), originY());
         }
 
-        public abstract void draw(SpriteBatch spritebatch, InternalTransform parentTransform);
+        protected int getLocalTint(int parentTint)
+        {
+            int tint = this.tint();
+            return tint == Tint.NOOP_TINT ? parentTint : Tint.combine(parentTint, tint);
+        }
+
+        public abstract void draw(SpriteBatch spritebatch, InternalTransform parentTransform, int parentTint);
     }
 }

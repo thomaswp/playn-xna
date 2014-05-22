@@ -101,16 +101,18 @@ namespace PlayNXNA
             return texture != null;
         }
 
-        protected Microsoft.Xna.Framework.Color getDrawColor(int color, float alpha)
-        {
-            Microsoft.Xna.Framework.Color xcolor = XNACanvas.GetXNAColor(color) * alpha;
+        protected Microsoft.Xna.Framework.Color getDrawColor(int color)
+        {   
+            Microsoft.Xna.Framework.Color xcolor = XNACanvas.GetXNAColor(color);
+            xcolor *= xcolor.A / 255f;
+           // if (xcolor.A < 255) Console.WriteLine(xcolor.A - alpha * 255);
             return xcolor;
         }
 
-        public virtual void draw(SpriteBatch spritebatch, InternalTransform transform, float width, float height, int color, float alpha)
+        public virtual void draw(SpriteBatch spritebatch, InternalTransform transform, float width, float height, int color)
         {
             if (texture == null) return;
-            Microsoft.Xna.Framework.Color xcolor = getDrawColor(color, alpha);
+            Microsoft.Xna.Framework.Color xcolor = getDrawColor(color);
             if (repeatX() || repeatY())
             {
                 spritebatch.End();
@@ -141,7 +143,7 @@ namespace PlayNXNA
 
         public void draw(SpriteBatch spritebatch, InternalTransform transform)
         {
-            draw(spritebatch, transform, width(), height(), XNACanvas.argb(255, 255, 255, 255), 1);
+            draw(spritebatch, transform, width(), height(), XNACanvas.argb(255, 255, 255, 255));
         }
     }
 }

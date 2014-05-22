@@ -23,7 +23,7 @@ namespace PlayNXNA
             return _renderer;
         }
 
-        public override void draw(SpriteBatch spritebatch, InternalTransform parentTransform)
+        public override void draw(SpriteBatch spritebatch, InternalTransform parentTransform, int parentTint) //TODO: tint
         {
             if (!visible()) return;
             InternalTransform xform = getLocalTransform(parentTransform);

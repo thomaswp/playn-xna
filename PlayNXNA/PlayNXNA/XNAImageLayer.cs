@@ -78,10 +78,10 @@ namespace PlayNXNA
             return scaleX() * width();
         }
 
-        public override void draw(SpriteBatch spritebatch, InternalTransform parentTransform)
+        public override void draw(SpriteBatch spritebatch, InternalTransform parentTransform, int parentTint)
         {
             if (_image == null || !visible()) return;
-            _image.draw(spritebatch, getLocalTransform(parentTransform), width(), height(), tint(), alpha());
+            _image.draw(spritebatch, getLocalTransform(parentTransform), width(), height(), getLocalTint(parentTint));
         }
     }
 }

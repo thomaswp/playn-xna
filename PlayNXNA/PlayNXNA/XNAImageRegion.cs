@@ -45,10 +45,10 @@ namespace PlayNXNA
             _parent.addCallback(callback);
         }
 
-        public override void draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spritebatch, InternalTransform transform, float width, float height, int color, float alpha)
+        public override void draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spritebatch, InternalTransform transform, float width, float height, int color)
         {
             texture = _parent.Texture;
-            Microsoft.Xna.Framework.Color xcolor = getDrawColor(color, alpha);
+            Microsoft.Xna.Framework.Color xcolor = getDrawColor(color);
             if (texture == null) return;
             Rectangle sourceRect = new Rectangle((int)x(), (int)y(), (int)bounds.width(), (int)bounds.height());
             spritebatch.Draw(texture, new Vector2(transform.tx(), transform.ty()), sourceRect, xcolor, 
