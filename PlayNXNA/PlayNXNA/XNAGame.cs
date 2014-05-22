@@ -100,10 +100,10 @@ namespace PlayNXNA
             frames++;
             if (frames > 60)
             {
-            //    int fps = frames * 1000 / (int)sw.ElapsedMilliseconds;
-            //    Console.WriteLine("fps: " + fps);
-            //    sw.Reset();
-            //    sw.Start();
+                int fps = frames * 1000 / (int)sw.ElapsedMilliseconds;
+                Console.WriteLine("fps: " + fps);
+                sw.Reset();
+                sw.Start();
                 frames = 0;
             }
 
