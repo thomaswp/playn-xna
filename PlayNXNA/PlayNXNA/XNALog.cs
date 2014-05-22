@@ -6,58 +6,12 @@ using playn.core;
 
 namespace PlayNXNA
 {
-    public class XNALog : Log
+    public class XNALog : LogImpl
     {
-
-        public void debug(string str, Exception t)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void debug(string str)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void error(string str)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void error(string str, Exception t)
+        protected override void logImpl(Log.Level ll, string str, Exception t)
         {
             Console.WriteLine(str);
-            Console.WriteLine(t);
-        }
-
-        public void info(string str, Exception t)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void info(string str)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void setCollector(Log.Collector lc)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void setMinLevel(Log.Level ll)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void warn(string str)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void warn(string str, Exception t)
-        {
-            throw new NotImplementedException();
+            if (t != null) Console.WriteLine(t);
         }
     }
 }

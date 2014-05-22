@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using playn.core;
+using System.Threading;
 
 namespace PlayNXNA
 {
     public class XNAPlatform : AbstractPlatform
     {
+
         public class Config
         {
             public int width = 800, height = 480;
@@ -147,12 +149,15 @@ namespace PlayNXNA
 
         public override Platform.Type type()
         {
-            return null;
+            return Platform.Type.STUB;
         }
 
         public override void invokeAsync(java.lang.Runnable action)
         {
-            action.run(); // TODO: async
+            ThreadPool.QueueUserWorkItem((target) =>
+                {
+                    action.run();
+                });
         }
 
         internal void update(Microsoft.Xna.Framework.GameTime gameTime)

@@ -27,6 +27,7 @@ namespace PlayNXNA
         public XNAGame()
         {
             graphics = new GraphicsDeviceManager(this);
+            Content = new ThreadSafeContentManager(Services);
             Content.RootDirectory = "Content";
         }
 

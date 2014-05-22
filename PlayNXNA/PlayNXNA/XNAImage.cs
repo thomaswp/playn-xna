@@ -30,7 +30,7 @@ namespace PlayNXNA
             return 0;
         }
 
-        public void getRgb(int startX, int startY, int width, int height, int[] array, int offset, int count)
+        public virtual void getRgb(int startX, int startY, int width, int height, int[] array, int offset, int count)
         {
             if (texture == null) return;
             int[] data = new int[width * height];

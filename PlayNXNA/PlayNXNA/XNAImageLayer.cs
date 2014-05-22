@@ -31,7 +31,7 @@ namespace PlayNXNA
 
         public override float height()
         {
-            return heightSet ? _height : _image.height();
+            return heightSet ? _height : ((Image)Asserts.checkNotNull(_image)).height();
         }
 
         public Image image()
@@ -65,17 +65,17 @@ namespace PlayNXNA
 
         public override float width()
         {
-            return widthSet ? _width : _image.width();
+            return widthSet ? _width : ((Image)Asserts.checkNotNull(_image)).width();
         }
 
         public float scaledHeight()
         {
-            return heightSet ? _height : _image.height();
+            return scaleY() * height();
         }
 
         public float scaledWidth()
         {
-            return scaleX() * _width;
+            return scaleX() * width();
         }
 
         public override void draw(SpriteBatch spritebatch, InternalTransform parentTransform)

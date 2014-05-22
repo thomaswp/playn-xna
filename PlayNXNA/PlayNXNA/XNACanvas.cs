@@ -12,15 +12,16 @@ namespace PlayNXNA
     {
         private static int aax = 2;
 
+        private readonly List<XNACanvasState> stateStack = new List<XNACanvasState>();
+        private readonly Texture2D texture;
+        private readonly int[] data;
+        private readonly byte[] bitmap;
+        private new readonly int width, height;
+        private readonly InternalTransform tempTransform = new StockInternalTransform();
+        private readonly Point tempPoint = new Point();
+
         private XNACanvasState state;
-        private List<XNACanvasState> stateStack = new List<XNACanvasState>();
-        private Texture2D texture;
-        private int[] data;
-        private byte[] bitmap;
         private bool dirty;
-        private new int width, height;
-        private InternalTransform tempTransform = new StockInternalTransform();
-        private Point tempPoint = new Point();
 
         public Texture2D Texture
         {

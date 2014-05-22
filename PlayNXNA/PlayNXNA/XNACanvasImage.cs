@@ -15,6 +15,7 @@ namespace PlayNXNA
         public XNACanvasImage(float width, float height)
         {
             _canvas = new XNACanvas(width, height);
+            this.texture = _canvas.Texture;
         }
 
         public override float width()
@@ -45,6 +46,12 @@ namespace PlayNXNA
                 else break;
             }
             texture.SetData<int>(0, new Rectangle(startX, startY, width, height), data, 0, data.Length);
+        }
+
+        public override void getRgb(int startX, int startY, int width, int height, int[] array, int offset, int count)
+        {
+            texture = _canvas.Texture;
+            base.getRgb(startX, startY, width, height, array, offset, count);
         }
 
         public Image snapshot()
