@@ -13,11 +13,18 @@ namespace PlayNXNA
         public int strokeColor, fillColor;
         public float alpha;
         public float strokeWidth;
+        public bool transformModified;
         public Rectangle clipRect;
         public XNAPath clipPath;
         public InternalTransform transform;
         public Canvas.LineCap lineCap;
         public Canvas.LineJoin lineJoin;
+
+        public InternalTransform ModifyTransform()
+        {
+            transformModified = true;
+            return transform;
+        }
 
         public static XNACanvasState create(Texture2D texture)
         {

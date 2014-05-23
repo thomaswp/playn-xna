@@ -152,18 +152,31 @@ namespace PlayNXNA
         {
             InternalTransform aaXform = getAAXform();
             int maxIndex = bitmap.Length;
-            for (int i = x1; i < x2; i++)
+
+            for (int j = y1; j < y2; j++)
             {
-                for (int j = y1; j < y2; j++)
+                int ib = j * width * aax;
+                for (int i = x1; i < x2; i++)
                 {
-                    int index = j * width * aax + i;
+                    int index = ib + i;
                     if (index < 0 || index >= maxIndex) continue;
 
-                    tempPoint.set(i, j);
-                    aaXform.inverseTransform(tempPoint, tempPoint);
-                    float tx = tempPoint.x(), ty = tempPoint.y();
+                    float tx, ty;
 
-                    action(tx, ty, i, j, index, inClip((float) i / aax, (float) j / aax));
+                    if (state.transformModified)
+                    {
+                        tempPoint.set(i, j);
+                        aaXform.inverseTransform(tempPoint, tempPoint);
+                        tx = tempPoint.x(); ty = tempPoint.y();
+                    }
+                    else
+                    {
+                        tx = (float)i / aax;
+                        ty = (float)j / aax;
+                    }
+
+                    bool clip = inClip((float) i / aax, (float) j / aax);
+                    action(tx, ty, i, j, index, clip);
                 }
             }
         }
@@ -172,10 +185,18 @@ namespace PlayNXNA
         {
             int x1, x2, y1, y2;
             getAAXformBounds(x, y, w, h, out x1, out y1, out x2, out y2);
+            float right = x + w, bot = y + height;
             operatePixels(x1, x2, y1, y2, (float tx, float ty, int i, int j, int index, bool inClip) =>
                 {
-                    bool inBounds = (!(tx < x || tx >= x + w || ty < y || ty >= y + h)) && inClip;
-                    bitmap[index] = (byte)((inBounds && hitTest.Invoke(tx, ty)) ? 1 : 0);
+                    bool inBounds = tx >= x && tx < right && ty >= y && ty < bot && inClip;
+                    if (inBounds && hitTest.Invoke(tx, ty))
+                    {
+                        bitmap[index] = 1;
+                    }
+                    else
+                    {
+                        bitmap[index] = 0;
+                    }
                 });
             
             applyBitmap(x1, x2, y1, y2, color);
@@ -462,7 +483,7 @@ namespace PlayNXNA
 
         public override Canvas rotate(float angle)
         {
-            state.transform.rotate(angle);
+            state.ModifyTransform().rotate(angle);
             return this;
         }
 
@@ -475,7 +496,7 @@ namespace PlayNXNA
 
         public override Canvas scale(float sx, float sy)
         {
-            state.transform.scale(sx, sy);
+            state.ModifyTransform().scale(sx, sy);
             return this;
         }
 
@@ -582,13 +603,13 @@ namespace PlayNXNA
         public override Canvas transform(float m11, float m12, float m21, float m22, float dx, float dy)
         {
             tempTransform.setTransform(m11, m12, m21, m22, dx, dy);
-            state.transform.concatenate(tempTransform);
+            state.ModifyTransform().concatenate(tempTransform);
             return this;
         }
 
         public override Canvas translate(float dx, float dy)
         {
-            state.transform.translate(dx, dy);
+            state.ModifyTransform().translate(dx, dy);
             return this;
         }
     }

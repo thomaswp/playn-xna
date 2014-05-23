@@ -160,14 +160,20 @@ namespace PlayNXNA
                 });
         }
 
+        System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
         internal void update(Microsoft.Xna.Framework.GameTime gameTime)
         {
             if (game != null)
             {
+                sw.Reset();
+                sw.Start();
                 _mouse.update();
                 _keyboard.update();
                 game.tick(tick());
                 runQueue.execute();
+                sw.Stop();
+                long ms = sw.ElapsedMilliseconds;
+                //if (ms > 16) Console.WriteLine("Update: " + ms);
             }
         }
 

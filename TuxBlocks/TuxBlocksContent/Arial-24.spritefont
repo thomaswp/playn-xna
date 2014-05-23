@@ -56,6 +56,10 @@ with.
         <End>&#126;</End>
       </CharacterRegion>
       <CharacterRegion>
+        <Start>&#183;</Start>
+        <End>&#183;</End>
+      </CharacterRegion>
+      <CharacterRegion>
         <Start>&#215;</Start>
         <End>&#215;</End>
       </CharacterRegion>
