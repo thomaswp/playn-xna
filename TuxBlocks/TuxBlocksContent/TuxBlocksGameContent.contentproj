@@ -57,357 +57,357 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="audio\bg\game1.mp3">
+    <Compile Include="assets\audio\bg\game1.mp3">
       <Name>game1</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\bg\menu.mp3">
+    <Compile Include="assets\audio\bg\menu.mp3">
       <Name>menu</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\back.mp3">
+    <Compile Include="assets\audio\se\back.mp3">
       <Name>back</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\beat.mp3">
+    <Compile Include="assets\audio\se\beat.mp3">
       <Name>beat</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\boom.mp3">
+    <Compile Include="assets\audio\se\boom.mp3">
       <Name>boom</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\die.mp3">
+    <Compile Include="assets\audio\se\die.mp3">
       <Name>die</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\drop.mp3">
+    <Compile Include="assets\audio\se\drop.mp3">
       <Name>drop</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\gameover.mp3">
+    <Compile Include="assets\audio\se\gameover.mp3">
       <Name>gameover</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\ok.mp3">
+    <Compile Include="assets\audio\se\ok.mp3">
       <Name>ok</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\pitch-final.mp3">
+    <Compile Include="assets\audio\se\pitch-final.mp3">
       <Name>pitch-final</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\pitch.mp3">
+    <Compile Include="assets\audio\se\pitch.mp3">
       <Name>pitch</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\pop0.mp3">
+    <Compile Include="assets\audio\se\pop0.mp3">
       <Name>pop0</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\pop1.mp3">
+    <Compile Include="assets\audio\se\pop1.mp3">
       <Name>pop1</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\pop2.mp3">
+    <Compile Include="assets\audio\se\pop2.mp3">
       <Name>pop2</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\pop3.mp3">
+    <Compile Include="assets\audio\se\pop3.mp3">
       <Name>pop3</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\select.mp3">
+    <Compile Include="assets\audio\se\select.mp3">
       <Name>select</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\success-special.mp3">
+    <Compile Include="assets\audio\se\success-special.mp3">
       <Name>success-special</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\success.mp3">
+    <Compile Include="assets\audio\se\success.mp3">
       <Name>success</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\tick.mp3">
+    <Compile Include="assets\audio\se\tick.mp3">
       <Name>tick</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\victory.mp3">
+    <Compile Include="assets\audio\se\victory.mp3">
       <Name>victory</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\wind.mp3">
+    <Compile Include="assets\audio\se\wind.mp3">
       <Name>wind</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="audio\se\zap.mp3">
+    <Compile Include="assets\audio\se\zap.mp3">
       <Name>zap</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="images\back.png">
+    <Compile Include="assets\images\back.png">
       <Name>back</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\cancel.png">
+    <Compile Include="assets\images\cancel.png">
       <Name>cancel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\cancel_bordered.png">
+    <Compile Include="assets\images\cancel_bordered.png">
       <Name>cancel_bordered</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\center.png">
+    <Compile Include="assets\images\center.png">
       <Name>center</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\circle.png">
+    <Compile Include="assets\images\circle.png">
       <Name>circle</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\confirm.png">
+    <Compile Include="assets\images\confirm.png">
       <Name>confirm</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\down.png">
+    <Compile Include="assets\images\down.png">
       <Name>down</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\en\start.png">
+    <Compile Include="assets\images\en\start.png">
       <Name>start</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\forward.png">
+    <Compile Include="assets\images\forward.png">
       <Name>forward</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\fr\start.png">
+    <Compile Include="assets\images\fr\start.png">
       <Name>start</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\heart.png">
+    <Compile Include="assets\images\heart.png">
       <Name>heart</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\hi\start.png">
+    <Compile Include="assets\images\hi\start.png">
       <Name>start</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\hourglass.png">
+    <Compile Include="assets\images\hourglass.png">
       <Name>hourglass</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\icon-16.png">
+    <Compile Include="assets\images\icon-16.png">
       <Name>icon-16</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\icon-32.png">
+    <Compile Include="assets\images\icon-32.png">
       <Name>icon-32</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\less.png">
+    <Compile Include="assets\images\less.png">
       <Name>less</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\logo.png">
+    <Compile Include="assets\images\logo.png">
       <Name>logo</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\menu.png">
+    <Compile Include="assets\images\menu.png">
       <Name>menu</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\missile.png">
+    <Compile Include="assets\images\missile.png">
       <Name>missile</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\more.png">
+    <Compile Include="assets\images\more.png">
       <Name>more</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\np\bubble.9.png">
+    <Compile Include="assets\images\np\bubble.9.png">
       <Name>bubble.9</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\ok.png">
+    <Compile Include="assets\images\ok.png">
       <Name>ok</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\options.png">
+    <Compile Include="assets\images\options.png">
       <Name>options</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\pa\start.png">
+    <Compile Include="assets\images\pa\start.png">
       <Name>start</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\plus.png">
+    <Compile Include="assets\images\plus.png">
       <Name>plus</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\puff.png">
+    <Compile Include="assets\images\puff.png">
       <Name>puff</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\reset.png">
+    <Compile Include="assets\images\reset.png">
       <Name>reset</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\scratch.png">
+    <Compile Include="assets\images\scratch.png">
       <Name>scratch</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\scratch2.png">
+    <Compile Include="assets\images\scratch2.png">
       <Name>scratch2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\star.png">
+    <Compile Include="assets\images\star.png">
       <Name>star</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\tux.png">
+    <Compile Include="assets\images\tux.png">
       <Name>tux</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\up.png">
+    <Compile Include="assets\images\up.png">
       <Name>up</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="images\upgrade.png">
+    <Compile Include="assets\images\upgrade.png">
       <Name>upgrade</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="text\en\About.txt">
+    <Compile Include="assets\text\en\About.txt">
       <Name>About</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\en\TutorialBuild.txt">
+    <Compile Include="assets\text\en\TutorialBuild.txt">
       <Name>TutorialBuild</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\en\TutorialPlay.txt">
+    <Compile Include="assets\text\en\TutorialPlay.txt">
       <Name>TutorialPlay</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\en\TutorialStart.txt">
+    <Compile Include="assets\text\en\TutorialStart.txt">
       <Name>TutorialStart</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\es\About.txt">
+    <Compile Include="assets\text\es\About.txt">
       <Name>About</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\es\TutorialBuild.txt">
+    <Compile Include="assets\text\es\TutorialBuild.txt">
       <Name>TutorialBuild</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\es\TutorialPlay.txt">
+    <Compile Include="assets\text\es\TutorialPlay.txt">
       <Name>TutorialPlay</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\es\TutorialStart.txt">
+    <Compile Include="assets\text\es\TutorialStart.txt">
       <Name>TutorialStart</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\hi\About.txt">
+    <Compile Include="assets\text\hi\About.txt">
       <Name>About</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\hi\TutorialBuild.txt">
+    <Compile Include="assets\text\hi\TutorialBuild.txt">
       <Name>TutorialBuild</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\hi\TutorialPlay.txt">
+    <Compile Include="assets\text\hi\TutorialPlay.txt">
       <Name>TutorialPlay</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\hi\TutorialStart.txt">
+    <Compile Include="assets\text\hi\TutorialStart.txt">
       <Name>TutorialStart</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\pa\About.txt">
+    <Compile Include="assets\text\pa\About.txt">
       <Name>About</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\pa\TutorialBuild.txt">
+    <Compile Include="assets\text\pa\TutorialBuild.txt">
       <Name>TutorialBuild</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\pa\TutorialPlay.txt">
+    <Compile Include="assets\text\pa\TutorialPlay.txt">
       <Name>TutorialPlay</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\pa\TutorialStart.txt">
+    <Compile Include="assets\text\pa\TutorialStart.txt">
       <Name>TutorialStart</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
@@ -429,64 +429,64 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <None Include="fonts\MANGAL.TTF">
+    <None Include="assets\fonts\MANGAL.TTF">
       <Name>MANGAL</Name>
     </None>
-    <None Include="fonts\MANGALB.TTF">
+    <None Include="assets\fonts\MANGALB.TTF">
       <Name>MANGALB</Name>
     </None>
-    <None Include="fonts\RAAVI.TTF">
+    <None Include="assets\fonts\RAAVI.TTF">
       <Name>RAAVI</Name>
     </None>
-    <None Include="fonts\RAAVIB.TTF">
+    <None Include="assets\fonts\RAAVIB.TTF">
       <Name>RAAVIB</Name>
     </None>
-    <Compile Include="text\en\ExplainingStarred.json">
+    <Compile Include="assets\text\en\ExplainingStarred.json">
       <Name>ExplainingStarred</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\en\StarredTutorial1.json">
+    <Compile Include="assets\text\en\StarredTutorial1.json">
       <Name>StarredTutorial1</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\en\StarredTutorial2.json">
+    <Compile Include="assets\text\en\StarredTutorial2.json">
       <Name>StarredTutorial2</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\en\Strings.json">
+    <Compile Include="assets\text\en\Strings.json">
       <Name>Strings</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\en\TutorialStory0.json">
+    <Compile Include="assets\text\en\TutorialStory0.json">
       <Name>TutorialStory0</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\en\TutorialStory1-1.json">
+    <Compile Include="assets\text\en\TutorialStory1-1.json">
       <Name>TutorialStory1-1</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\es\Strings.json">
+    <Compile Include="assets\text\es\Strings.json">
       <Name>Strings</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\fr\Strings.json">
+    <Compile Include="assets\text\fr\Strings.json">
       <Name>Strings</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\hi\Strings.json">
+    <Compile Include="assets\text\hi\Strings.json">
       <Name>Strings</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="text\pa\Strings.json">
+    <Compile Include="assets\text\pa\Strings.json">
       <Name>Strings</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
@@ -535,6 +535,7 @@
       <Name>Arial-24</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
+      <SubType>Designer</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

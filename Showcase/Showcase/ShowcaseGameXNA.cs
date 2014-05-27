@@ -26,8 +26,8 @@ namespace Showcase
             graphics.registerFont("Museo-300", "Museo-24", 24, Font.Style.PLAIN);
             graphics.registerFont("Courier", "CourierNew-24", 24, Font.Style.PLAIN);
             graphics.registerFont("Courier", "CourierNew-12", 12, Font.Style.PLAIN);
-            //Game game = new playn.showcase.core.Showcase(this);
-            Game game = new CanvasTestGame();
+            Game game = new playn.showcase.core.Showcase(this);
+            //Game game = new CanvasTestGame();
             PlayN.run(game);
         }
 

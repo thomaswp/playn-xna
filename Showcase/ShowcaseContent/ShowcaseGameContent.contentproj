@@ -57,121 +57,121 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="peas\images\bg.png">
+    <Compile Include="assets\peas\images\bg.png">
       <Name>bg</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="peas\images\Block-Gel.png">
+    <Compile Include="assets\peas\images\Block-Gel.png">
       <Name>Block-Gel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="peas\images\Block-LeftRamp.png">
+    <Compile Include="assets\peas\images\Block-LeftRamp.png">
       <Name>Block-LeftRamp</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="peas\images\Block-Normal.png">
+    <Compile Include="assets\peas\images\Block-Normal.png">
       <Name>Block-Normal</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="peas\images\Block-RightRamp.png">
+    <Compile Include="assets\peas\images\Block-RightRamp.png">
       <Name>Block-RightRamp</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="peas\images\Block-Spring.png">
+    <Compile Include="assets\peas\images\Block-Spring.png">
       <Name>Block-Spring</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="peas\images\chrome.png">
+    <Compile Include="assets\peas\images\chrome.png">
       <Name>chrome</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="peas\images\Cloud1.png">
+    <Compile Include="assets\peas\images\Cloud1.png">
       <Name>Cloud1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="peas\images\Cloud3.png">
+    <Compile Include="assets\peas\images\Cloud3.png">
       <Name>Cloud3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="peas\images\pea.png">
+    <Compile Include="assets\peas\images\pea.png">
       <Name>pea</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="peas\images\peaglow.png">
+    <Compile Include="assets\peas\images\peaglow.png">
       <Name>peaglow</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="peas\images\teleport.png">
+    <Compile Include="assets\peas\images\teleport.png">
       <Name>teleport</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="sprites\bg.png">
+    <Compile Include="assets\sprites\bg.png">
       <Name>bg</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="sprites\ding.mp3">
+    <Compile Include="assets\sprites\ding.mp3">
       <Name>ding</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="sprites\pea.png">
+    <Compile Include="assets\sprites\pea.png">
       <Name>pea</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="sprites\peasprites.png">
+    <Compile Include="assets\sprites\peasprites.png">
       <Name>peasprites</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="sprites\peasprites2.png">
+    <Compile Include="assets\sprites\peasprites2.png">
       <Name>peasprites2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="sprites\peasprites3.png">
+    <Compile Include="assets\sprites\peasprites3.png">
       <Name>peasprites3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="swirl\background.png">
+    <Compile Include="assets\swirl\background.png">
       <Name>background</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="swirl\girlcat.png">
+    <Compile Include="assets\swirl\girlcat.png">
       <Name>girlcat</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="peas\levels\level1.json">
+    <Compile Include="assets\peas\levels\level1.json">
       <Name>level1</Name>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="sprites\peasprite.json">
+    <Compile Include="assets\sprites\peasprite.json">
       <Name>peasprite</Name>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="sprites\peasprite2.json">
+    <Compile Include="assets\sprites\peasprite2.json">
       <Name>peasprite2</Name>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Importer>TextImporter</Importer>
@@ -243,10 +243,10 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <None Include="text\Museo.otf">
+    <None Include="assets\text\Museo.otf">
       <Name>Museo</Name>
     </None>
-    <None Include="text\Museo.ttf">
+    <None Include="assets\text\Museo.ttf">
       <Name>Museo</Name>
     </None>
   </ItemGroup>

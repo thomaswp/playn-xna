@@ -60,10 +60,6 @@
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Hello, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\Hello.dll</HintPath>
-    </Reference>
     <Reference Include="IKVM.OpenJDK.Core">
       <HintPath>..\..\PlayNXNA\PlayNXNA\IKVM.OpenJDK.Core.dll</HintPath>
     </Reference>
@@ -99,6 +95,10 @@
     </Reference>
     <Reference Include="PlayN-1.8.5">
       <HintPath>..\..\PlayNXNA\PlayNXNA\PlayN-1.8.5.dll</HintPath>
+    </Reference>
+    <Reference Include="playn-hello-xna, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\playn-hello-xna.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>False</Private>

@@ -42,14 +42,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="images\bg.png">
+    <Compile Include="assets\images\bg.png">
       <Name>bg</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="images\pea.png">
+    <Compile Include="assets\images\pea.png">
       <Name>pea</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>

@@ -13,6 +13,14 @@ namespace PlayNXNA
         private XNAPlatform platform;
         private Dictionary<String, Texture2D> textureCache = new Dictionary<String, Texture2D>();
 
+        public static string getAssetPath(String path)
+        {
+            path = "assets\\" + path;
+            int lastDot = path.LastIndexOf('.');
+            if (lastDot >= 0) path = path.Substring(0, lastDot);
+            return path;
+        }
+
         public XNAAssets(XNAPlatform platform) : base(platform)
         {
             this.platform = platform;
@@ -35,7 +43,7 @@ namespace PlayNXNA
 
         public override Sound getSound(string path)
         {
-            SoundEffect effect = platform.Content.Load<SoundEffect>(path);
+            SoundEffect effect = platform.Content.Load<SoundEffect>(getAssetPath(path));
             return ((XNAAudio)platform.audio()).createSound(effect);
         }
 
@@ -46,9 +54,7 @@ namespace PlayNXNA
 
         public override string getTextSync(string file)
         {
-            int ext = file.LastIndexOf(".");
-            if (ext >= 0) file = file.Substring(0, ext);
-            return platform.Content.Load<String>(file);
+            return platform.Content.Load<String>(getAssetPath(file));
         }
 
         protected override Image loadImage(string path, AbstractAssets.ImageReceiver aair)
@@ -63,10 +69,7 @@ namespace PlayNXNA
                 try
                 {
                     Console.WriteLine("Loading: " + path);
-                    string noDot = path;
-                    int lastDot = path.LastIndexOf('.');
-                    if (lastDot >= 0) noDot = path.Substring(0, lastDot);
-                    texture = platform.Content.Load<Texture2D>(noDot);
+                    texture = platform.Content.Load<Texture2D>(getAssetPath(path));
                     textureCache.Add(path, texture);
                 }
                 catch (Exception e)
