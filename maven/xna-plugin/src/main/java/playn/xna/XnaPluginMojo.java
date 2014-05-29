@@ -23,6 +23,13 @@ import org.apache.maven.project.MavenProject;
 public class XnaPluginMojo extends AbstractMojo
 {
 	
+	/**
+     * The fully qualified name of the core game that should be run,
+     * e.g. my.package.core.MyGame 
+     * @parameter expression="${qualifiedGameName}"
+     */
+    public String qualifiedGameName;
+	
     public void execute() throws MojoExecutionException {
     	
     	String finalName = _project.getBuild().getFinalName();
@@ -35,24 +42,27 @@ public class XnaPluginMojo extends AbstractMojo
     	String assets = _project.getBasedir() + File.separator + "content" + File.separator + "assets";
     	
     	String slnPath = _project.getBasedir() + File.separator + gameName + ".sln";
-    	String gamePath = _project.getBasedir() + File.separator + "game" + File.separator + gameName + ".csproj";
+    	String projectPath = _project.getBasedir() + File.separator + "game" + File.separator + gameName + ".csproj";
     	String contentPath = _project.getBasedir() + File.separator + "content" + File.separator + gameName + "Content.contentproj";
+    	String gamePath = _project.getBasedir() + File.separator + "game" + File.separator + gameName + "XNA.cs";
     	
     	getLog().debug("Game name: " + gameName);
+    	getLog().debug("Qualified Game name: " + qualifiedGameName);
     	getLog().debug("Library name: " + finalName);
     	getLog().debug("Assets path: " + assets);
     	getLog().debug("SLN path: " + slnPath);
-    	getLog().debug("Game path: " + gamePath);
+    	getLog().debug("Project path: " + projectPath);
     	getLog().debug("Content path: " + contentPath);
+    	getLog().debug("Game path: " + gamePath);
     	
-    	XNAProject game = new XNAProject(gameName, finalName, new File(assets));
-    	Solution solution = new Solution(game);
-
+    	XNAProject project = new XNAProject(gameName, finalName, new File(assets));
+    	Solution solution = new Solution(project);
+    	Game game = new Game(qualifiedGameName, project);
     	
 		try {
-			PrintWriter gameWriter = new PrintWriter(new FileWriter(gamePath));
-	    	game.write(gameWriter);
-	    	gameWriter.close();
+			PrintWriter projectWriter = new PrintWriter(new FileWriter(projectPath));
+	    	project.write(projectWriter);
+	    	projectWriter.close();
 		} catch (IOException e) {
     		getLog().info("Failed to write csproj");
     		getLog().debug(e);
@@ -60,7 +70,7 @@ public class XnaPluginMojo extends AbstractMojo
     	
 		try {
 	    	PrintWriter contentWriter = new PrintWriter(new FileWriter(contentPath));
-	    	game.content.write(contentWriter);
+	    	project.content.write(contentWriter);
 	    	contentWriter.close();
 		} catch (IOException e) {
     		getLog().info("Failed to write contentproj");
@@ -76,9 +86,22 @@ public class XnaPluginMojo extends AbstractMojo
     		getLog().debug(e);
     	}
     	
-    	
-    	
-    	
+    	if (qualifiedGameName != null) {
+	    	try {
+		    	PrintWriter gameWriter = new PrintWriter(new FileWriter(gamePath));
+		    	game.write(gameWriter);
+		    	gameWriter.close();
+	    	} catch (IOException e) {
+	    		getLog().info("Failed to write solution");
+	    		getLog().debug(e);
+	    	}
+    	} else {
+    		getLog().warn("Please provide a qualifiedGameName configuration property");
+    	}
+    }
+    
+    public static void main(String[] args) {
+    	writeJavaString("C:\\Users\\Thomas\\Documents\\Eclipse\\Tux\\playn-samples\\hello\\xna\\game\\PlaynHelloXNA.cs");
     }
     
     public static void writeJavaString(String path) {
@@ -86,9 +109,9 @@ public class XnaPluginMojo extends AbstractMojo
     		Scanner sc = new Scanner(new FileInputStream(path));
     		while (sc.hasNext()) {
     			String line = sc.nextLine();
-    			line = line.replaceAll("\\\\", "\\\\\\\\");
-    			line = line.replaceAll("\"", "\\\\\"");
-    			line = line.replaceAll("\t", "\\\\t");
+    			line = line.replace("\\", "\\\\");
+    			line = line.replace("\"", "\\\"");
+    			line = line.replace("\t", "\\t");
     			line = "\"" + line + "\\n\"";
     			if (sc.hasNext()) line += " + ";
     			System.out.println(line);
