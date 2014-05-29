@@ -16,8 +16,8 @@ namespace PlayNXNA
         public static string getAssetPath(String path)
         {
             path = "assets\\" + path;
-            int lastDot = path.LastIndexOf('.');
-            if (lastDot >= 0) path = path.Substring(0, lastDot);
+            //int lastDot = path.LastIndexOf('.');
+            //if (lastDot >= 0) path = path.Substring(0, lastDot);
             return path;
         }
 
