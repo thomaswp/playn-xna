@@ -1,6 +1,6 @@
 package playn.xna;
 
-public class Project {
+public abstract class Project implements IWritable {
 	public String guid;
 	public String name;
 	

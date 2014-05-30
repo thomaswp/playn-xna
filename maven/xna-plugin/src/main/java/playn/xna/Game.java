@@ -3,7 +3,7 @@ package playn.xna;
 import java.io.PrintWriter;
 import java.util.HashMap;
 
-public class Game {
+public class Game implements IWritable {
 	
 	public String gameName;
 	public XNAProject game;
@@ -36,6 +36,7 @@ public class Game {
 			"        {\n" + 
 			"            base.Initialize();\n" + 
 			"\n" + 
+			"            Importer.Import();\n" +
 			"            Game game = new $game$();\n" + 
 			"            PlayN.run(game);\n" + 
 			"        }\n" + 

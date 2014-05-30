@@ -9,11 +9,11 @@ public class XNAProject extends Project {
 	public ContentProject content;
 	public String dll;
 	
-	public XNAProject(String name, String dll, File contentDir) {
+	public XNAProject(String name, String dll, File contentDir, File fontDir) {
 		super(name);
 		this.dll = dll;
 		guid = "A1FAA6C5-27EF-44C3-818C-B82F423C30A9";
-		content = new ContentProject(name + "Content", contentDir);
+		content = new ContentProject(name + "Content", contentDir, fontDir);
 	}
 	
 	public void write(PrintWriter writer) {
@@ -148,6 +148,7 @@ public class XNAProject extends Project {
 			"  </ItemGroup>\n" + 
 			"  <ItemGroup>\n" + 
 			"    <Compile Include=\"$name$XNA.cs\" />\n" + 
+			"    <Compile Include=\"Importer.cs\" />\n" + 
 			"  </ItemGroup>\n" + 
 			"  <ItemGroup>\n" + 
 			"    <ProjectReference Include=\"..\\content\\$name$Content.contentproj\">\n" + 

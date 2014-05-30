@@ -8,10 +8,11 @@ public class ContentProject extends Project {
 	
 	public String content;
 	
-	public ContentProject(String name, File contentDir) {
+	public ContentProject(String name, File contentDir, File fontDir) {
 		super(name);
 		guid = "AE956C53-4E72-4DDB-ABC9-761075852D63";
 		content = getContentItems(contentDir, "assets");
+		content += getContentItems(fontDir, "fonts");
 	}
 	
 	private String getContentItems(File dir, String prefix) {
@@ -28,6 +29,10 @@ public class ContentProject extends Project {
 						ContentType type = extMap.get(ext);
 						HashMap<String, String> map = new HashMap<String, String>();
 						map.put("path", prefix + File.separator + path);
+						if (type.stripExt) {
+							int dot = path.lastIndexOf(".");
+							if (dot >= 0) path = path.substring(0, dot);
+						}
 						map.put("name", path);
 						map.put("importer", type.importer);
 						map.put("processor", type.processor);
@@ -55,15 +60,19 @@ public class ContentProject extends Project {
 		extMap.put(".jpg", texture);
 		extMap.put(".jpeg", texture);
 		ContentType mp3 = new ContentType("Mp3Importer", "SoundEffectProcessor");
+		mp3.stripExt = true;
 		extMap.put(".mp3", mp3);
 		ContentType text = new ContentType("TextImporter", "TextProcessor");
 		extMap.put(".txt", text);
 		extMap.put(".csv", text);
 		extMap.put(".json", text);
+		ContentType font = new ContentType("FontDescriptionImporter", "FontDescriptionProcessor");
+		extMap.put(".spritefont", font);
 	}
 	
 	public static class ContentType {
 		public String importer, processor;
+		public boolean stripExt;
 		public ContentType(String importer, String processor) {
 			this.importer = importer; this.processor = processor;
 		}
@@ -116,16 +125,16 @@ public class ContentProject extends Project {
 			"      <HintPath>../game/PlayNContentImporter.dll</HintPath>\n" + 
 			"    </Reference>\n" + 
 			"  </ItemGroup>\n" + 
-			"$content$" + 
+			"  <ItemGroup>\n" + 
+			"$content$" +
+			"  </ItemGroup>\n" +
 			"  <Import Project=\"$(MSBuildExtensionsPath)\\Microsoft\\XNA Game Studio\\$(XnaFrameworkVersion)\\Microsoft.Xna.GameStudio.ContentPipeline.targets\" />\n" + 
 			"</Project>\n";
 	
 	public final static String CONTENT_FORAMT =
-			"  <ItemGroup>\n" + 
 			"    <Compile Include=\"$path$\">\n" + 
 			"      <Name>$name$</Name>\n" + 
 			"      <Importer>$importer$</Importer>\n" + 
 			"      <Processor>$processor$</Processor>\n" + 
-			"    </Compile>\n" + 
-			"  </ItemGroup>\n";
+			"    </Compile>\n";
 }

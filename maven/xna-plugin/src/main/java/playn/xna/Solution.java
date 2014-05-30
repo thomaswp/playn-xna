@@ -3,7 +3,7 @@ package playn.xna;
 import java.io.PrintWriter;
 import java.util.HashMap;
 
-public class Solution {
+public class Solution implements IWritable {
 	
 	public XNAProject game;
 	public ContentProject content;
