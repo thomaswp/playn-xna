@@ -11,21 +11,6 @@
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
     <OutputPath>bin\$(Platform)\$(Configuration)</OutputPath>
     <ContentRootDirectory>Content</ContentRootDirectory>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -34,7 +19,7 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>ShowcaseContent</RootNamespace>
+    <RootNamespace>PlaynShowcaseContent</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.EffectImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
@@ -58,67 +43,72 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="assets\peas\images\bg.png">
-      <Name>bg</Name>
+      <Name>bg.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\peas\images\Block-Gel.png">
-      <Name>Block-Gel</Name>
+      <Name>Block-Gel.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\peas\images\Block-LeftRamp.png">
-      <Name>Block-LeftRamp</Name>
+      <Name>Block-LeftRamp.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\peas\images\Block-Normal.png">
-      <Name>Block-Normal</Name>
+      <Name>Block-Normal.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\peas\images\Block-RightRamp.png">
-      <Name>Block-RightRamp</Name>
+      <Name>Block-RightRamp.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\peas\images\Block-Spring.png">
-      <Name>Block-Spring</Name>
+      <Name>Block-Spring.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\peas\images\chrome.png">
-      <Name>chrome</Name>
+      <Name>chrome.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\peas\images\Cloud1.png">
-      <Name>Cloud1</Name>
+      <Name>Cloud1.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\peas\images\Cloud3.png">
-      <Name>Cloud3</Name>
+      <Name>Cloud3.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\peas\images\pea.png">
-      <Name>pea</Name>
+      <Name>pea.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\peas\images\peaglow.png">
-      <Name>peaglow</Name>
+      <Name>peaglow.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\peas\images\teleport.png">
-      <Name>teleport</Name>
+      <Name>teleport.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="assets\peas\levels\level1.json">
+      <Name>level1.json</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
     <Compile Include="assets\sprites\bg.png">
-      <Name>bg</Name>
+      <Name>bg.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -128,149 +118,285 @@
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="assets\sprites\pea.png">
-      <Name>pea</Name>
+      <Name>pea.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\sprites\peasprites.png">
-      <Name>peasprites</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\sprites\peasprites2.png">
-      <Name>peasprites2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\sprites\peasprites3.png">
-      <Name>peasprites3</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\swirl\background.png">
-      <Name>background</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\swirl\girlcat.png">
-      <Name>girlcat</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="assets\peas\levels\level1.json">
-      <Name>level1</Name>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
     </Compile>
     <Compile Include="assets\sprites\peasprite.json">
-      <Name>peasprite</Name>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>peasprite.json</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
     <Compile Include="assets\sprites\peasprite2.json">
-      <Name>peasprite2</Name>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>peasprite2.json</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="Helvetica-12.spritefont">
-      <Name>Helvetica-12</Name>
+    <Compile Include="assets\sprites\peasprites.png">
+      <Name>peasprites.png</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\sprites\peasprites2.png">
+      <Name>peasprites2.png</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\sprites\peasprites3.png">
+      <Name>peasprites3.png</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\swirl\background.png">
+      <Name>background.png</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\swirl\girlcat.png">
+      <Name>girlcat.png</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Courier-12.0-Bold.spritefont">
+      <Name>Courier-12.0-Bold</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Museo-24.spritefont">
-      <Name>Museo-24</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <SubType>Designer</SubType>
-    </Compile>
-    <Compile Include="CourierNew-24.spritefont">
-      <Name>CourierNew-24</Name>
+    <Compile Include="fonts\Courier-12.0-BoldItalic.spritefont">
+      <Name>Courier-12.0-BoldItalic</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="CourierNew-12.spritefont">
-      <Name>CourierNew-12</Name>
+    <Compile Include="fonts\Courier-12.0-Italic.spritefont">
+      <Name>Courier-12.0-Italic</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Helvetica-24.spritefont">
-      <Name>Helvetica-24</Name>
+    <Compile Include="fonts\Courier-12.0-Plain.spritefont">
+      <Name>Courier-12.0-Plain</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Helvetica-12-Bold.spritefont">
-      <Name>Helvetica-12-Bold</Name>
+    <Compile Include="fonts\Courier-24.0-Bold.spritefont">
+      <Name>Courier-24.0-Bold</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="CourierNew-24-Bold.spritefont">
-      <Name>CourierNew-24-Bold</Name>
+    <Compile Include="fonts\Courier-24.0-BoldItalic.spritefont">
+      <Name>Courier-24.0-BoldItalic</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Helvetica-24-Bold.spritefont">
-      <Name>Helvetica-24-Bold</Name>
+    <Compile Include="fonts\Courier-24.0-Italic.spritefont">
+      <Name>Courier-24.0-Italic</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Helvetica-12-Italic.spritefont">
-      <Name>Helvetica-12-Italic</Name>
+    <Compile Include="fonts\Courier-24.0-Plain.spritefont">
+      <Name>Courier-24.0-Plain</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Helvetica-24-Italic.spritefont">
-      <Name>Helvetica-24-Italic</Name>
+    <Compile Include="fonts\Courier-36.0-Bold.spritefont">
+      <Name>Courier-36.0-Bold</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Helvetica-12-Bold-Italic.spritefont">
-      <Name>Helvetica-12-Bold-Italic</Name>
+    <Compile Include="fonts\Courier-36.0-BoldItalic.spritefont">
+      <Name>Courier-36.0-BoldItalic</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Helvetica-24-Bold-Italic.spritefont">
-      <Name>Helvetica-24-Bold-Italic</Name>
+    <Compile Include="fonts\Courier-36.0-Italic.spritefont">
+      <Name>Courier-36.0-Italic</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Helvetica-9.spritefont">
-      <Name>Helvetica-9</Name>
+    <Compile Include="fonts\Courier-36.0-Plain.spritefont">
+      <Name>Courier-36.0-Plain</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <None Include="assets\text\Museo.otf">
-      <Name>Museo</Name>
-    </None>
-    <None Include="assets\text\Museo.ttf">
-      <Name>Museo</Name>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
-      <Visible>False</Visible>
-      <ProductName>Windows Installer 3.1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
+    <Compile Include="fonts\Courier-8.0-Bold.spritefont">
+      <Name>Courier-8.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Courier-8.0-BoldItalic.spritefont">
+      <Name>Courier-8.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Courier-8.0-Italic.spritefont">
+      <Name>Courier-8.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Courier-8.0-Plain.spritefont">
+      <Name>Courier-8.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-12.0-Bold.spritefont">
+      <Name>Helvetica-12.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-12.0-BoldItalic.spritefont">
+      <Name>Helvetica-12.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-12.0-Italic.spritefont">
+      <Name>Helvetica-12.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-12.0-Plain.spritefont">
+      <Name>Helvetica-12.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-24.0-Bold.spritefont">
+      <Name>Helvetica-24.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-24.0-BoldItalic.spritefont">
+      <Name>Helvetica-24.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-24.0-Italic.spritefont">
+      <Name>Helvetica-24.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-24.0-Plain.spritefont">
+      <Name>Helvetica-24.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-36.0-Bold.spritefont">
+      <Name>Helvetica-36.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-36.0-BoldItalic.spritefont">
+      <Name>Helvetica-36.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-36.0-Italic.spritefont">
+      <Name>Helvetica-36.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-36.0-Plain.spritefont">
+      <Name>Helvetica-36.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-8.0-Bold.spritefont">
+      <Name>Helvetica-8.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-8.0-BoldItalic.spritefont">
+      <Name>Helvetica-8.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-8.0-Italic.spritefont">
+      <Name>Helvetica-8.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Helvetica-8.0-Plain.spritefont">
+      <Name>Helvetica-8.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-12.0-Bold.spritefont">
+      <Name>Museo-300-12.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-12.0-BoldItalic.spritefont">
+      <Name>Museo-300-12.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-12.0-Italic.spritefont">
+      <Name>Museo-300-12.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-12.0-Plain.spritefont">
+      <Name>Museo-300-12.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-24.0-Bold.spritefont">
+      <Name>Museo-300-24.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-24.0-BoldItalic.spritefont">
+      <Name>Museo-300-24.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-24.0-Italic.spritefont">
+      <Name>Museo-300-24.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-24.0-Plain.spritefont">
+      <Name>Museo-300-24.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-36.0-Bold.spritefont">
+      <Name>Museo-300-36.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-36.0-BoldItalic.spritefont">
+      <Name>Museo-300-36.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-36.0-Italic.spritefont">
+      <Name>Museo-300-36.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-36.0-Plain.spritefont">
+      <Name>Museo-300-36.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-8.0-Bold.spritefont">
+      <Name>Museo-300-8.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-8.0-BoldItalic.spritefont">
+      <Name>Museo-300-8.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-8.0-Italic.spritefont">
+      <Name>Museo-300-8.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Museo-300-8.0-Plain.spritefont">
+      <Name>Museo-300-8.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\PlayNContentImporter\PlayNContentImporter.csproj">
@@ -279,11 +405,4 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
-  <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

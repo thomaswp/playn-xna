@@ -1,10 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNXNA", "PlayNXNA\PlayNXNA\PlayNXNA.csproj", "{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNXNAContent", "PlayNXNA\PlayNXNAContent\PlayNXNAContent.contentproj", "{19F0E54C-F31D-45F5-8FC4-B43CA389BAE7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloGame", "HelloGame\HelloGame\HelloGame.csproj", "{A1FAA6C5-27EF-44C3-818C-B82F423C30A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloGameContent", "HelloGame\HelloGameContent\HelloGameContent.contentproj", "{AE956C53-4E72-4DDB-ABC9-761075852D63}"
@@ -21,7 +17,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNContentImporter", "Pla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuxBlocksGame", "TuxBlocks\TuxBlocks\TuxBlocksGame.csproj", "{C90A93AD-1C32-4CE7-B56D-A64FB98DCB22}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "TuxBlocksGameContent", "TuxBlocks\TuxBlocksContent\TuxBlocksGameContent.contentproj", "{75A36A18-7677-4356-B73E-FB6F215D62B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuxBlocksGameContent", "TuxBlocks\TuxBlocksContent\TuxBlocksGameContent.contentproj", "{75A36A18-7677-4356-B73E-FB6F215D62B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayNXNA", "PlayNXNA\PlayNXNA.csproj", "{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,12 +27,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}.Debug|x86.ActiveCfg = Debug|x86
-		{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}.Debug|x86.Build.0 = Debug|x86
-		{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}.Release|x86.ActiveCfg = Release|x86
-		{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}.Release|x86.Build.0 = Release|x86
-		{19F0E54C-F31D-45F5-8FC4-B43CA389BAE7}.Debug|x86.ActiveCfg = Debug|x86
-		{19F0E54C-F31D-45F5-8FC4-B43CA389BAE7}.Release|x86.ActiveCfg = Release|x86
 		{A1FAA6C5-27EF-44C3-818C-B82F423C30A9}.Debug|x86.ActiveCfg = Debug|x86
 		{A1FAA6C5-27EF-44C3-818C-B82F423C30A9}.Debug|x86.Build.0 = Debug|x86
 		{A1FAA6C5-27EF-44C3-818C-B82F423C30A9}.Release|x86.ActiveCfg = Release|x86
@@ -63,6 +55,10 @@ Global
 		{C90A93AD-1C32-4CE7-B56D-A64FB98DCB22}.Release|x86.Build.0 = Release|x86
 		{75A36A18-7677-4356-B73E-FB6F215D62B1}.Debug|x86.ActiveCfg = Debug|x86
 		{75A36A18-7677-4356-B73E-FB6F215D62B1}.Release|x86.ActiveCfg = Release|x86
+		{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}.Debug|x86.ActiveCfg = Debug|x86
+		{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}.Debug|x86.Build.0 = Debug|x86
+		{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}.Release|x86.ActiveCfg = Release|x86
+		{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

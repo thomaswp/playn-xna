@@ -19,7 +19,7 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>CuteGameContent</RootNamespace>
+    <RootNamespace>PlaynCuteContent</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.EffectImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
@@ -43,395 +43,286 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="assets\images\block_brown.png">
-      <Name>block_brown</Name>
+      <Name>block_brown.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\block_dirt.png">
-      <Name>block_dirt</Name>
+      <Name>block_dirt.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\block_grass.png">
-      <Name>block_grass</Name>
+      <Name>block_grass.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\block_plain.png">
-      <Name>block_plain</Name>
+      <Name>block_plain.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\block_stone.png">
-      <Name>block_stone</Name>
+      <Name>block_stone.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\block_stone_tall.png">
-      <Name>block_stone_tall</Name>
+      <Name>block_stone_tall.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\block_wall.png">
-      <Name>block_wall</Name>
+      <Name>block_wall.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\block_wall_tall.png">
-      <Name>block_wall_tall</Name>
+      <Name>block_wall_tall.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\block_water.png">
-      <Name>block_water</Name>
+      <Name>block_water.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\block_wood.png">
-      <Name>block_wood</Name>
+      <Name>block_wood.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\character_boy.png">
-      <Name>character_boy</Name>
+      <Name>character_boy.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\character_cat_girl.png">
-      <Name>character_cat_girl</Name>
+      <Name>character_cat_girl.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\character_horn_girl.png">
-      <Name>character_horn_girl</Name>
+      <Name>character_horn_girl.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\character_pink_girl.png">
-      <Name>character_pink_girl</Name>
+      <Name>character_pink_girl.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\character_princess_girl.png">
-      <Name>character_princess_girl</Name>
+      <Name>character_princess_girl.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\chest_closed.png">
-      <Name>chest_closed</Name>
+      <Name>chest_closed.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\chest_lid.png">
-      <Name>chest_lid</Name>
+      <Name>chest_lid.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\chest_open.png">
-      <Name>chest_open</Name>
+      <Name>chest_open.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\door_tall_closed.png">
-      <Name>door_tall_closed</Name>
+      <Name>door_tall_closed.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\door_tall_open.png">
-      <Name>door_tall_open</Name>
+      <Name>door_tall_open.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\enemy_bug.png">
-      <Name>enemy_bug</Name>
+      <Name>enemy_bug.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\gem_blue.png">
-      <Name>gem_blue</Name>
+      <Name>gem_blue.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\gem_green.png">
-      <Name>gem_green</Name>
+      <Name>gem_green.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\gem_orange.png">
-      <Name>gem_orange</Name>
+      <Name>gem_orange.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\heart.png">
-      <Name>heart</Name>
+      <Name>heart.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\key.png">
-      <Name>key</Name>
+      <Name>key.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\ramp_east.png">
-      <Name>ramp_east</Name>
+      <Name>ramp_east.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\ramp_north.png">
-      <Name>ramp_north</Name>
+      <Name>ramp_north.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\ramp_south.png">
-      <Name>ramp_south</Name>
+      <Name>ramp_south.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\ramp_west.png">
-      <Name>ramp_west</Name>
+      <Name>ramp_west.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\rock.png">
-      <Name>rock</Name>
+      <Name>rock.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\roof_east.png">
-      <Name>roof_east</Name>
+      <Name>roof_east.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\roof_north.png">
-      <Name>roof_north</Name>
+      <Name>roof_north.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\roof_northeast.png">
-      <Name>roof_northeast</Name>
+      <Name>roof_northeast.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\roof_northwest.png">
-      <Name>roof_northwest</Name>
+      <Name>roof_northwest.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\roof_south.png">
-      <Name>roof_south</Name>
+      <Name>roof_south.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\roof_southeast.png">
-      <Name>roof_southeast</Name>
+      <Name>roof_southeast.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\roof_southwest.png">
-      <Name>roof_southwest</Name>
+      <Name>roof_southwest.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\roof_west.png">
-      <Name>roof_west</Name>
+      <Name>roof_west.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\selector.png">
-      <Name>selector</Name>
+      <Name>selector.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\shadow_east.png">
-      <Name>shadow_east</Name>
+      <Name>shadow_east.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\shadow_north.png">
-      <Name>shadow_north</Name>
+      <Name>shadow_north.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\shadow_northeast.png">
-      <Name>shadow_northeast</Name>
+      <Name>shadow_northeast.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\shadow_northwest.png">
-      <Name>shadow_northwest</Name>
+      <Name>shadow_northwest.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\shadow_side_west.png">
-      <Name>shadow_side_west</Name>
+      <Name>shadow_side_west.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\shadow_south.png">
-      <Name>shadow_south</Name>
+      <Name>shadow_south.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\shadow_southeast.png">
-      <Name>shadow_southeast</Name>
+      <Name>shadow_southeast.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\shadow_southwest.png">
-      <Name>shadow_southwest</Name>
+      <Name>shadow_southwest.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\shadow_west.png">
-      <Name>shadow_west</Name>
+      <Name>shadow_west.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\speechbubble.png">
-      <Name>speechbubble</Name>
+      <Name>speechbubble.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\star.png">
-      <Name>star</Name>
+      <Name>star.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="assets\images\tree_tall.png">
-      <Name>tree_tall</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="assets\images\tree_ugly.png">
-      <Name>tree_ugly</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="assets\images\treeshort.png">
-      <Name>treeshort</Name>
+      <Name>treeshort.png</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\images\tree_tall.png">
+      <Name>tree_tall.png</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\images\tree_ugly.png">
+      <Name>tree_ugly.png</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\images\window_tall.png">
+      <Name>window_tall.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="assets\images\window_tall.png">
-      <Name>window_tall</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
+    <ProjectReference Include="..\..\PlayNContentImporter\PlayNContentImporter.csproj">
+      <Project>{5758AEE3-1E7E-4707-B75C-DE85709414F0}</Project>
+      <Name>PlayNContentImporter</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
-  <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

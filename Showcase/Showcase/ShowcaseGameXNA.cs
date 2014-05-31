@@ -22,7 +22,6 @@ namespace Showcase
         protected override XNAPlatform registerPlatform()
         {
             XNAPlatform.Config config = new XNAPlatform.Config();
-            config.width = 640;
             config.name = "PlayN Showcase XNA";
             return XNAPlatform.register(config);
         }

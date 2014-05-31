@@ -137,7 +137,7 @@
     <Content Include="Some.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\PlayNXNA\PlayNXNA\PlayNXNA.csproj">
+    <ProjectReference Include="..\..\PlayNXNA\PlayNXNA.csproj">
       <Project>{72CE56D5-9A90-4827-A92A-CA3B2B39EE61}</Project>
       <Name>PlayNXNA</Name>
     </ProjectReference>

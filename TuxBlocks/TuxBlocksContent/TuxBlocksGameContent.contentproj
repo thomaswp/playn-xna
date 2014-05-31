@@ -11,21 +11,6 @@
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
     <OutputPath>bin\$(Platform)\$(Configuration)</OutputPath>
     <ContentRootDirectory>Content</ContentRootDirectory>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -34,7 +19,7 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>TuxBlocksContent</RootNamespace>
+    <RootNamespace>TuxblocksContent</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.EffectImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL">
@@ -168,374 +153,599 @@
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\back.png">
-      <Name>back</Name>
+      <Name>back.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\cancel.png">
-      <Name>cancel</Name>
+      <Name>cancel.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\cancel_bordered.png">
-      <Name>cancel_bordered</Name>
+      <Name>cancel_bordered.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\center.png">
-      <Name>center</Name>
+      <Name>center.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\circle.png">
-      <Name>circle</Name>
+      <Name>circle.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\confirm.png">
-      <Name>confirm</Name>
+      <Name>confirm.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\down.png">
-      <Name>down</Name>
+      <Name>down.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\en\start.png">
-      <Name>start</Name>
+      <Name>start.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\forward.png">
-      <Name>forward</Name>
+      <Name>forward.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\fr\start.png">
-      <Name>start</Name>
+      <Name>start.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\heart.png">
-      <Name>heart</Name>
+      <Name>heart.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\hi\start.png">
-      <Name>start</Name>
+      <Name>start.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\hourglass.png">
-      <Name>hourglass</Name>
+      <Name>hourglass.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\icon-16.png">
-      <Name>icon-16</Name>
+      <Name>icon-16.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\icon-32.png">
-      <Name>icon-32</Name>
+      <Name>icon-32.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\less.png">
-      <Name>less</Name>
+      <Name>less.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\logo.png">
-      <Name>logo</Name>
+      <Name>logo.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\menu.png">
-      <Name>menu</Name>
+      <Name>menu.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\missile.png">
-      <Name>missile</Name>
+      <Name>missile.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\more.png">
-      <Name>more</Name>
+      <Name>more.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\np\bubble.9.png">
-      <Name>bubble.9</Name>
+      <Name>bubble.9.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\ok.png">
-      <Name>ok</Name>
+      <Name>ok.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\options.png">
-      <Name>options</Name>
+      <Name>options.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\pa\start.png">
-      <Name>start</Name>
+      <Name>start.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\plus.png">
-      <Name>plus</Name>
+      <Name>plus.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\puff.png">
-      <Name>puff</Name>
+      <Name>puff.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\reset.png">
-      <Name>reset</Name>
+      <Name>reset.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\scratch.png">
-      <Name>scratch</Name>
+      <Name>scratch.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\scratch2.png">
-      <Name>scratch2</Name>
+      <Name>scratch2.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\star.png">
-      <Name>star</Name>
+      <Name>star.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\tux.png">
-      <Name>tux</Name>
+      <Name>tux.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\up.png">
-      <Name>up</Name>
+      <Name>up.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\images\upgrade.png">
-      <Name>upgrade</Name>
+      <Name>upgrade.png</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="assets\text\en\About.txt">
-      <Name>About</Name>
+      <Name>About.txt</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="assets\text\en\TutorialBuild.txt">
-      <Name>TutorialBuild</Name>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\text\en\TutorialPlay.txt">
-      <Name>TutorialPlay</Name>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\text\en\TutorialStart.txt">
-      <Name>TutorialStart</Name>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\text\es\About.txt">
-      <Name>About</Name>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\text\es\TutorialBuild.txt">
-      <Name>TutorialBuild</Name>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\text\es\TutorialPlay.txt">
-      <Name>TutorialPlay</Name>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\text\es\TutorialStart.txt">
-      <Name>TutorialStart</Name>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\text\hi\About.txt">
-      <Name>About</Name>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\text\hi\TutorialBuild.txt">
-      <Name>TutorialBuild</Name>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\text\hi\TutorialPlay.txt">
-      <Name>TutorialPlay</Name>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\text\hi\TutorialStart.txt">
-      <Name>TutorialStart</Name>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\text\pa\About.txt">
-      <Name>About</Name>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\text\pa\TutorialBuild.txt">
-      <Name>TutorialBuild</Name>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\text\pa\TutorialPlay.txt">
-      <Name>TutorialPlay</Name>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
-    </Compile>
-    <Compile Include="assets\text\pa\TutorialStart.txt">
-      <Name>TutorialStart</Name>
-      <Importer>TextImporter</Importer>
-      <Processor>TextProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Arial-48.spritefont">
-      <Name>Arial-48</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-    </Compile>
-    <Compile Include="Raavi-12.spritefont">
-      <Name>Raavi-12</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-    </Compile>
-    <Compile Include="Mangal-12.spritefont">
-      <Name>Mangal-12</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-    </Compile>
-    <None Include="assets\fonts\MANGAL.TTF">
-      <Name>MANGAL</Name>
-    </None>
-    <None Include="assets\fonts\MANGALB.TTF">
-      <Name>MANGALB</Name>
-    </None>
-    <None Include="assets\fonts\RAAVI.TTF">
-      <Name>RAAVI</Name>
-    </None>
-    <None Include="assets\fonts\RAAVIB.TTF">
-      <Name>RAAVIB</Name>
-    </None>
     <Compile Include="assets\text\en\ExplainingStarred.json">
-      <Name>ExplainingStarred</Name>
+      <Name>ExplainingStarred.json</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
     <Compile Include="assets\text\en\StarredTutorial1.json">
-      <Name>StarredTutorial1</Name>
+      <Name>StarredTutorial1.json</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
     <Compile Include="assets\text\en\StarredTutorial2.json">
-      <Name>StarredTutorial2</Name>
+      <Name>StarredTutorial2.json</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
     <Compile Include="assets\text\en\Strings.json">
-      <Name>Strings</Name>
+      <Name>Strings.json</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\text\en\TutorialBuild.txt">
+      <Name>TutorialBuild.txt</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\text\en\TutorialPlay.txt">
+      <Name>TutorialPlay.txt</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\text\en\TutorialStart.txt">
+      <Name>TutorialStart.txt</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
     <Compile Include="assets\text\en\TutorialStory0.json">
-      <Name>TutorialStory0</Name>
+      <Name>TutorialStory0.json</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
     <Compile Include="assets\text\en\TutorialStory1-1.json">
-      <Name>TutorialStory1-1</Name>
+      <Name>TutorialStory1-1.json</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\text\es\About.txt">
+      <Name>About.txt</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
     <Compile Include="assets\text\es\Strings.json">
-      <Name>Strings</Name>
+      <Name>Strings.json</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\text\es\TutorialBuild.txt">
+      <Name>TutorialBuild.txt</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\text\es\TutorialPlay.txt">
+      <Name>TutorialPlay.txt</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\text\es\TutorialStart.txt">
+      <Name>TutorialStart.txt</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
     <Compile Include="assets\text\fr\Strings.json">
-      <Name>Strings</Name>
+      <Name>Strings.json</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\text\hi\About.txt">
+      <Name>About.txt</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
     <Compile Include="assets\text\hi\Strings.json">
-      <Name>Strings</Name>
+      <Name>Strings.json</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\text\hi\TutorialBuild.txt">
+      <Name>TutorialBuild.txt</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\text\hi\TutorialPlay.txt">
+      <Name>TutorialPlay.txt</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\text\hi\TutorialStart.txt">
+      <Name>TutorialStart.txt</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\text\pa\About.txt">
+      <Name>About.txt</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
     <Compile Include="assets\text\pa\Strings.json">
-      <Name>Strings</Name>
+      <Name>Strings.json</Name>
       <Importer>TextImporter</Importer>
       <Processor>TextProcessor</Processor>
     </Compile>
-    <Compile Include="Arial-12-Bold-Italic.spritefont">
-      <Name>Arial-12-Bold-Italic</Name>
+    <Compile Include="assets\text\pa\TutorialBuild.txt">
+      <Name>TutorialBuild.txt</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\text\pa\TutorialPlay.txt">
+      <Name>TutorialPlay.txt</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="assets\text\pa\TutorialStart.txt">
+      <Name>TutorialStart.txt</Name>
+      <Importer>TextImporter</Importer>
+      <Processor>TextProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Arial-12.0-Bold.spritefont">
+      <Name>Arial-12.0-Bold</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Arial-9.spritefont">
-      <Name>Arial-9</Name>
+    <Compile Include="fonts\Arial-12.0-BoldItalic.spritefont">
+      <Name>Arial-12.0-BoldItalic</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Arial-12-Bold.spritefont">
-      <Name>Arial-12-Bold</Name>
+    <Compile Include="fonts\Arial-12.0-Italic.spritefont">
+      <Name>Arial-12.0-Italic</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Arial-12-Italic.spritefont">
-      <Name>Arial-12-Italic</Name>
+    <Compile Include="fonts\Arial-12.0-Plain.spritefont">
+      <Name>Arial-12.0-Plain</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Arial-12.spritefont">
-      <Name>Arial-12</Name>
+    <Compile Include="fonts\Arial-16.0-Bold.spritefont">
+      <Name>Arial-16.0-Bold</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Arial-24-Bold-Italic.spritefont">
-      <Name>Arial-24-Bold-Italic</Name>
+    <Compile Include="fonts\Arial-16.0-BoldItalic.spritefont">
+      <Name>Arial-16.0-BoldItalic</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Arial-24-Bold.spritefont">
-      <Name>Arial-24-Bold</Name>
+    <Compile Include="fonts\Arial-16.0-Italic.spritefont">
+      <Name>Arial-16.0-Italic</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Arial-24-Italic.spritefont">
-      <Name>Arial-24-Italic</Name>
+    <Compile Include="fonts\Arial-16.0-Plain.spritefont">
+      <Name>Arial-16.0-Plain</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="Arial-24.spritefont">
-      <Name>Arial-24</Name>
+    <Compile Include="fonts\Arial-24.0-Bold.spritefont">
+      <Name>Arial-24.0-Bold</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
-      <SubType>Designer</SubType>
+    </Compile>
+    <Compile Include="fonts\Arial-24.0-BoldItalic.spritefont">
+      <Name>Arial-24.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Arial-24.0-Italic.spritefont">
+      <Name>Arial-24.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Arial-24.0-Plain.spritefont">
+      <Name>Arial-24.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Arial-36.0-Bold.spritefont">
+      <Name>Arial-36.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Arial-36.0-BoldItalic.spritefont">
+      <Name>Arial-36.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Arial-36.0-Italic.spritefont">
+      <Name>Arial-36.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Arial-36.0-Plain.spritefont">
+      <Name>Arial-36.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Arial-8.0-Bold.spritefont">
+      <Name>Arial-8.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Arial-8.0-BoldItalic.spritefont">
+      <Name>Arial-8.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Arial-8.0-Italic.spritefont">
+      <Name>Arial-8.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Arial-8.0-Plain.spritefont">
+      <Name>Arial-8.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-12.0-Bold.spritefont">
+      <Name>Mangal-12.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-12.0-BoldItalic.spritefont">
+      <Name>Mangal-12.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-12.0-Italic.spritefont">
+      <Name>Mangal-12.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-12.0-Plain.spritefont">
+      <Name>Mangal-12.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-16.0-Bold.spritefont">
+      <Name>Mangal-16.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-16.0-BoldItalic.spritefont">
+      <Name>Mangal-16.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-16.0-Italic.spritefont">
+      <Name>Mangal-16.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-16.0-Plain.spritefont">
+      <Name>Mangal-16.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-24.0-Bold.spritefont">
+      <Name>Mangal-24.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-24.0-BoldItalic.spritefont">
+      <Name>Mangal-24.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-24.0-Italic.spritefont">
+      <Name>Mangal-24.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-24.0-Plain.spritefont">
+      <Name>Mangal-24.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-36.0-Bold.spritefont">
+      <Name>Mangal-36.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-36.0-BoldItalic.spritefont">
+      <Name>Mangal-36.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-36.0-Italic.spritefont">
+      <Name>Mangal-36.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-36.0-Plain.spritefont">
+      <Name>Mangal-36.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-8.0-Bold.spritefont">
+      <Name>Mangal-8.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-8.0-BoldItalic.spritefont">
+      <Name>Mangal-8.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-8.0-Italic.spritefont">
+      <Name>Mangal-8.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-8.0-Plain.spritefont">
+      <Name>Mangal-8.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-12.0-Bold.spritefont">
+      <Name>Raavi-12.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-12.0-BoldItalic.spritefont">
+      <Name>Raavi-12.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-12.0-Italic.spritefont">
+      <Name>Raavi-12.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-12.0-Plain.spritefont">
+      <Name>Raavi-12.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-16.0-Bold.spritefont">
+      <Name>Raavi-16.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-16.0-BoldItalic.spritefont">
+      <Name>Raavi-16.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-16.0-Italic.spritefont">
+      <Name>Raavi-16.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-16.0-Plain.spritefont">
+      <Name>Raavi-16.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-24.0-Bold.spritefont">
+      <Name>Raavi-24.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-24.0-BoldItalic.spritefont">
+      <Name>Raavi-24.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-24.0-Italic.spritefont">
+      <Name>Raavi-24.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-24.0-Plain.spritefont">
+      <Name>Raavi-24.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-36.0-Bold.spritefont">
+      <Name>Raavi-36.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-36.0-BoldItalic.spritefont">
+      <Name>Raavi-36.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-36.0-Italic.spritefont">
+      <Name>Raavi-36.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-36.0-Plain.spritefont">
+      <Name>Raavi-36.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-8.0-Bold.spritefont">
+      <Name>Raavi-8.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-8.0-BoldItalic.spritefont">
+      <Name>Raavi-8.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-8.0-Italic.spritefont">
+      <Name>Raavi-8.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-8.0-Plain.spritefont">
+      <Name>Raavi-8.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -545,33 +755,66 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
-      <Visible>False</Visible>
-      <ProductName>Windows Installer 3.1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
+    <Compile Include="fonts\Arial-48.0-Bold.spritefont">
+      <Name>Arial-48.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Arial-48.0-BoldItalic.spritefont">
+      <Name>Arial-48.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Arial-48.0-Italic.spritefont">
+      <Name>Arial-48.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Arial-48.0-Plain.spritefont">
+      <Name>Arial-48.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-48.0-Bold.spritefont">
+      <Name>Mangal-48.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-48.0-BoldItalic.spritefont">
+      <Name>Mangal-48.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-48.0-Italic.spritefont">
+      <Name>Mangal-48.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Mangal-48.0-Plain.spritefont">
+      <Name>Mangal-48.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-48.0-Bold.spritefont">
+      <Name>Raavi-48.0-Bold</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-48.0-BoldItalic.spritefont">
+      <Name>Raavi-48.0-BoldItalic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-48.0-Italic.spritefont">
+      <Name>Raavi-48.0-Italic</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="fonts\Raavi-48.0-Plain.spritefont">
+      <Name>Raavi-48.0-Plain</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
-  <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
