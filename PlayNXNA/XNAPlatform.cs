@@ -62,7 +62,7 @@ namespace PlayNXNA
             _json = new XNAJson();
             _net = new XNANet(this);
             _audio = new XNAAudio(this);
-            _storage = new XNAStorage();
+            _storage = new XNAStorage(this);
         }
 
         public override Assets assets()
@@ -117,6 +117,7 @@ namespace PlayNXNA
 
         public override void run(Game game)
         {
+            _storage.init();
             this.game = game;
             stopwatch.Start();
             game.init();

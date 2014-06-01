@@ -41,7 +41,6 @@ namespace PlayNXNA
 
         protected override void setVolumeImpl(float f)
         {
-            Console.WriteLine(effect.Name + ": " +  f);
             instance.Volume = f;
         }
 
