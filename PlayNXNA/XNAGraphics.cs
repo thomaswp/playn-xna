@@ -79,6 +79,7 @@ namespace PlayNXNA
             return new XNAImmediateLayer(ilr);
         }
 
+        //TODO: implement fancy graphics
         public ImmediateLayer.Clipped createImmediateLayer(int i1, int i2, ImmediateLayer.Renderer ilr)
         {
             throw new NotImplementedException();
@@ -141,12 +142,12 @@ namespace PlayNXNA
 
         public int screenHeight()
         {
-            throw new NotImplementedException();
+            return ((XNAPlatform)PlayN.platform()).XnaGame.GraphicsDevice.Adapter.CurrentDisplayMode.Height;
         }
 
         public int screenWidth()
         {
-            throw new NotImplementedException();
+            return ((XNAPlatform)PlayN.platform()).XnaGame.GraphicsDevice.Adapter.CurrentDisplayMode.Width;
         }
 
         public int width()

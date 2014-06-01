@@ -31,6 +31,8 @@ namespace PlayNXNA
 
         public override byte[] getBytesSync(string value)
         {
+            // this isn't possible on XNA because assets are compiled
+            // TODO: think of an elegant way not to kill this request
             throw new NotImplementedException();
         }
 

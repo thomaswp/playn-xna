@@ -56,7 +56,8 @@ namespace PlayNXNA
 
         public Image snapshot()
         {
-            throw new NotImplementedException();
+            XNAStaticImage image = new XNAStaticImage(_canvas.Texture, new playn.core.gl.Scale(1));
+            return image;
         }
 
         public override void addCallback(playn.core.util.Callback callback)

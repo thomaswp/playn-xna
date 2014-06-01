@@ -43,6 +43,7 @@ namespace PlayNXNA
         private readonly XNAStorage _storage;
 
         private Game game;
+        private Random rand = new Random();
         private readonly System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
 
         public Microsoft.Xna.Framework.GraphicsDeviceManager DeviceManager { get; set; }
@@ -102,7 +103,8 @@ namespace PlayNXNA
 
         public override void openURL(string value)
         {
-            throw new NotImplementedException();
+            //TODO: this won't work on XNA... also maybe a little insecure
+            System.Diagnostics.Process.Start(value);
         }
 
         public override Pointer pointer()
@@ -112,7 +114,7 @@ namespace PlayNXNA
 
         public override float random()
         {
-            throw new NotImplementedException();
+            return (float) rand.NextDouble();
         }
 
         public override void run(Game game)

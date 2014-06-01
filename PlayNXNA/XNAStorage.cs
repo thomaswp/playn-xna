@@ -28,6 +28,7 @@ namespace PlayNXNA
 
         public void init()
         {
+            //TODO: for Xbox implementation we'll need a more elegant way to handle this
             StorageDevice.BeginShowSelector((IAsyncResult target) =>
                 {
                     device = StorageDevice.EndShowSelector(target);
