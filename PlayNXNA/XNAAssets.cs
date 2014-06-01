@@ -16,8 +16,6 @@ namespace PlayNXNA
         public static string getAssetPath(String path)
         {
             path = "assets\\" + path;
-            //int lastDot = path.LastIndexOf('.');
-            //if (lastDot >= 0) path = path.Substring(0, lastDot);
             return path;
         }
 
@@ -44,6 +42,7 @@ namespace PlayNXNA
         public override Sound getSound(string path)
         {
             SoundEffect effect = platform.Content.Load<SoundEffect>(getAssetPath(path));
+            effect.Name = path;
             return ((XNAAudio)platform.audio()).createSound(effect);
         }
 

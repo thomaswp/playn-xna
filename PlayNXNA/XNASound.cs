@@ -21,16 +21,17 @@ namespace PlayNXNA
 
         protected override bool playImpl()
         {
+            SoundEffectInstance nInstance = effect.CreateInstance();
+            nInstance.Volume = instance.Volume;
             instance.Dispose();
-            instance = effect.CreateInstance();
-            //instance.Play();
+            instance = nInstance;
+            instance.Play();
             return true;
         }
 
         protected override void releaseImpl()
         {
             instance.Dispose();
-            effect.Dispose();
         }
 
         protected override void setLoopingImpl(bool b)
@@ -40,6 +41,7 @@ namespace PlayNXNA
 
         protected override void setVolumeImpl(float f)
         {
+            Console.WriteLine(effect.Name + ": " +  f);
             instance.Volume = f;
         }
 
