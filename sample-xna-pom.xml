@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>GROUP_ID</groupId>
+    <artifactId>ARTIFACT_ID</artifactId>
+    <version>VERSION</version>
+  </parent>
+
+  <artifactId>ARTIFACT_ID-xna</artifactId>
+  <packaging>dll</packaging>
+  <name>NAME XNA</name>
+  
+  <!-- We define some custom plugin repositories -->
+  <pluginRepositories>
+	<pluginRepository>
+	  <id>ikvm-maven-plugin</id>
+	  <url>https://raw.githubusercontent.com/thomaswp/ikvm-maven-plugin/mvn-repo/</url>
+	  <!-- Alternately you can declare the url in your settings.xml file under your xna profile -->
+	  <!-- but this will require everyone to define these values in their settings.xml to build -->
+	  <!-- the project for ANY platform. Hopefully this will be fixed in future versions. -->
+	  <!-- <url>${ikvm.plugin}</url> -->
+	</pluginRepository>
+	<pluginRepository>
+	  <id>playn-xna-plugin</id>
+	  <url>https://raw.githubusercontent.com/thomaswp/playn-xna-plugin/mvn-repo/</url>
+	</pluginRepository>
+  </pluginRepositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>GROUP_ID</groupId>
+      <artifactId>ARTIFACT_ID-core</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <directory>game</directory>
+    <!-- omit the version from the dll name so it doesn't change with releases -->
+    <finalName>${project.artifactId}</finalName>
+    <plugins>
+      <plugin>
+        <groupId>com.pyx4j</groupId>
+        <artifactId>maven-junction-plugin</artifactId>
+        <version>1.0.3</version>
+        <executions>
+          <execution>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>link</goal>
+            </goals>
+          </execution>
+        </executions>
+        <!-- generate a symlink to our assets directory in the proper location -->
+        <configuration>
+          <links>
+            <link>
+              <src>${basedir}/../assets/src/main/resources/assets</src>
+              <dst>${basedir}/content/assets</dst>
+            </link>
+          </links>
+        </configuration>
+      </plugin>
+	  
+      <plugin>
+        <groupId>playn.xna</groupId>
+        <artifactId>ikvm-maven-plugin</artifactId>
+        <version>1.3</version>
+        <extensions>true</extensions>
+        <configuration>
+          <ikvmArgs>
+            <ikvmArg>-debug</ikvmArg>
+          </ikvmArgs>
+          <createStub>true</createStub>
+          <dlls>
+          </dlls>
+          <copyDlls>
+			<!-- Here we define libraries against which your project will need to link -->
+            <copyDll>bin/IKVM.Runtime.dll</copyDll>
+            <copyDll>bin/IKVM.Runtime.JNI.dll</copyDll>
+            <copyDll>bin/IKVM.OpenJDK.Core.dll</copyDll>
+            <copyDll>bin/IKVM.OpenJDK.Util.dll</copyDll>
+            <copyDll>bin/IKVM.OpenJDK.Text.dll</copyDll>
+			<copyDll>PlayN-1.8.5.dll</copyDll>
+			<copyDll>PlayNXNA.dll</copyDll>
+			<copyDll>PlayNContentImporter.dll</copyDll>
+          </copyDlls>
+        </configuration>
+      </plugin>
+	  
+	  <plugin>
+        <groupId>playn.xna</groupId>
+        <artifactId>xna-plugin</artifactId>
+        <version>1.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>xna</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+			<!-- This should be the fully qualified name of the Game class in your core project (no .java) -->
+			<qualifiedGameName>GROUP_ID.PACKAGE.core.GAME_CLASS</qualifiedGameName>
+			<!-- Here you can define spritefonts to generate with your project -->
+			<spritefonts>
+				<!-- Fonts are defined as follows: -->
+				<!-- name_in_playn;name_on_your_system;size1,size2...;[Plain|,Bolt|,Italic];c1-c2,c3-c4,c5 -->
+				<!-- The last argument is character ranges. 32-126 contains most English characters. -->
+				<!-- <spritefont>Arial;Arial;8,12,16,24,36,48;Plain,Bold,Italic;32-126,183-184</spritefont> -->
+			</spritefonts>
+			<!-- Set to true to have the .sln file overwritten if it already exists -->
+			<overwriteSLN>false</overwriteSLN>
+			<!-- Set to true to have the .csproject file overwritten if it already exists -->
+			<overwriteProject>false</overwriteProject>
+			<!-- Set to true to have the MyGame.cs file overwritten if it already exists -->
+			<overwriteGame>false</overwriteGame>
+			<!-- Set to true to have the .contentproject file overwritten if it already exists -->
+			<overwriteContent>true</overwriteContent>
+        </configuration>
+      </plugin>
+	  
+    </plugins>
+  </build>
+</project>
