@@ -61,10 +61,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="IKVM.OpenJDK.Core">
-      <HintPath>..\..\PlayNXNA\PlayNXNA\IKVM.OpenJDK.Core.dll</HintPath>
+      <HintPath>..\..\PlayNXNA\IKVM.OpenJDK.Core.dll</HintPath>
     </Reference>
     <Reference Include="jBox2D-2.2.1.1">
-      <HintPath>..\..\PlayNXNA\PlayNXNA\jBox2D-2.2.1.1.dll</HintPath>
+      <HintPath>..\..\PlayNXNA\jBox2D-2.2.1.1.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
       <Private>False</Private>
@@ -96,9 +96,8 @@
     <Reference Include="mscorlib">
       <Private>False</Private>
     </Reference>
-    <Reference Include="PlayN-1.8.5, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\PlayNXNA\PlayNXNA\PlayN-1.8.5.dll</HintPath>
+    <Reference Include="PlayN-1.8.5">
+      <HintPath>..\..\PlayNXNA\PlayN-1.8.5.dll</HintPath>
     </Reference>
     <Reference Include="Showcase, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -120,7 +119,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="TriplePlay-1.8.5">
-      <HintPath>..\..\PlayNXNA\PlayNXNA\TriplePlay-1.8.5.dll</HintPath>
+      <HintPath>..\..\PlayNXNA\TriplePlay-1.8.5.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
