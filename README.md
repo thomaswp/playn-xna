@@ -16,7 +16,7 @@ Before getting started, make sure that you have the following programs installed
 Quick Setup
 -----------
 
-For a quick demonstration of PlayN-XNA, clone this project and open PlayNXNA.sln. Most of the PlayN sample projects are included as XNA games. Choose a project and run it to see the XNA implementation.
+For a quick demonstration of PlayN-XNA, clone this project and open PlayNXNA.sln. Most of the PlayN sample projects are included as XNA games. Choose a project and run it to see the XNA implementation. Note that it may take a minute or two to build all of the projects, so be patient.
 
 Using PlayN-XNA in Your Own Project
 -----------------------------------
