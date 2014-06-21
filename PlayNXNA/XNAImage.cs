@@ -83,7 +83,7 @@ namespace PlayNXNA
 
         public Pattern toPattern()
         {
-            throw new NotImplementedException();
+            return new XNAPattern(this, repeatX(), repeatY());
         }
 
         public Image transform(Image.BitmapTransformer ibt)

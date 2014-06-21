@@ -150,6 +150,7 @@
     <Compile Include="XNAMouse.cs" />
     <Compile Include="XNANet.cs" />
     <Compile Include="XNAPath.cs" />
+    <Compile Include="XNAPattern.cs" />
     <Compile Include="XNAPlatform.cs" />
     <Compile Include="XNAPointer.cs" />
     <Compile Include="XNASound.cs" />
