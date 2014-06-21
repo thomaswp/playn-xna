@@ -32,7 +32,7 @@ Finally, run the following command from your projects root directory to build:
 
     mvn -Pxna package
     
-This will create a .sln file in your XNA folder. With any luck, that project will contain a complete build of your project on the XNA platform. Changes you make to this code will not be overwritten unless requested in the playn-xna-plugin parameters. By default, only the .contentproject will be overwritten (to update when new resources are available).
+This will create a .sln file in your xna folder. With any luck, that project will contain a complete build of your project on the XNA platform. Changes you make to this code will not be overwritten unless requested in the playn-xna-plugin parameters. By default, only the .contentproject will be overwritten (to update when new resources are available).
 
 
 FAQ
