@@ -6,7 +6,7 @@ using playn.core;
 using tripleplay.util;
 using System.Diagnostics;
 
-namespace Showcase
+namespace TestGame
 {
     class CanvasTestGame : Game.Default, Mouse.Listener
     {
@@ -18,10 +18,10 @@ namespace Showcase
         {
             Image pea;
 
-            ImageLayer imageLayer = PlayN.graphics().createImageLayer(PlayN.assets().getImage("peas/images/bg"));
+            ImageLayer imageLayer = PlayN.graphics().createImageLayer(PlayN.assets().getImage("images/bg.png"));
             PlayN.graphics().rootLayer().add(imageLayer);
 
-            ImageLayer imageLayer2 = PlayN.graphics().createImageLayer(pea = PlayN.assets().getImageSync("peas/images/pea"));
+            ImageLayer imageLayer2 = PlayN.graphics().createImageLayer(pea = PlayN.assets().getImageSync("images/pea.png"));
             PlayN.graphics().rootLayer().add(imageLayer2);
 
             //testSpeed();
@@ -80,8 +80,7 @@ namespace Showcase
 
         public void onMouseMove(Mouse.MotionEvent mme)
         {
-
-            //canvasImageLayer.setTranslation(mme.x() + 25, mme.y() + 25);
+            canvasImageLayer.setTranslation(mme.x() + 25, mme.y() + 25);
         }
 
         public void onMouseUp(Mouse.ButtonEvent mbe)

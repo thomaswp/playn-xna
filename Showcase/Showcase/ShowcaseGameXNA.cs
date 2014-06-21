@@ -15,7 +15,6 @@ namespace Showcase
 
             Importer.Import();
             Game game = new playn.showcase.core.Showcase(this);
-            //Game game = new CanvasTestGame();
             PlayN.run(game);
         }
 
