@@ -26,7 +26,7 @@ To add an XNA target to your PlayN project, add the following profile to your pr
       <modules><module>xna</module></modules>
     </profile>
     
-Then create a folder called xna and copy the [xna-sample-pom.xml](/xna-sample-pom.xml) file into the directory and rename it pom.xml. Go through and replace the all capitalized portions with values appropriate to your project. Customize the plugin parameters to your needs.
+Then create a folder called xna and copy the [sample-xna-pom.xml](/sample-xna-pom.xml) file into the directory and rename it pom.xml. Go through and replace the all capitalized portions with values appropriate to your project. Customize the plugin parameters to your needs.
 
 Finally, run the following command from your projects root directory to build:
 
