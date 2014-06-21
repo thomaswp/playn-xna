@@ -38,19 +38,19 @@ This will create a .sln file in your xna folder. With any luck, that project wil
 
 FAQ
 ---
-Q: How does PlayNXNA work?
+Q: How does PlayNXNA work?  
 A: Using the [IKVM](http://www.ikvm.net/), the [core PlayN library](https://github.com/threerings/playn/tree/master/core), along with your core code and any dependencies, are compiled from Java source into a Common Language Runtime (CLR) .dll file, which can be used in both the .NET and mono frameworks. XNA uses .NET, which means C# code can call your compiled java functions. In order to execute on a given platform, however, PlayN requires a backend that will translate its platform-independent calls into platform-specific ones. That's what this library does.
 
-Q: But why XNA? Isn't is a [dead platform](http://www.wpcentral.com/xna-dead-long-live-xna)?
-A: Well yes... and no. Fist of all, you can still create Xbox 360 games with XNA. Though Microsoft canned support for XNA with the Xbox One, PlayN was never designed to next-generation consoles, and this seems like a small loss. More importantly, the developers at [monogame](http://www.monogame.net/) have continued development for XNA, using the mono framework in place of .NET, and offer Windows 8 Store, Windows Phone and other targets. Integration with monogame is planned for future releases.
+Q: But why XNA? Isn't is a [dead platform](http://www.wpcentral.com/xna-dead-long-live-xna)?  
+A: Well yes... and no. Fist of all, you can still create Xbox 360 games with XNA. Though Microsoft canned support for XNA with the Xbox One, PlayN was never designed to next-generation consoles, and this seems like a small loss. More importantly, the developers at [monogame](http://www.monogame.net/) have continued development for XNA, using the mono framework in place of .NET, and offer Windows 8 Store, Windows Phone and other targets (with a rumor about PS4 support coming). Integration with monogame is planned for future releases.
 
-Q: Is my game compatible?
+Q: Is my game compatible?  
 A: Probably. PlayN-XNA supports arbitrary dependencies through maven, though if they're complex, something might get lost in translation. If IKVM supports it, this should. In short, if you can target iOS, you should be able to target XNA, and if you can target the web, you should as well.
 
-Q: I found a bug!
-A: Well that's not really a question, but well done. First make sure it's not just an [incomplete feature](/TODO.md), and the feel free to post and issue about it on this Github page.
+Q: I found a bug!  
+A: Well that's not really a question, but well done. First make sure it's not just an [incomplete feature](/Features.md), and the feel free to post and issue about it on this Github page.
 
-Q: This is cool. How can I help?
+Q: This is cool. How can I help?  
 A: There's a lot of room for parallel development. If you'd like to see a feature implemented, just clone or fork the repository, make your change and make a pull request.
 
 Structure
