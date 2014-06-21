@@ -105,10 +105,10 @@
         </executions>
         <configuration>
 			<!-- This should be the fully qualified name of the Game class in your core project (no .java) -->
-			<qualifiedGameName>GROUP_ID.PACKAGE.core.GAME_CLASS</qualifiedGameName>
+			<qualifiedGameName>PACKAGE.GAME_CLASS</qualifiedGameName>
 			<!-- Here you can define spritefonts to generate with your project -->
 			<spritefonts>
-				<!-- Fonts are defined as follows: -->
+				<!-- Fonts must be registered to use XNA and are defined as follows: -->
 				<!-- name_in_playn;name_on_your_system;size1,size2...;[Plain|,Bolt|,Italic];c1-c2,c3-c4,c5 -->
 				<!-- The last argument is character ranges. 32-126 contains most English characters. -->
 				<!-- <spritefont>Arial;Arial;8,12,16,24,36,48;Plain,Bold,Italic;32-126,183-184</spritefont> -->
